@@ -1,0 +1,57 @@
+// comments are not legal in JSON
+{
+    "images": [
+        {
+            "id": 0,
+            "name": "outdoor tileset",
+            "url": "http://cdn.learn2d.com/uploads/cmwelsh/ffff-ffff-ffff.png"
+        },
+        {
+            "id": 1,
+            "name": "collisions",
+            "url": "http://cdn.learn2d.com/uploads/cmwelsh/ffff-ffff-ffff.png"
+        }
+    ],
+    "index": [
+        {
+            "image": 0,
+            "width": 32,
+            "height": 32,
+            "tile_width": 16,
+            "tile_height": 16
+        },
+        {
+            "image": 1,
+            "width": 16,
+            "height": 16,
+            "tile_width": 16,
+            "tile_height": 16
+        }
+    ],
+    "level": {
+        "name": "Waiting Room",
+        "width": 64,
+        "height": 16
+    },
+    "tile_data": [
+        {
+            "id": 0,
+            "name": "background",
+            "data": [1,1,2,3]
+        },
+        {
+            "id": 1,
+            "name": "collisions",
+            "data": [6,6,0,0]
+        }
+    ],
+    "npcs": [
+        {
+            "id": 0,
+            "x": 2344,
+            "y": 2525,
+            "z": 0,
+            "script": "function oncreated() { this.chat = 'hello world!'; }"
+        }
+    ]
+}
