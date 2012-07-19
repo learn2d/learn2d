@@ -5,11 +5,11 @@ app = express.createServer()
 
 app.get '/', (req, res) ->
     res.render 'index',
-        title: 'My Site'
+        title: 'Learn2D'
 
 app.get '/test', (req, res) ->
     res.render 'test',
-        title: 'My Site'
+        title: 'Learn2D'
 
 app.configure ->
     app.use express.methodOverride()
