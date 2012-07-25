@@ -1,5 +1,4 @@
 express = require 'express'
-browserify = require 'browserify'
 
 app = express.createServer()
 

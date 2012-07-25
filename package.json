@@ -4,7 +4,6 @@
   "author":      "Learn2D",
 
   "dependencies": {
-    "browserify": "1.13.5",
     "ejs": "0.7.2",
     "express": "3.0.0beta7",
     "libxmljs": "0.5.4"
