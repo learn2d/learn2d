@@ -4,7 +4,6 @@ define(function () {
   var context;
 
   function init(){
-    console.log('init?');
     canvas = document.getElementById("myCanvas");
     context = canvas.getContext("2d");
     drawLayers();
@@ -47,7 +46,16 @@ define(function () {
     y = Math.floor(Data[x+y*TilesX]/y);
   }
 
-  return {
-    init: init
-  };
+  Game = (function () {
+    function Game() {
+    }
+
+    Game.prototype.init = function () {
+      init();
+    }
+
+    return Game;
+  }());
+
+  return Game;
 });

@@ -1,10 +1,9 @@
 define [
   'game'
-], (game) ->
+], (Game) ->
   document.addEventListener 'mousedown', ->
-    console.log 'test'
     false
 
-  game.init()
+  game = new Game()
 
-  console.log('init?')
+  game.init()
