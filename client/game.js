@@ -40,11 +40,6 @@ define(function () {
     }
   }
 
-  function linearizeData(x, y){
-    x = Data[x+y*TilesX]%y;
-    y = Math.floor(Data[x+y*TilesX]/y);
-  }
-
   Game = (function () {
     function Game() {
     }
