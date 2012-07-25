@@ -7,27 +7,18 @@ app.get '/', (req, res) ->
     res.render 'index',
         title: 'Learn2D'
 
-app.get '/test', (req, res) ->
-    res.render 'test',
+app.get '/render', (req, res) ->
+    res.render 'render',
         title: 'Learn2D'
 
 app.configure ->
     app.use express.methodOverride()
     app.use express.bodyParser()
     app.use app.router
-    app.use express.static __dirname + '/public'
+    app.use express.static __dirname + '/client'
     app.use express.errorHandler
         dumpExceptions: true
         showStack: true
-
-    # browserify
-    bundle = browserify
-        entry: __dirname + '/assets/entry.coffee'
-        watch: true
-        debug: true
-        require: {}
-
-    app.use bundle
 
     # ejs views
     app.set 'view engine', 'ejs'

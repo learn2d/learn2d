@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+              height: 100%;
+              background: white;
+        }
+        #container {
+            box-sizing: border-box;
+            position: relative;
+            background: white;
+            display: block;
+            height: 100%;
+            width: 100%;
+            max-width: 1024px;
+            max-height: 1024px;
+            padding-bottom: 28px;
+            margin: 0 auto;
+        }
+        #myCanvas {
+            background: white;
+            display: block;
+            height: 100%;
+            width: 100%;
+            max-width: 1024px;
+            max-height: 1024px;
+            margin: 0 auto;
+        }
+
+        </style>
+    </head>
+    <body>
+      <div id="container">
+        <canvas id="myCanvas" width="1024" height="1024">
+        </canvas>
+      </div>
+    <script src="Data.js"></script>
+    <script data-main="main" src="require.js"></script>
+    </body>
+</html>
