@@ -1,4 +1,4 @@
-void function(root){
+define(function () {
     
     // shim for cross-browser requestAnimationFrame, 
     // with setTimeout for a backup for older browsers
@@ -94,9 +94,11 @@ void function(root){
     }
 
     //// export using commonjs or into the global scope
+    /*
     if ( typeof module !== "undefined" && module["exports"] )
         module["exports"] = flywheel
     else
         root["flywheel"] = flywheel
-
-}(this)
+    */
+    return flywheel;
+});
