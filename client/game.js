@@ -1,5 +1,5 @@
-define(['flywheel'], function () {
-  var flywheel = require('flywheel');
+define(['use!flywheel'], function () {
+  var flywheel = require('use!flywheel');
 
   var Game = (function () {
     function Game(resourceLoader, canvas, context) {
