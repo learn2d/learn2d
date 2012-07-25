@@ -2,6 +2,7 @@ define(function () {
   var imageCache = {};
   var canvas;
   var context;
+  var loader;
 
   function init(){
     canvas = document.getElementById("myCanvas");
@@ -13,9 +14,9 @@ define(function () {
 
     var size = Level.tilesets[0].tileheight;
     var border = 0;
-    var imageObj = new Image();
-    
-    imageObj.onload = function() {
+    var imageObj = loader.loadImage(Level.tilesets[0].image);
+
+    if (imageObj !== null) {
       var TilesX = imageObj.width/size;
 
       for (var y = 0; y < 32; y++) {
@@ -29,10 +30,8 @@ define(function () {
                 context.drawImage(imageObj, srcx, srcy, size, size, x * size, y * size, size, size);
               } //end if
           }
-      }//end for y
-    };
-
-    imageObj.src = Level.tilesets[0].image;
+      }
+    }
   }
 
   function drawLayers(){
@@ -50,8 +49,13 @@ define(function () {
     function Game() {
     }
 
-    Game.prototype.init = function () {
+    Game.prototype.init = function (resourceLoader) {
+      loader = resourceLoader;
       init();
+
+      setTimeout(function () {
+        init();
+      }, 2000);
     }
 
     return Game;
