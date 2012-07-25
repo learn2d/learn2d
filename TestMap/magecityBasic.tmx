@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Mage City" tilewidth="32" tileheight="32">
+  <image source="fantasy/magecity_0.png" width="256" height="1450"/>
+ </tileset>
+ <layer name="ground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzFlz1TGzEQhqXrMKQgARogMyYJCd944ib4esZDkXGoHP9TdxAogJaS0iX++AnsjrVzrxdJpzMEimd8Pmn3kVZ30ty1MeY2kSvikriuEFOW7x/xlfgW4ZDYJi6c3xfzvSSH7if5OFed2CL23a9wANdflL+u+h+p/j72XT++/gH+HWK3hD3ixtXtLjEmxjH4bSJS8+0KMTGq+rnmp3a6Fm/lf3S0Xc1/2+lanEHb4yv5m6p9TGSODvEHOIe2GjGZYyzanys35x0Rg4Cf7w9hHFXHEvLfQ64Hd69L/AV6EDcA9HgmL/CPPDFDmF8or4yjVjIG9DeIE+In+HnuC9RYs0WMtGVmts6+8QxNvA7o/+X8LeeQ2i9T40fw4zOp8TmwDg8Rf+765M7f9/SXuTdcnTLPfx2DdSjzD9wv3780z/cG8efm+dxzcCxS5yXigy3iagl+m+iPwY5P1HmFWCXWbBGn1yfkx3NmHv86dd4gNonPzt+z0xqk+EPnjPibHm/ThNdf6p8l+uvGf86In98V/fy1Svy+/STkx3Mm9k5rfPsV+lOfP/T43mm9307ctc+Ne0YVv6yZnCeh3DLWUB9xV3n/QrXW+60wDrTz/bYtzlE9tjK/1Nq35lIb+d/39GG6tnCPVZ3QH0Pmx3PJwMt522Z2vzozs8/GSOXAZyrVL7lkLpKf2zrKfx7IgTUcVfTjOPS9rvL3IvFYj3n8IdBfNY5j+u8E++WseQ/4fGvYtO/G/wGfb3VTfGsi+js05dsS8bXpGD7fngAYOS8S
+  </data>
+ </layer>
+ <layer name="top" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzNl8mKAjEQhrsfwIsyHhR9A+emL+RNb4oLOC7gCq7gNnPzpPMKjS/nL/QhhHSSyqJ+8FFQSafa2KS6g+Dz+HN4bSkMgu/Qfl1TyqhdCf2s3YM/fpYWco3jLY5jOHG4fpY4fwlXkvEvQa4omS8bE7GHB8l4wbCG6L5tSRHqi+7bN1ku6uJqr4pc1OUde+WLGmFuC7ZhB3Yd1W/EMYIXeJfM7cMBHMKRYl3qf/rkXzE+hTM4hwsP9VWs4QZu4Y7JU888U47wBM/wl8mbnnksbJ9x0eNsfj/b40zPGpv6bI8zPWts6qt6XBJpmOFyPvpaEjmY53Ky/aty0RW6z2+dixSiOIrOS913tCYXXaF6R2Oh9n4dKM+vj3Py04nUU7wh6+/vIukbkZo3vebVPADl3iv0
+  </data>
+ </layer>
+ <layer name="leaves" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlbEKgzAURV+surhndOrs6q84+v+b0hbaqngHhdAhFaK9Kb4DhyyBk0B4ETkXFfsAJ8U6MigXWf0Vdl9RQulgD2sjcsN6hw/Pfuuse8yAJ3zBNxzgCKcN/dIxBIN7J/ACU5jB3HzvsziyX5D7W4ilH8sfGPr+lf+k8cyoX9CS+4ryyZV9ADIzNv4Ojg==
+  </data>
+ </layer>
+</map>
