@@ -1,7 +1,10 @@
 define [
   'game',
   'cs!resource-loader'
-], (Game, ResourceLoader) ->
+], () ->
+  Game = require 'game'
+  ResourceLoader = require 'cs!resource-loader'
+
   document.addEventListener 'mousedown', ->
     false
 
