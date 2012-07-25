@@ -1,12 +1,8 @@
-define([
-  'flywheel'
-  ], function () {
-  var loader;
+define(['flywheel'], function () {
+  var flywheel = require('flywheel');
 
-  Game = (function () {
+  var Game = (function () {
     function Game(resourceLoader, canvas, context) {
-      var flywheel = require('flywheel');
-
       this.loop = this.loop.bind(this);
 
       this.loader = resourceLoader;
