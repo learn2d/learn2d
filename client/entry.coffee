@@ -1,7 +1,11 @@
 define [
   'game',
-  'cs!resource-loader'
+  'cs!resource-loader',
+  'json',
+  'json!Data.json'
 ], () ->
+  window.Level = require 'json!Data.json'
+
   Game = require 'game'
   ResourceLoader = require 'cs!resource-loader'
 
@@ -15,3 +19,6 @@ define [
   game = new Game(resourceLoader, canvas, context)
 
   game.init(resourceLoader)
+
+  require ['json!Data.json'], (data) ->
+    console.log data
