@@ -2,6 +2,7 @@ define ->
   class ResourceLoader
     constructor: ->
       @imageCache = {}
+      @levelCache = {}
 
     loadImage: (imageName) ->
       cachedImage = @imageCache[imageName]
@@ -20,3 +21,7 @@ define ->
         null
       else
         cachedImage
+
+    loadLevel: (levelName) ->
+      # do something
+      null
