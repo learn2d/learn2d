@@ -2,13 +2,12 @@ define(['use!flywheel'], function () {
   var flywheel = require('use!flywheel');
 
   var Game = (function () {
-    function Game(resourceLoader, canvas, context) {
+    function Game(resourceLoader, context) {
       this.loop = this.loop.bind(this);
 
       this.loader = resourceLoader;
-      this.canvas = canvas;
       this.context = context;
-      this.fw = flywheel(this.loop, this.canvas);
+      this.fw = flywheel(this.loop, this.context.canvas);
     }
 
     Game.prototype.init = function (resourceLoader) {

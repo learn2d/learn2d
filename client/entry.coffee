@@ -16,7 +16,7 @@ define [
   context = canvas.getContext("2d");
 
   resourceLoader = new ResourceLoader()
-  game = new Game(resourceLoader, canvas, context)
+  game = new Game(resourceLoader, context)
 
   game.init(resourceLoader)
 
