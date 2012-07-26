@@ -1,5 +1,5 @@
-define(['use!flywheel'], function () {
-  var flywheel = require('use!flywheel');
+define(['flywheel'], function () {
+  var flywheel = require('flywheel');
 
   var Game = (function () {
     function Game(resourceLoader, context) {
@@ -10,11 +10,18 @@ define(['use!flywheel'], function () {
       this.fw = flywheel(this.loop, this.context.canvas);
     }
 
-    Game.prototype.init = function (resourceLoader) {
+    Game.prototype.init = function () {
       this.fw.start();
     };
 
     Game.prototype.loop = function (timeDelta) {
+      // TODO: handle input here
+
+      // TODO: run scripts here
+
+      // TODO: handle network updates here
+
+      // Render all cameras
       this.draw();
     };
 

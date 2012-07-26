@@ -1,8 +1,8 @@
 require.config({
   urlArgs: "bust=" + (new Date()).getTime(),
-  use: {
+  shim: {
     'flywheel': {
-      attach: 'flywheel'
+      exports: 'flywheel'
     }
   }
 });
