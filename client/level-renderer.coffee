@@ -3,44 +3,65 @@ define ->
     constructor: (@loader, @context) ->
 
     draw: ->
-      levelData = @loader.loadLevel 'test.level'
-      return unless levelData
+      @levelData = @loader.loadLevel 'test.level'
+      return unless @levelData
 
-      @drawLayers levelData
+      @drawLayers()
 
-    drawLayers: (levelData) ->
-      for layer in levelData.layers
-        @drawLayer levelData, layer
+    drawLayers: ->
+      for layer in @levelData.layers
+        @drawLayer layer
 
-    drawLayer: (levelData, layer) ->
-      horizontalTiles = levelData.width
-      verticalTiles = levelData.height
-      tileWidth = levelData.tilewidth
-      tileHeight = levelData.tileheight
-
-      image = @loader.loadImage levelData.tilesets[0].image
-      return unless image
-
-      imageTilesX = Math.floor(image.width / tileWidth)
+    drawLayer: (layer) ->
+      horizontalTiles = @levelData.width
+      verticalTiles = @levelData.height
+      tileWidth = @levelData.tilewidth
+      tileHeight = @levelData.tileheight
 
       for index, currentPos in layer.data
-        if index > 0
-          x = currentPos % horizontalTiles
-          y = Math.floor(currentPos / verticalTiles)
+        continue unless index != 0
 
-          srcX = ((index-1)%imageTilesX)*tileWidth
-          srcY = Math.floor((index-1)/imageTilesX)*tileHeight
+        drawFunc = @getDrawFuncForIndex index
+        continue unless drawFunc
 
-          @context.drawImage(
-            image,
-            srcX,
-            srcY,
-            tileWidth,
-            tileHeight,
-            x * tileWidth,
-            y * tileHeight,
-            tileWidth,
-            tileHeight
-          )
+        x = currentPos % horizontalTiles
+        y = Math.floor(currentPos / verticalTiles)
+
+        drawFunc(
+          tileWidth,
+          tileHeight,
+          x * tileWidth,
+          y * tileHeight,
+          tileWidth,
+          tileHeight
+        )
 
       undefined
+
+    getDrawFuncForIndex: (index) ->
+      for tileset, currentPos in @levelData.tilesets
+        if tileset.firstgid > index
+          break
+
+      tileset = @levelData.tilesets[currentPos - 1]
+      imageName = tileset.image
+
+      image = @loader.loadImage imageName
+      return null unless image
+
+      tileWidth = @levelData.tilewidth
+      tileHeight = @levelData.tileheight
+      imageTilesX = Math.floor(tileset.imagewidth / tileWidth)
+
+      firstgid = tileset.firstgid
+      srcX = ((index - firstgid) % imageTilesX) * tileWidth
+      srcY = Math.floor((index - firstgid) / imageTilesX) * tileHeight
+
+      drawFunc = @context.drawImage.bind(
+        @context,
+        image,
+        srcX,
+        srcY
+      )
+
+      return drawFunc
