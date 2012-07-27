@@ -1,0 +1,20 @@
+Code authors
+============
+
+This program was written by the following people:
+ - Chris M. Welsh
+ - Michael Kummer
+
+
+Asset attribution
+=================
+
+Assets were authored by the following people:
+
+Hyptosis
+ - Mage City Arcanos
+   http://opengameart.org/content/mage-city-arcanos
+
+wulax
+-  Medieval fantasy character sprites
+   http://opengameart.org/content/lpc-medieval-fantasy-character-sprites
