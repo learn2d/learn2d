@@ -2,11 +2,11 @@ express = require 'express'
 
 app = express.createServer()
 
-app.get '/', (req, res) ->
-    res.render 'index',
-        title: 'Learn2D'
+#app.get '/', (req, res) ->
+#    res.render 'index',
+#        title: 'Learn2D'
 
-app.get '/render', (req, res) ->
+app.get '/', (req, res) ->
     res.render 'render',
         title: 'Learn2D'
 
