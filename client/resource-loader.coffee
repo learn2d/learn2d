@@ -23,5 +23,17 @@ define ->
         cachedImage
 
     loadLevel: (levelName) ->
-      # do something
-      null
+      cachedLevel = @levelCache[levelName]
+
+      if cachedLevel is null
+        null
+      else if not cachedLevel?
+        require ["json!#{levelName}.json"], (levelData) =>
+          @levelCache[levelName] = levelData
+
+        # avoid adding this image to cache again
+        @levelCache[levelName] = null
+
+        null
+      else
+        cachedLevel

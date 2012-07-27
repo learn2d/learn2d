@@ -26,16 +26,19 @@ define(['flywheel'], function () {
     };
 
     Game.prototype.draw = function () {
-      this.drawLayers();
+      var Level = this.loader.loadLevel('Data');
+      this.drawLayers(Level);
     };
 
-    Game.prototype.drawLayers = function () {
-      for (var i = 0; i < Level.layers.length; i++) {
-        this.drawLayer(i);
+    Game.prototype.drawLayers = function (Level) {
+      if (Level !== null) {
+        for (var i = 0; i < Level.layers.length; i++) {
+          this.drawLayer(Level, i);
+        }
       }
     };
 
-    Game.prototype.drawLayer = function (a) {
+    Game.prototype.drawLayer = function (Level, a) {
       var size = Level.tilesets[0].tileheight;
       var border = 0;
       var imageObj = this.loader.loadImage(Level.tilesets[0].image);
