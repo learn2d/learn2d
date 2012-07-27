@@ -1,0 +1,33 @@
+Character animations
+- The character animation format will look something like this JSON:
+
+{
+    frames: [
+        {
+            index: image_id, // image id as given in next section
+            x: x_offset, // sprite position relative to player coords
+            y: y_offset, // sprite position relative to player coords
+            delay: frame_delay // wait this long until next frame
+        }
+    ],
+    sprites: [
+        {
+            id: image_id,
+            x: x_offset,
+            y: y_offset,
+            width: width,
+            height: height
+        }
+    ]
+}
+
+  We need to figure out what sprite sheets we're using and then
+  I'll try and build some idle/walking animations in this format.
+
+Attribution
+- We need to license our entry correctly!
+  http://lpc.opengameart.org/content/properly-licensing-your-liberated-pixel-cup-game-entry
+  We need license information for all the art we use in our project.
+  Please add both of us as contributors to the code portion.
+  I will go ahead and gather the license information for all other
+  software libraries being used so far.
