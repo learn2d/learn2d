@@ -13,6 +13,7 @@ Character animations
     sprites: [
         {
             id: image_id,
+            file: filename,
             x: x_offset,
             y: y_offset,
             width: width,
