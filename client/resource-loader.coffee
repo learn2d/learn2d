@@ -3,6 +3,7 @@ define ->
     constructor: ->
       @imageCache = {}
       @levelCache = {}
+      @aniCache = {}
 
     loadImage: (imageName) ->
       cachedImage = @imageCache[imageName]
@@ -37,3 +38,20 @@ define ->
         null
       else
         cachedLevel
+
+
+    loadAni: (aniName) ->
+      cachedAni = @aniCache[aniName]
+
+      if cachedAni is null
+        null
+      else if not cachedAni?
+        require ["json!anis/#{aniName}.ani.json"], (aniData) =>
+          @aniCache[aniName] = aniData
+
+        # avoid adding this image to cache again
+        @aniCache[aniName] = null
+
+        null
+      else
+        cachedAni
