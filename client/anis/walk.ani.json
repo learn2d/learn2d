@@ -1,3 +1,23 @@
 {
-    "foo": 10
+    "frames": [
+        [
+            [
+                {
+                    "id": 0,
+                    "x": 32,
+                    "y": 32
+                }
+            ]
+        ]
+    ],
+    "sprites": [
+        {
+            "id": 0,
+            "image": "bodies/BODY_male.png",
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+        }
+    ]
 }

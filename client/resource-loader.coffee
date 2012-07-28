@@ -14,7 +14,7 @@ define ->
         image = new Image()
         image.addEventListener 'load', =>
           @imageCache[imageName] = image
-        image.src = imageName
+        image.src = "images/#{imageName}"
 
         # avoid adding this image to cache again
         @imageCache[imageName] = null
