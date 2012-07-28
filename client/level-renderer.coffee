@@ -1,27 +1,27 @@
 define ->
   class LevelRenderer
-    constructor: (@level, @loader, @context) ->
+    constructor: (@loader, @context) ->
 
-    render: ->
-      @levelData = @loader.loadLevel "#{@level.getName()}"
-      return unless @levelData
+    render: (level) ->
+      levelData = @loader.loadLevel "#{level.getName()}"
+      return unless levelData
 
-      @drawLayers()
+      @drawLayers(levelData)
 
-    drawLayers: ->
-      for layer in @levelData.layers
-        @drawLayer layer
+    drawLayers: (levelData) ->
+      for layer in levelData.layers
+        @drawLayer levelData, layer
 
-    drawLayer: (layer) ->
-      horizontalTiles = @levelData.width
-      verticalTiles = @levelData.height
-      tileWidth = @levelData.tilewidth
-      tileHeight = @levelData.tileheight
+    drawLayer: (levelData, layer) ->
+      horizontalTiles = levelData.width
+      verticalTiles = levelData.height
+      tileWidth = levelData.tilewidth
+      tileHeight = levelData.tileheight
 
       for index, currentPos in layer.data
         continue unless index != 0
 
-        drawFunc = @getDrawFuncForIndex index
+        drawFunc = @getDrawFuncForIndex levelData, index
         continue unless drawFunc
 
         x = currentPos % horizontalTiles
@@ -38,19 +38,19 @@ define ->
 
       undefined
 
-    getDrawFuncForIndex: (index) ->
-      for tileset, currentPos in @levelData.tilesets
+    getDrawFuncForIndex: (levelData, index) ->
+      for tileset, currentPos in levelData.tilesets
         if tileset.firstgid > index
           break
 
-      tileset = @levelData.tilesets[currentPos - 1]
+      tileset = levelData.tilesets[currentPos - 1]
       imageName = tileset.image
 
       image = @loader.loadImage imageName
       return null unless image
 
-      tileWidth = @levelData.tilewidth
-      tileHeight = @levelData.tileheight
+      tileWidth = levelData.tilewidth
+      tileHeight = levelData.tileheight
       imageTilesX = Math.floor(tileset.imagewidth / tileWidth)
 
       firstgid = tileset.firstgid
