@@ -1,5 +1,5 @@
 define [
-  'game',
+  'cs!game',
   'cs!resource-loader',
   'json'
 ], () ->
