@@ -2,7 +2,7 @@ define ->
   class LevelRenderer
     constructor: (@loader, @context) ->
 
-    draw: ->
+    render: ->
       @levelData = @loader.loadLevel 'test.level'
       return unless @levelData
 

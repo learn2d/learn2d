@@ -1,24 +1,26 @@
 define [
-  'flywheel',
-  'cs!level-renderer',
+  'flywheel'
+  'cs!level-renderer'
   'cs!scene-graph'
+  'cs!scene-renderer'
 ], ->
   flywheel = require 'flywheel'
   LevelRenderer = require 'level-renderer'
   SceneGraph = require 'scene-graph'
+  SceneRenderer = require 'scene-renderer'
 
   class Game
     constructor: (@loader, @context) ->
       @fw = flywheel @loop, @context.canvas
-      @levelRenderer = new LevelRenderer(@loader, @context)
 
       @sceneGraph = new SceneGraph()
+      @sceneRenderer = new SceneRenderer(@loader, @context)
 
-    init: ->
+    start: ->
       @fw.start()
 
     draw: ->
-      @levelRenderer.draw()
+      @sceneRenderer.render()
 
     loop: (timeDelta) =>
       # TODO: handle input here

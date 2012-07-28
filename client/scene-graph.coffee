@@ -1,2 +1,3 @@
 define ->
   class SceneGraph
+    constructor: () ->

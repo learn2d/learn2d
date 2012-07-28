@@ -15,4 +15,4 @@ define [
   resourceLoader = new ResourceLoader()
   game = new Game(resourceLoader, context)
 
-  game.init()
+  game.start()
