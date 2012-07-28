@@ -1,9 +1,9 @@
 define ->
   class LevelRenderer
-    constructor: (@loader, @context) ->
+    constructor: (@level, @loader, @context) ->
 
     render: ->
-      @levelData = @loader.loadLevel 'test.level'
+      @levelData = @loader.loadLevel "#{@level.getName()}"
       return unless @levelData
 
       @drawLayers()

@@ -1,11 +1,9 @@
 define [
   'flywheel'
-  'cs!level-renderer'
   'cs!scene-graph'
   'cs!scene-renderer'
 ], ->
   flywheel = require 'flywheel'
-  LevelRenderer = require 'level-renderer'
   SceneGraph = require 'scene-graph'
   SceneRenderer = require 'scene-renderer'
 
@@ -14,7 +12,7 @@ define [
       @fw = flywheel @loop, @context.canvas
 
       @sceneGraph = new SceneGraph()
-      @sceneRenderer = new SceneRenderer(@loader, @context)
+      @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
 
     start: ->
       @fw.start()
