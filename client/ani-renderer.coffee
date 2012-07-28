@@ -10,7 +10,7 @@ define [
       aniData = @loader.loadAni(ani.getName())
       return unless aniData
 
-      direction = util.DIR_UP
+      direction = util.DIR_RIGHT
 
       aniX = 0
       aniY = 0
@@ -26,14 +26,17 @@ define [
           srcX = spriteData.x
           srcY = spriteData.y
 
+          partX = sprite.x
+          partY = sprite.y
+
           @context.drawImage(
             image,
             srcX,
             srcY,
             spriteData.width,
             spriteData.height,
-            aniX,
-            aniY,
+            aniX + partX,
+            aniY + partY,
             spriteData.width,
             spriteData.height
           )
