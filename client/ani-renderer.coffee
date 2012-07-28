@@ -15,7 +15,9 @@ define [
       aniX = 0
       aniY = 0
 
-      for frame in aniData.frames[direction]
+      for frame, idx in aniData.frames[direction]
+        break if idx == 1 # we dont support multiple frames
+
         for sprite in frame
           spriteId = sprite.id
           spriteData = aniData.sprites[spriteId]
