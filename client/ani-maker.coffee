@@ -2,7 +2,7 @@
 class aniMaker
   constructor: ->
     @name = 'walk'
-    @filenames = ["bodies/BODY_male.png", "bodies/LEGS_robe_skirt.png", "bodies/TORSO_chain_armor_torso.png"]
+    @filenames = ["bodies/BODY_male.png", "bodies/FEET_shoes_brown.png", "bodies/LEGS_robe_skirt.png", "bodies/TORSO_chain_armor_torso.png", "bodies/BELT_rope.png", "bodies/HEAD_hair_blonde.png", "bodies/HEAD_leather_armor_hat.png"]
     @xtiles = 9
     @ytiles = 4
     @spritewidth = 64
