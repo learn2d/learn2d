@@ -26,7 +26,7 @@ class aniMaker
           y: @spriteheight*(dir - 1)
           width: @spritewidth
           height: @spriteheight
-  printAnimation: ->
+  saveAnimation: ->
     @makeFrames()
     @makeSprites()
     console.log JSON.stringify 
@@ -34,4 +34,4 @@ class aniMaker
               sprites: @sprites
 
 ani = new aniMaker
-ani.printAnimation()
+ani.saveAnimation()
