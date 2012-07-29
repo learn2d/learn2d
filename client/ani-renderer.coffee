@@ -29,7 +29,7 @@ define [
 
 
       for frame, idx in aniData.frames[direction]
-        break if idx == 1 # we dont support multiple frames
+#        break if idx == 1 # we dont support multiple frames
 
         frame = aniData.frames[direction][idx][index]
         sprite = frame
