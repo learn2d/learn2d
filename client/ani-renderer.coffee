@@ -12,35 +12,46 @@ define [
 
       direction = util.DIR_RIGHT
 
-      aniX = 0
-      aniY = 0
+      aniX = 100
+      aniY = 100
+      index = 0
+      
+      if ani.getIsAnimating()
+        index = ani.getLastFrame()
+        index++
+        if index < aniData.frames[direction][0].length
+          ani.setLastFrame(index)
+        else
+          index = 0
+          ani.setLastFrame(0)
+      else
+        ani.setLastFrame(0)
+
 
       for frame, idx in aniData.frames[direction]
         break if idx == 1 # we dont support multiple frames
 
-        for sprite in frame
-          spriteId = sprite.id
-          spriteData = aniData.sprites[spriteId]
+        frame = aniData.frames[direction][idx][index]
+        sprite = frame
+        spriteId = sprite.id
+        spriteData = aniData.sprites[spriteId]
 
-          image = @loader.loadImage spriteData.image
-          return unless image
+        image = @loader.loadImage spriteData.image
+        return unless image
 
-          srcX = spriteData.x
-          srcY = spriteData.y
+        srcX = sprite.x
+        srcY = spriteData.y
 
-          partX = sprite.x
-          partY = sprite.y
-
-          @context.drawImage(
-            image,
-            srcX,
-            srcY,
-            spriteData.width,
-            spriteData.height,
-            aniX + partX,
-            aniY + partY,
-            spriteData.width,
-            spriteData.height
-          )
+        @context.drawImage(
+          image,
+          srcX,
+          srcY,
+          spriteData.width,
+          spriteData.height,
+          aniX + 0,
+          aniY + 0,
+          spriteData.width,
+          spriteData.height
+        )
 
       undefined
