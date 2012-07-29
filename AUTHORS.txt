@@ -15,6 +15,11 @@ Hyptosis
  - Mage City Arcanos
    http://opengameart.org/content/mage-city-arcanos
 
-wulax
--  Medieval fantasy character sprites
+Johannes Sjolund
+ - Character animations, clothes, armor, weapons, skeleton enemy, combat dummy
+ - Medieval fantasy character sprites
    http://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+   
+Luke_Mehl
+ - Female Mage Clothing Set
+   http://opengameart.org/lpc-art-entries
