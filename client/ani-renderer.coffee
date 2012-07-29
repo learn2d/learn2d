@@ -12,24 +12,27 @@ define [
 
       direction = util.DIR_RIGHT
 
-      aniX = 100
-      aniY = 100
-      index = 0
+      aniX = ani.getXpos()
+      aniY = ani.getYpos()
+
+      index = ani.getLastFrame()
+      time = new Date().getTime()
+      nextTime = ani.getNextTime()
       
       if ani.getIsAnimating()
-        index = ani.getLastFrame()
-        index++
-        if index < aniData.frames[direction][0].length
-          ani.setLastFrame(index)
-        else
-          index = 0
-          ani.setLastFrame(0)
+        if time > nextTime
+          index++
+          ani.setNextTime()
+          if index < aniData.frames[direction][0].length
+            ani.setLastFrame(index)
+          else
+            index = 1
+            ani.setLastFrame(1)
       else
         ani.setLastFrame(0)
 
 
       for frame, idx in aniData.frames[direction]
-#        break if idx == 1 # we dont support multiple frames
 
         frame = aniData.frames[direction][idx][index]
         sprite = frame

@@ -26,6 +26,7 @@ class aniMaker
           y: @spriteheight*(dir - 1)
           width: @spritewidth
           height: @spriteheight
+
   saveAnimation: ->
     @makeFrames()
     @makeSprites()
