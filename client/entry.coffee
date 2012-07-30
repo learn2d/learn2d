@@ -9,7 +9,9 @@ define [
   document.addEventListener 'mousedown', ->
     false
 
-  canvas = document.getElementById("myCanvas")
+  canvas = document.getElementById("canvas")
+  canvas.width = 1024
+  canvas.height = 1024
   context = canvas.getContext("2d")
 
   resourceLoader = new ResourceLoader()

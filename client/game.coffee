@@ -2,10 +2,14 @@ define [
   'flywheel'
   'cs!scene-graph'
   'cs!scene-renderer'
+  'cs!input'
+  'cs!scripting-engine'
 ], ->
   flywheel = require 'flywheel'
   SceneGraph = require 'scene-graph'
   SceneRenderer = require 'scene-renderer'
+  ScriptingEngine = require 'scripting-engine'
+  Input = require 'input'
 
   class Game
     constructor: (@loader, @context) ->
@@ -13,6 +17,9 @@ define [
 
       @sceneGraph = new SceneGraph()
       @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
+
+      @input = new Input()
+      @scriptingEngine = new ScriptingEngine(@input, @sceneGraph)
 
     start: ->
       @fw.start()
@@ -22,8 +29,10 @@ define [
 
     loop: (timeDelta) =>
       # TODO: handle input here
+      @input.loop()
 
       # TODO: run scripts here
+      @scriptingEngine.loop(timeDelta)
 
       # TODO: handle network updates here
 

@@ -46,7 +46,7 @@ define ->
       if cachedAni is null
         null
       else if not cachedAni?
-        require ["json!anis/#{aniName}.ani.json"], (aniData) =>
+        require ["json!anis/#{aniName}.female.json"], (aniData) =>
           @aniCache[aniName] = aniData
 
         # avoid adding this image to cache again

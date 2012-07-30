@@ -1,39 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-        html, body {
-            padding: 0;
-            margin: 0;
-        }
-        body {
-              height: 100%;
-              background: white;
-        }
-        #container {
-            background: white;
-            display: block;
-            width: 1024px;
-            height: 1024px;
-            margin: 0 auto;
-        }
-        #myCanvas {
-            background: white;
-            display: block;
-            height: 100%;
-            width: 100%;
-            max-width: 1024px;
-            max-height: 1024px;
-            margin: 0 auto;
-        }
-
-        </style>
+      <link rel="stylesheet" href="styles/game.css">
     </head>
     <body>
       <div id="container">
-        <canvas id="myCanvas" width="1024" height="1024">
+        <canvas id="canvas">
         </canvas>
+
+        <div id="chatbox-container">
+          <form id="chat-form" action="">
+            <input id="chatbox" type="text" value="">
+          </form>
+        </div>
       </div>
-    <script data-main="main" src="require.js"></script>
+
+      <script data-main="main" src="require.js"></script>
     </body>
 </html>
