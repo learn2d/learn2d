@@ -14,5 +14,5 @@ define [
       level = @sceneGraph.getLevel()
       @levelRenderer.render(level)
 
-      ani = @sceneGraph.getAni()
-      @aniRenderer.render(ani)
+      #ani = @sceneGraph.getAni()
+      #@aniRenderer.render(ani)

@@ -7,8 +7,7 @@ define [
 
   class SceneGraph
     constructor: () ->
-      @level = new Level('test')
-      @ani = new Ani()
+      @reset {}
 
     getLevel: () ->
       @level
@@ -19,3 +18,10 @@ define [
     moveAni: (x, y) ->
       @ani.setXpos(x)
       @ani.setYpos(y)
+
+    reset: ({level}) ->
+      @players = []
+      if level
+        @level = new Level(level)
+      else
+        @level = null

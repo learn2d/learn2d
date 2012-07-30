@@ -1,26 +1,14 @@
 express = require 'express'
+Game = require './Game'
 
 app = express.createServer()
+
+game = new Game()
 
 io = require('socket.io').listen(3001)
 
 io.sockets.on 'connection', (socket) ->
-  socket.on 'init', (data) ->
-  socket.emit 'init', ->
-    player:
-      x: 400
-      y: 400
-    players: []
-    levelName: 'test'
-
-  socket.on 'move', (data) ->
-    socket.volatile.broadcast.emit 'update', ->
-  socket.on 'wtf', (data) ->
-    console.log 'wtf'
-    console.log data
-  socket.on 'trigger', (data) ->
-    console.log 'trigger'
-    console.log data
+  game.addClient socket
 
 app.get '/', (req, res) ->
   res.render 'render',

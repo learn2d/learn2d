@@ -3,6 +3,8 @@ define ->
     constructor: (@loader, @context) ->
 
     render: (level) ->
+      return if level is null
+
       levelData = @loader.loadLevel "#{level.getName()}"
       return unless levelData
 

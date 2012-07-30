@@ -23,6 +23,7 @@ define [
       @scriptingEngine = new ScriptingEngine(@input, @sceneGraph, @network)
 
     start: ->
+      @network.start(this)
       @fw.start()
 
     draw: ->
@@ -39,3 +40,6 @@ define [
 
       # Render all cameras
       @draw()
+
+    reset: (data) ->
+      @sceneGraph.reset(data)
