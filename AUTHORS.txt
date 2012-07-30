@@ -11,15 +11,219 @@ Asset attribution
 
 Assets were authored by the following people:
 
+Base Assets
+ - base_assets
+ - /fantasy/outside/signs.png
+ - /fantasy/outside/waterfall.png
+ - /fantasy/outside/house.png
+ - /fantasy/outside/wheelbarrows.png
+ - /fantasy/outside/fence*
+ - /fantasy/outside/mountains.png
+ - /fantasy/outside/treetop.png
+ - /fantasy/outside/trunk.png
+ - /fantasy/outside/water.png
+ - /fantasy/outside/watergrass.png
+ - /fantasy/outside/grass.png
+ - /fantasy/outside/lava.png
+ - /fantasy/outside/lavarock.png
+ - /fantasy/outside/rock.png
+ - /fantasy/outside/hole.png
+ - /fantasy/outside/dirt2.png
+ - /fantasy/outside/brackish.png
+ - /fantasy/outside/cup.png
+ - /fantasy/monsters/bee.png
+ - /fantasy/monsters/bat.png
+ - /fantasy/monsters/bigworm.png
+ - /fantasy/monsters/eyeball.png
+ - /fantasy/monsters/ghost.png
+ - /fantasy/monsters/man_eater_flower.png
+ - /fantasy/monsters/pumpking.png
+ - /fantasy/monstersslime.png
+ - /fantasy/monsters/small_worm.png
+ - /fantasy/monsters/snake.png
+ - /fantasy/inside/kitchen.png
+ - /fantasy/inside/chests.png
+ - /fantasy/inside/cementstair.png
+ - /fantasy/inside/cement.png
+ - /fantasy/inside/cabinets.png
+ - /fantasy/inside/barrel.png
+ - /fantasy/inside/country.png
+ - /fantasy/inside/dungeon.png
+ - /fantasy/inside/victoria.png
+ - /fantasy/inside/castlefloors.png
+ - /fantasy/hair/hairfemale.png
+ - /fantasy/hair/hairmale.png
+ - /fantasy/ui/frame.gif
+ - /fantasy/npcs/princess.png
+ - /fantasy/npcs/soldier.png
+ - /fantasy/npcs/soldier_altcolor.png
+
 Hyptosis
  - Mage City Arcanos
+ - /fantasy/outside/magecity_0.png
    http://opengameart.org/content/mage-city-arcanos
 
 Johannes Sjolund
- - Character animations, clothes, armor, weapons, skeleton enemy, combat dummy
- - Medieval fantasy character sprites
+ - Johannes_Sjolund__Character animations, clothes, armor, weapons, skeleton enemy, combat dummy
+ - JS_Male/*
    http://opengameart.org/content/lpc-medieval-fantasy-character-sprites
    
-Luke_Mehl
- - Female Mage Clothing Set
+Luke Mehl
+ - Luke_Mehl__Female Mage Clothing Set
+ - LM_Female/*
+ - /fantasy/npcs/*_mage*
+ - /fantasy/npcs/red_novice.png
    http://opengameart.org/lpc-art-entries
+
+Daniel Eddeland
+ - Daniel_Eddeland__Farming tilesets, magic animations and UI elements
+ - /fantasy/spells/magic_*
+ - /fantasy/spells/turtleshell_*
+ - /fantasy/oustide/plants.png
+ - /fantasy/oustide/sand.png
+ - /fantasy/oustide/sandwater.png
+ - /fantasy/oustide/youngwheat.png
+ - /fantasy/oustide/wheat.png
+ - /fantasy/oustide/reed.png
+ - /fantasy/oustide/tallgrass.png
+ - /fantasy/oustide/plowed_soil.png
+ - /fantasy/oustide/farming_fishing.png
+ - /fantasy/ui/scrollsandblocks.png
+ - /fantasy/weapons/sword_sheet_128.png
+
+
+
+Mark Weyer 
+ - Mark_Weyer__Caeles' LPC art
+ - /fantasy/spells/water_attacK*
+ - /fantasy/outside/birdbath.png
+
+Chris Phillips
+ - Chris_Phillips__Team River Fox
+ - /fantasy/outside/BRivera-Church.png
+ - /fantasy/outside/BRivera--Tere.png
+ - /fantasy/outside/CPhillips--whitheredtree.png
+ - /fantasy/npcs/BRivera--femaleelfwalk.png
+ - /fantasy/npcs/BRivera--gunnerwalkcycle.png
+ - /fantasy/npcs/BRivera--malesoldier.png
+ - /fantasy/npcs/BRivera-maleZombiesoldier.png
+ - /fantasy/npcs/BRivera--roguewalkredone.png
+ - /fantasy/npcs/BRivera--FBI_walk_cycle.png
+ - /fantasy/npcs/maskman.png
+
+Lori Angela Nagel
+ - Lori_Angela_Nagel__Jastiv's Artwork
+ - /fantasy/outside/mushrooms1.png
+ - /fantasy/outside/campfire.png
+ - /fantasy/Clothing_extras/*_dwing_*
+ - /fantasy/Clothing_extras/*_robe_*
+ - /fantasy/monsters/badflower.png
+
+Casper Nilsson
+ - Casper_Nilsson__LPC C.Nilsson
+ - /fantasy/outside/cherry_blossom_trees.png
+ - /fantasy/outside/toro.png
+ - /fantasy/outside/foodog_statue.png
+ - /fantasy/outside/shrine*
+ - /fantasy/outside/torii.png
+ - /fantasy/outside/victorian_house.png
+ - /fantasy/outside/gravestones.png
+ - /fantasy/outside/windmill.png
+ - /fantasy/outside/tent.png
+ - /fantasy/outside/wheelbarrows.png
+ - /fantasy/outside/Sampan_boat.png
+ - /fantasy/outside/water_lilies.png
+ - /fantasy/inside/longcase_clock_32x128.png
+ - /fantasy/outside/sika_deer_eating_sprite_96x64.png
+
+Emilio J Sanchez-Sierra
+ - Emilio_J_Sanchez-Sierra__Steampun-a-fy (with concept art)
+ - /fantasy/outside/chimney.png
+ - /fantasy/outside/environment_assets.png
+ - /fantasy/outside/wood_and_bronze_house.png
+ - /fantasy/npcs/Astraea_walkcycle_*
+
+Jonas Klinger
+ - Jonas__Klinger_Skorpio's SciFi Sprite Pack
+ - /fantasy/outside/Lightning*
+ - /fantasy/spells/Explosion.png
+
+Guido Bos
+ - Guido_Bos__Flowers, buildings and boxes
+ - /fantasy/outside/contest-art.png
+ - Guido_Bos__Interior wooden tiles
+ - /fantasy/inside/inside-contest.png
+
+Matthew Nash
+ - Matthew_Nash__Public Toilet Tileset
+ - /fantasy/inside/toilets.png
+ 
+Clint Bellanger
+ - Clint_Bellanger__Animated Coins
+ - /fantasy/items/coin*
+ 
+Ben Potter
+ - Ben_Potter__Cookiez monsters
+ - /fantasy/monsters/BenP_monsters/*
+
+Barbara Rivera
+ - Barbara_Rivera__Concept Art for LPC Entry
+ - /fantasy/hair/*femalehairlong*
+ - /fantasy/outside/BRivera-Church.png
+ - /fantasy/outside/Building11.png
+ - /fantasy/outside/CPhillips--whitheredtree.png
+ - /fantasy/ontside/tombstone1.png
+
+Joshua Taylor
+ - Joshua_Taylor__Fruit and Veggie Inventory
+ - /fantasy/items/Vegies.png
+
+Dennis_Boysen__Firefight
+ - Dennis_Boysen__Firefight
+ - /fantasy/npcs/female_slashfeuerloescher.png
+ - /fantasy/npcs/female_walkcyclebunt.png
+
+Stephen Challener
+ - Stephen_Challener__Suzerain Mage Character Sprite
+ - /fantasy/npcs/SCmage_walk_sheet.png
+ - /fantasy/npcs/SCmage_cast_sheet.png
+ - /fantasy/npcs/SCmage_hurt_sheet.png
+
+Juan M Rodriguez
+ - Juan_M_Rodriguez__Maskman
+ - /fantasy/npcs/maskman.png
+
+Skyler Robert
+ - Skyler_Robert_Colladay__FeralFantom's Entry
+ - /fantasy/npcs/professor_walk_cycle_no_hat.png
+ - /fantasy/npcs/FBI_walk_cycle.png
+ - /fantasy/npcs/FBI_hurt.png
+
+Artur Reterski
+ - Artur_Reterski__Items set
+ - /fantasy/items/items.png
+
+Nelson James
+ - Nelson_James_Gatlin__Memento
+ - /fantasy/music/bells_menu_theme.flac
+ - /fantasy/music/torvald's_slow_theme_(ambient_guitar).flac
+ - /fantasy/music/h_theme.flac
+ - /fantasy/music/Earie_bells.flac
+ - /fantasy/music/mallet_music_box_motif.flac
+ - /fantasy/music/ocarina_overture(full).flac
+ - /fantasy/music/brass_loop.flac
+ - /fantasy/music/choir_loop.flac
+ - /fantasy/music/ocarina_overture_acoustic.flac
+ - /fantasy/music/strings_theme.flac
+ - /fantasy/music/trouble_loop.flac
+
+Brandon
+ - Brandon__Calm Town
+ - /fantasy/music/Calmtown.ogg
+ 
+Johnathan Roatch
+ - Johnathan_Roatch__Miscellaneous SFX
+ - /fantasy/sounds/*
+
+
+
