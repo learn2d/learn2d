@@ -1,9 +1,6 @@
 define [
   'cs!trigger'
-  'cs!player'
 ], ->
-  player = require 'player'
-
   class System
     constructor: ({@trigger}) ->
     onMouseDown: (mouse) ->

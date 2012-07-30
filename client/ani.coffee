@@ -1,14 +1,15 @@
 define ->
   class Ani
-    constructor: ->
+    constructor: ({@x, @y}) ->
       @name = 'walk'
       @IsAnimating = 1
       @LastFrame = 0
       @NextTime = new Date().getTime()
       @delay = 50
-      @xpos = 100
-      @ypos = 100
-      
+
+      @xpos = @x
+      @ypos = @y
+
     getXpos: ->
       @xpos
     setXpos: (newx) ->

@@ -16,7 +16,6 @@ define [
 
       entities = @sceneGraph.getEntities()
       for entity in entities
-        console.log 'we found an entity'
         getAnis = entity.components.ani?.getAnis
 
         if typeof getAnis is 'function'
