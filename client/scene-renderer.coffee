@@ -14,5 +14,12 @@ define [
       level = @sceneGraph.getLevel()
       @levelRenderer.render(level)
 
-      #ani = @sceneGraph.getAni()
-      #@aniRenderer.render(ani)
+      entities = @sceneGraph.getEntities()
+      for entity in entities
+        console.log 'we found an entity'
+        getAnis = entity.components.ani?.getAnis
+
+        if typeof getAnis is 'function'
+          anis = getAnis()
+          for ani in anis
+            @aniRenderer.render(ani)

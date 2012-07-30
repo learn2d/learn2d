@@ -12,15 +12,14 @@ define [
     getLevel: () ->
       @level
 
-    getAni: ->
-      @ani
+    addEntity: (entity) ->
+      @entities.push entity
 
-    moveAni: (x, y) ->
-      @ani.setXpos(x)
-      @ani.setYpos(y)
+    getEntities: () ->
+      @entities
 
     reset: ({level}) ->
-      @players = []
+      @entities = []
       if level
         @level = new Level(level)
       else

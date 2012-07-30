@@ -7,7 +7,6 @@ define [
   class System
     constructor: ({@trigger}) ->
     onMouseDown: (mouse) ->
-      window.sgg.moveAni(mouse.x, mouse.y)
       @trigger.send
         target: 'server/modules/system'
         action: 'createPlayer'
