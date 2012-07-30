@@ -5,7 +5,6 @@ define [
 
   class Ani
     constructor: ({@entity, @x, @y}) ->
-      @isAnimating = 1
       @lastFrame = 0
       @nextTime = new Date().getTime()
       @delay = 50
@@ -34,9 +33,3 @@ define [
       @nextTime
     setNextTime: () ->
       @nextTime = new Date().getTime() + @delay
-
-    getIsAnimating: ->
-      @isAnimating
-    setIsAnimating: (isAnimating) ->
-      @isAnimating = isAnimating
-

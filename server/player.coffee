@@ -14,7 +14,7 @@ class Player
     level: @level.getName()
     x: @x
     y: @y
-    direction: util.DIR_DOWN
-    aniName: 'walk-female'
+    direction: util.DIR_RIGHT
+    aniName: 'walk-female-male'
 
 module.exports = Player

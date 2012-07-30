@@ -19,18 +19,14 @@ define [
       time = new Date().getTime()
       nextTime = ani.getNextTime()
       
-      if ani.getIsAnimating()
-        if time > nextTime
-          index++
-          ani.setNextTime()
-          if index < aniData.frames[direction][0].length
-            ani.setLastFrame(index)
-          else
-            index = 1
-            ani.setLastFrame(1)
-      else
-        ani.setLastFrame(0)
-
+      if time > nextTime
+        index++
+        ani.setNextTime()
+        if index < aniData.frames[direction][0].length
+          ani.setLastFrame(index)
+        else
+          index = 0
+          ani.setLastFrame(0)
 
       for frame, idx in aniData.frames[direction]
 
