@@ -22,6 +22,7 @@ class Game
   entityAdded: (entity) ->
     console.log 'entity added?'
     for own id, socket of @clients
+      console.log entity
       socket.emit 'entityAdded', entity
   
 

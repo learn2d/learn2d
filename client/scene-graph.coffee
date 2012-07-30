@@ -24,8 +24,8 @@ define [
       entity = new Entity
         x: entityData.x
         y: entityData.y
-        aniName: 'walk'
-        direction: util.DIR_DOWN
+        aniName: entityData.aniName
+        direction: entityData.direction
       @addEntity entity
 
     getEntities: () ->

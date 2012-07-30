@@ -28,7 +28,7 @@ define [
       @y
 
     getAniName: ->
-      'walk'
+      @aniName
 
     getDirection: ->
-      util.DIR_DOWN
+      @direction
