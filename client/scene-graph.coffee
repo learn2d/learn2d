@@ -16,15 +16,13 @@ define [
 
     addEntity: (entity) ->
       @entities.push entity
+      console.log 'entity added'
 
     addEntityFromData: (entityData) ->
-      console.log 'adding entity'
-      console.log entityData
-
       entity = new Entity
         x: entityData.x
         y: entityData.y
-      @entities.push entity
+      @addEntity entity
 
     getEntities: () ->
       @entities
