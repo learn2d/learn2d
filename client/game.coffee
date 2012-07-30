@@ -16,9 +16,10 @@ define [
       @fw = flywheel @loop, @context.canvas
 
       @sceneGraph = new SceneGraph()
+      window.sgg = @sceneGraph
       @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
 
-      @input = new Input()
+      @input = new Input(@context)
       @scriptingEngine = new ScriptingEngine(@input, @sceneGraph)
 
     start: ->

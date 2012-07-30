@@ -4,7 +4,7 @@ define [
   bean = require 'bean'
 
   class Input
-    constructor: ->
+    constructor: (@context) ->
         @input = {}
         @chatHasFocus = false
         @playerChat = undefined
@@ -60,6 +60,9 @@ define [
                 delete @input[keyCode]
 
         bean.add document, 'mousedown', (e) =>
+          mousePos = @_getPosition(e)
+          @mouseX = mousePos.x
+          @mouseY = mousePos.y
           @mouseDown = true
         bean.add document, 'mouseup', (e) =>
           @mouseDown = false
@@ -78,6 +81,23 @@ define [
 
     getMouseY: ->
       @mouseY
+
+    # get mouse position
+    _getPosition: (event) ->
+      if event.x? or event.y?
+        x = event.x
+        y = event.y
+      else
+        x = event.clientX + document.body.scrollLeft +
+             document.documentElement.scrollLeft
+        y = event.clientY + document.body.scrollTop +
+              document.documentElement.scrollTop
+
+      x -= @context.canvas.offsetLeft
+      y -= @context.canvas.offsetTop
+
+      x: x
+      y: y
 
     # called for each game loop
     loop: ->

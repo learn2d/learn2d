@@ -26,7 +26,7 @@ define [
         if not @mouseDown
           @mouseDown = true
           @callMouseDownListeners()
-      else if @mouseDown
+      else
         @mouseDown = false
 
     callMouseDownListeners: ->

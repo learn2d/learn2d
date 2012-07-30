@@ -15,3 +15,7 @@ define [
 
     getAni: ->
       @ani
+
+    moveAni: (x, y) ->
+      @ani.setXpos(x)
+      @ani.setYpos(y)
