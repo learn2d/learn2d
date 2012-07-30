@@ -25,20 +25,17 @@ define [
       @network.start(this)
       @fw.start()
 
-    draw: ->
-      @sceneRenderer.render()
-
     loop: (timeDelta) =>
-      # TODO: handle input here
+      # Handle input here
       @input.loop()
 
-      # TODO: run scripts here
+      # Run scripts here
       @scriptingEngine.loop(timeDelta)
 
       # TODO: handle network updates here
 
-      # Render all cameras
-      @draw()
+      # Render scene
+      @sceneRenderer.render(timeDelta)
 
     reset: (data) ->
       @sceneGraph.reset(data)

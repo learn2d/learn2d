@@ -10,7 +10,7 @@ define [
       @levelRenderer = new LevelRenderer(@loader, @context)
       @aniRenderer = new AniRenderer(@loader, @context)
 
-    render: ->
+    render: (timeDelta) ->
       level = @sceneGraph.getLevel()
       @levelRenderer.render(level)
 
