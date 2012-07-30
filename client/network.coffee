@@ -6,6 +6,10 @@ define ->
       @socket.on 'connect', (data) ->
       @socket.on 'reset', (data) =>
         @game.reset(data)
+      @socket.on 'entityAdded', (data) =>
+        console.log 'entity added'
+        console.log data
+        @game.sceneGraph.addEntityFromData data
 
     on: (eventName, callback) ->
       @socket.on eventName, callback

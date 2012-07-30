@@ -1,12 +1,13 @@
 Level = require './level'
 
 class SceneGraph
-  constructor: ->
+  constructor: (@game) ->
     @entities = []
     @level = new Level('test')
 
   addEntity: (entity) ->
     @entities.push entity
+    @game.entityAdded(entity)
 
   getEntities: ->
     @entities

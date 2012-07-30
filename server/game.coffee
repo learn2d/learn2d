@@ -5,7 +5,7 @@ class Game
   constructor: ->
     @clients = {}
 
-    @sceneGraph = new SceneGraph()
+    @sceneGraph = new SceneGraph(this)
 
   addClient: (socket) ->
     @clients[socket.id] = socket
@@ -19,5 +19,10 @@ class Game
         y: params.y
       @sceneGraph.addEntity entity
 
+  entityAdded: (entity) ->
+    console.log 'entity added?'
+    for own id, socket of @clients
+      socket.emit 'entityAdded', entity
+  
 
 module.exports = Game
