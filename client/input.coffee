@@ -90,10 +90,6 @@ define [
 
       x -= @context.canvas.offsetLeft
 
-      console.log
-        x: x
-        y: y
-
       x: x
       y: y
 
