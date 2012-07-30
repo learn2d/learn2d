@@ -2,7 +2,7 @@
 class aniMaker
   constructor: ->
     @name = 'walk'
-    @filenames = ["LM_Female/female_base.png","JS_Male/png/walkcycle/BELT_leather.png", "JS_Male/png/walkcycle/HANDS_plate_armor_gloves.png"]
+    @filenames = ["LM_Female/female_base.png"]
     @xtiles = 8
     @ytiles = 4
     @spritewidth = 64
@@ -19,12 +19,14 @@ class aniMaker
           for pos in [1..@xtiles]
             id: idz + (dir-1) * @filenames.length
             x: (pos - 1)*@spritewidth + @xoffset
+            y: 0
 
   makeSprites: ->
     for dir in [1..@ytiles]
       for layers, idz in @filenames
         @sprites.push
           image: @filenames[idz]
+          x: 0
           y: @spriteheight*(dir - 1) + @yoffset
           width: @spritewidth
           height: @spriteheight

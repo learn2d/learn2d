@@ -28,14 +28,14 @@ define [
           index = 0
           ani.setLastFrame(0)
 
-      for frame, idx in aniData.frames[direction]
+      for file, idx in ani.getFiles()
 
-        frame = aniData.frames[direction][idx][index]
+        frame = aniData.frames[direction][0][index]
         sprite = frame
         spriteId = sprite.id
         spriteData = aniData.sprites[spriteId]
 
-        image = @loader.loadImage spriteData.image
+        image = @loader.loadImage file
         return unless image
 
         srcX = sprite.x
