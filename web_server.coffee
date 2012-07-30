@@ -18,6 +18,9 @@ io.sockets.on 'connection', (socket) ->
   socket.on 'wtf', (data) ->
     console.log 'wtf'
     console.log data
+  socket.on 'trigger', (data) ->
+    console.log 'trigger'
+    console.log data
 
 app.get '/', (req, res) ->
   res.render 'render',

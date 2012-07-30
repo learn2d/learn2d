@@ -2,17 +2,21 @@ define [
   'cs!module-system'
   'cs!trigger'
 ], ->
+  Trigger = require 'trigger'
   ModuleSystem = require 'cs!module-system'
 
   class ScriptingEngine
-    constructor: (@input, @sceneGraph) ->
+    constructor: (@input, @sceneGraph, @network) ->
       @mouseDown = false
       @keyDown = {}
       @mouseDownListeners = []
       @keyDownListeners = []
 
+      @trigger = new Trigger(@network)
+
       @moduleList = []
-      @moduleList.push new ModuleSystem()
+      @moduleList.push new ModuleSystem
+        trigger: @trigger
 
       for module in @moduleList
         @addClientModule(module)

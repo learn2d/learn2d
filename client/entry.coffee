@@ -2,7 +2,9 @@ define [
   'cs!game'
   'cs!resource-loader'
   'json'
+  'cs!network'
 ], () ->
+  Network = require 'network'
   Game = require 'game'
   ResourceLoader = require 'cs!resource-loader'
 
@@ -15,19 +17,7 @@ define [
   context = canvas.getContext("2d")
 
   resourceLoader = new ResourceLoader()
-  game = new Game(resourceLoader, context)
-
-  socket = io.connect 'http://localhost:3001'
-  socket.on 'connect', (data) ->
-    console.log 'connected'
-    console.log data
-
-    doSomething = ->
-      console.log 'test'
-      setTimeout(doSomething, 1000)
-      socket.emit 'wtf',
-        foo: 'baz'
-
-    setTimeout(doSomething, 1000)
+  network = new Network()
+  game = new Game(resourceLoader, context, network)
 
   game.start()

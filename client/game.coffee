@@ -12,7 +12,7 @@ define [
   Input = require 'input'
 
   class Game
-    constructor: (@loader, @context) ->
+    constructor: (@loader, @context, @network) ->
       @fw = flywheel @loop, @context.canvas
 
       @sceneGraph = new SceneGraph()
@@ -20,7 +20,7 @@ define [
       @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
 
       @input = new Input(@context)
-      @scriptingEngine = new ScriptingEngine(@input, @sceneGraph)
+      @scriptingEngine = new ScriptingEngine(@input, @sceneGraph, @network)
 
     start: ->
       @fw.start()

@@ -1,6 +1,8 @@
 define ->
   class Trigger
-    send: ->
-      console.log 'sending trigger'
-
-  new Trigger
+    constructor: (@network) ->
+    send: ({target, action, params}) ->
+      @network.socket.emit 'trigger',
+        target: target
+        action: action
+        params: params
