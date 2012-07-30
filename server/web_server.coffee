@@ -1,5 +1,5 @@
 express = require 'express'
-Game = require './Game'
+Game = require './game'
 
 app = express.createServer()
 
