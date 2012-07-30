@@ -2,7 +2,9 @@ define [
   'cs!level'
   'cs!ani'
   'cs!entity'
+  'cs!util'
 ], ->
+  util = require 'util'
   Level = require 'level'
   Ani = require 'ani'
   Entity = require 'entity'
@@ -22,6 +24,8 @@ define [
       entity = new Entity
         x: entityData.x
         y: entityData.y
+        aniName: 'walk'
+        direction: util.DIR_DOWN
       @addEntity entity
 
     getEntities: () ->

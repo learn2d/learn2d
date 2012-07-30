@@ -1,3 +1,5 @@
+util = require './util'
+
 class Player
   constructor: ({@level, @x, @y}) ->
 
@@ -12,5 +14,7 @@ class Player
     level: @level.getName()
     x: @x
     y: @y
+    direction: util.DIR_DOWN
+    aniName: 'walk'
 
 module.exports = Player

@@ -4,13 +4,12 @@ define [
   util = require 'util'
 
   class Ani
-    constructor: ({@x, @y}) ->
-      @name = 'walk'
+    constructor: ({@x, @y, @aniName, @direction}) ->
+      @name = @aniName
       @IsAnimating = 1
       @LastFrame = 0
       @NextTime = new Date().getTime()
       @delay = 50
-      @direction = util.DIR_LEFT
 
       @xpos = @x
       @ypos = @y
