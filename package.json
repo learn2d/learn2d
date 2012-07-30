@@ -6,7 +6,8 @@
   "dependencies": {
     "ejs": "0.7.2",
     "express": "3.0.0beta7",
-    "libxmljs": "0.5.4"
+    "libxmljs": "0.5.4",
+    "socket.io": "0.9.8"
   },
 
   "engines": {
