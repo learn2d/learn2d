@@ -1,16 +1,17 @@
 define [
   'cs!ani'
+  'cs!util'
 ], ->
   Ani = require 'ani'
+  util = require 'util'
 
   class AniComponent
-    constructor: ([{@x, @y, @aniName, @direction}]) ->
+    constructor: (@entity) ->
       @anis = [
         new Ani
-          x: @x
-          y: @y
-          aniName: @aniName
-          direction: @direction
+          entity: @entity
+          x: -16
+          y: -32
       ]
     getAnis: =>
       @anis
@@ -18,4 +19,16 @@ define [
   class Entity
     constructor: ({@x, @y, @aniName, @direction}) ->
       @components = {}
-      @components.ani = new AniComponent([{@x, @y, @aniName, @direction}])
+      @components.ani = new AniComponent(this)
+
+    getX: ->
+      @x
+
+    getY: ->
+      @y
+
+    getAniName: ->
+      'walk'
+
+    getDirection: ->
+      util.DIR_DOWN

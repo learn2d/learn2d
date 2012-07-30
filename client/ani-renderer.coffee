@@ -12,8 +12,8 @@ define [
 
       direction = ani.getDirection()
 
-      aniX = ani.getXpos()
-      aniY = ani.getYpos()
+      aniX = ani.getX()
+      aniY = ani.getY()
 
       index = ani.getLastFrame()
       time = new Date().getTime()

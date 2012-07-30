@@ -4,46 +4,39 @@ define [
   util = require 'util'
 
   class Ani
-    constructor: ({@x, @y, @aniName, @direction}) ->
-      @name = @aniName
-      @IsAnimating = 1
-      @LastFrame = 0
-      @NextTime = new Date().getTime()
+    constructor: ({@entity, @x, @y}) ->
+      @isAnimating = 1
+      @lastFrame = 0
+      @nextTime = new Date().getTime()
       @delay = 50
 
-      @xpos = @x
-      @ypos = @y
-
     getDirection: ->
-      @direction
+      @entity.getDirection()
 
-    getXpos: ->
-      @xpos
-    setXpos: (newx) ->
-      @xpos = newx
+    getX: ->
+      @entity.getX() + @x
 
-    getYpos: ->
-      @ypos
-    setYpos: (newy) ->
-      @ypos = newy
+    getY: ->
+      @entity.getY() + @y
 
     getName: ->
-      @name
+      @entity.getAniName()
+
     getDelay: ->
       @delay
 
     getLastFrame: ->
-      @LastFrame
+      @lastFrame
     setLastFrame: (frameNum) ->
-      @LastFrame = frameNum
+      @lastFrame = frameNum
 
     getNextTime: ->
-      @NextTime
+      @nextTime
     setNextTime: () ->
-      @NextTime = new Date().getTime() + @delay
+      @nextTime = new Date().getTime() + @delay
 
     getIsAnimating: ->
-      @IsAnimating
-    SetIsAnimating: (bool) ->
-      @IsAnimating = bool
+      @isAnimating
+    setIsAnimating: (isAnimating) ->
+      @isAnimating = isAnimating
 
