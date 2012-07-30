@@ -4,6 +4,9 @@ define ->
     start: (@game) ->
       @socket = io.connect 'http://localhost:3001'
       @socket.on 'connect', (data) ->
+        console.log 'socket connected'
+      @socket.on 'disconnect', (data) ->
+        console.log 'socket disconnected'
       @socket.on 'reset', (data) =>
         @game.reset(data)
       @socket.on 'entityAdded', (data) =>
