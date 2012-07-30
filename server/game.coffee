@@ -1,23 +1,23 @@
-Player = require './Player'
+Player = require './player'
+SceneGraph = require './scene-graph'
 
 class Game
   constructor: ->
     @clients = {}
 
-    @level = 'test'
-    @entities = []
+    @sceneGraph = new SceneGraph()
 
   addClient: (socket) ->
     @clients[socket.id] = socket
     socket.emit 'reset',
       level: 'test'
-      entities: @entities
+      entities: @sceneGraph.getEntities()
     socket.on 'trigger', ({target, action, params}) =>
       entity = new Player
-        level: @level
+        level: @sceneGraph.getLevel()
         x: params.x
         y: params.y
-      @entities.push entity
+      @sceneGraph.addEntity entity
 
 
 module.exports = Game

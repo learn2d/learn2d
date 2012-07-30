@@ -9,7 +9,7 @@ class Player
     @level
 
   toJSON: ->
-    level: @level
+    level: @level.getName()
     x: @x
     y: @y
 

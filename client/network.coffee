@@ -5,8 +5,6 @@ define ->
       @socket = io.connect 'http://localhost:3001'
       @socket.on 'connect', (data) ->
       @socket.on 'reset', (data) =>
-        console.log 'clear game'
-        console.log(data)
         @game.reset(data)
 
     on: (eventName, callback) ->
