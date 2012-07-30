@@ -84,17 +84,15 @@ define [
 
     # get mouse position
     _getPosition: (event) ->
-      if event.x? or event.y?
-        x = event.x
-        y = event.y
-      else
-        x = event.clientX + document.body.scrollLeft +
-             document.documentElement.scrollLeft
-        y = event.clientY + document.body.scrollTop +
-              document.documentElement.scrollTop
+      x = event.clientX + document.body.scrollLeft +
+           document.documentElement.scrollLeft
+      y = event.pageY
 
       x -= @context.canvas.offsetLeft
-      y -= @context.canvas.offsetTop
+
+      console.log
+        x: x
+        y: y
 
       x: x
       y: y
