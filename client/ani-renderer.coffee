@@ -10,7 +10,7 @@ define [
       aniData = @loader.loadAni(ani.getName())
       return unless aniData
 
-      direction = util.DIR_RIGHT
+      direction = ani.getDirection()
 
       aniX = ani.getXpos()
       aniY = ani.getYpos()

@@ -1,4 +1,8 @@
-define ->
+define [
+  'cs!util'
+], ->
+  util = require 'util'
+
   class Ani
     constructor: ({@x, @y}) ->
       @name = 'walk'
@@ -6,9 +10,13 @@ define ->
       @LastFrame = 0
       @NextTime = new Date().getTime()
       @delay = 50
+      @direction = util.DIR_LEFT
 
       @xpos = @x
       @ypos = @y
+
+    getDirection: ->
+      @direction
 
     getXpos: ->
       @xpos
