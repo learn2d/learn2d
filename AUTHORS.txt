@@ -234,7 +234,7 @@ Polymorphable
  - /fantasy/outside/small_objects.png
  - /fantasy/outside/generic_background.png
  - /fantasy/inside/inside_objects.png
-
+ - /fantasy/ui/bar*
 
  
  
