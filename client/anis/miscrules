@@ -61,3 +61,35 @@ fantasy/spells/explosion_poison.png
 
 haste blind fireproof onfire (charmed or heal) teal? ice (poison or heal)
 
+*******************************************************************************
+
+basemonsters.ani.json
+fantasy/monsters/badflower.png
+fantasy/monsters/bat.png
+fantasy/monsters/bee.png
+fantasy/monsters/slime.png
+fantasy/monsters/snake.png
+fantasy/monsters/small_worm.png
+fantasy/monsters/badblueflower.png
+fantasy/monsters/badfireflower.png
+fantasy/monsters/badiceflower.png
+fantasy/monsters/batalbino.png
+fantasy/monsters/batfire.png
+fantasy/monsters/batgolden.png
+fantasy/monsters/batnight.png
+fantasy/monsters/snakefire.png
+fantasy/monsters/snakepoison.png
+fantasy/monsters/snakewater.png
+fantasy/monsters/snakeshadow.png
+fantasy/monsters/slimewater.png
+fantasy/monsters/slimeice.png
+fantasy/monsters/slimelava.png
+
+
+SPECIAL, needs width/3 height/4 for tile size (not worth it now...)
+fantasy/monsters/ghost.png
+fantasy/monsters/big_worm.png
+fantasy/monsters/eyeball.png
+fantasy/monsters/man_eater_flower.png
+fantasy/monsters/pumpking.png
+

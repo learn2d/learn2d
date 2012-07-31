@@ -3,10 +3,10 @@ class aniMaker
   constructor: ->
     @name = 'walk'
     @filenames = ["null"]
-    @xtiles = 8
-    @ytiles = 8
-    @spritewidth = 64
-    @spriteheight = 64
+    @xtiles = 3
+    @ytiles = 4
+    @spritewidth = 32
+    @spriteheight = 32
     @xoffset = 0*@spritewidth #remove idle
     @yoffset = 0*@spriteheight #for female sheets
     @frames = []

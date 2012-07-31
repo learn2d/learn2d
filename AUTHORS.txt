@@ -277,8 +277,33 @@ Michael Kummer (Same license) simply a derivative work
  - /fantasy/spells/explosion_poison.png
  - /fantasy/spells/explosion_teal.png
  - /fantasy/spells/explosion_time.png
-
-
+ - 
+ - Derivatives of base assets
+ - fantasy/monsters/badblueflower.png
+ - fantasy/monsters/badfireflower.png
+ - fantasy/monsters/badiceflower.png
+ - fantasy/monsters/batalbino.png
+ - fantasy/monsters/batfire.png
+ - fantasy/monsters/batgolden.png
+ - fantasy/monsters/batnight.png
+ - fantasy/monsters/snakefire.png
+ - fantasy/monsters/snakepoison.png
+ - fantasy/monsters/snakewater.png
+ - fantasy/monsters/snakeshadow.png
+ - fantasy/monsters/slimewater.png
+ - fantasy/monsters/slimeice.png
+ - fantasy/monsters/slimelava.png
+ - LM_Female/female_base_shadow.png
+ - LM_Female/female_base_blue.png
+ - LM_Female/female_base_grey.png
+ - LM_Female/female_base_yellow.png
+ - LM_Female/female_base_white.png
+ - LM_Female/female_base_pink.png
+ - LM_Female/female_base_brown.png
+ - LM_Female/female_base_green.png
+ - LM_Female/female_base_glow.png
+ - LM_Female/female_base_iceblue.png
+ - LM_Female/female_base_purple.png
 
 The following is licenced under GPL 2.0, GPL 3.0, and CC-BY-SA 3.0
 

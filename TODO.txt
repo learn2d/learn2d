@@ -54,8 +54,6 @@ Controls
 NPCs
   need maps with npcs via some file name associated with fantasy/npcs
 Chat
-Monsters
-  they need animations 11 should be the same
 
 All Animations need to be testable...
 
