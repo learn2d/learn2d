@@ -39,7 +39,7 @@ define [
         return unless image
 
         srcX = sprite.x
-        srcY = spriteData.y
+        srcY = sprite.y
 
         @context.drawImage(
           image,

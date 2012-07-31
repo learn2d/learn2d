@@ -3,12 +3,12 @@ class aniMaker
   constructor: ->
     @name = 'walk'
     @filenames = ["LM_Female/female_base.png"]
-    @xtiles = 8
-    @ytiles = 4
+    @xtiles = 5
+    @ytiles = 1
     @spritewidth = 64
     @spriteheight = 64
     @xoffset = 1*@spritewidth #remove idle
-    @yoffset = 0*@spriteheight #for female sheets
+    @yoffset = 12*@spriteheight #for female sheets
     @frames = []
     @sprites = []
     
@@ -19,15 +19,15 @@ class aniMaker
           for pos in [1..@xtiles]
             id: idz + (dir-1) * @filenames.length
             x: (pos - 1)*@spritewidth + @xoffset
-            y: 0
+            y: @spriteheight*(dir - 1) + @yoffset
 
   makeSprites: ->
     for dir in [1..@ytiles]
       for layers, idz in @filenames
         @sprites.push
-          image: @filenames[idz]
-          x: 0
-          y: @spriteheight*(dir - 1) + @yoffset
+          #tilesetOffset
+#          x: 0 
+#          y: 0
           width: @spritewidth
           height: @spriteheight
 
