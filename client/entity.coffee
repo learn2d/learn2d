@@ -11,7 +11,7 @@ define [
         new Ani
           entity: @entity
           x: -32
-          y: -56
+          y: -60
       ]
     getAnis: =>
       @anis

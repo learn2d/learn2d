@@ -1,0 +1,177 @@
+Explosion.ani.json
+["fantasy/spells/Explosion.png"]
+
+magic.ani.json
+["magic_firelion_sheet.png", "magic_iceshield_sheet.png", "magic_snakebite_sheet.png", "magic_torrentacle_sheet.png", "turtleshell_front.png", "turtleshell_side.png"]
+
+*******************************************************************************
+*************************  Male Animations **********************************
+*******************************************************************************
+
+male-walk.ani.json
+["JS_Male/png/walkcycle/BODY_male.png","JS_Male/png/walkcycle/TORSO_leather_armor_torso.png","JS_Male/png/walkcycle/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/walkcycle/FEET_plate_armor_shoes.png","JS_Male/png/walkcycle/LEGS_pants_greenish.png","JS_Male/png/walkcycle/HEAD_chain_armor_helmet.png"]
+
+male-cast.ani.json
+["JS_Male/png/spellcast/BODY_male.png","JS_Male/png/spellcast/TORSO_leather_armor_torso.png","JS_Male/png/spellcast/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/spellcast/FEET_plate_armor_shoes.png","JS_Male/png/spellcast/LEGS_pants_greenish.png","JS_Male/png/spellcast/HEAD_chain_armor_helmet.png"]
+
+male-slash.ani.json
+["JS_Male/png/slash/BODY_male.png","JS_Male/png/slash/TORSO_leather_armor_torso.png","JS_Male/png/slash/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/slash/FEET_plate_armor_shoes.png","JS_Male/png/slash/LEGS_pants_greenish.png","JS_Male/png/slash/HEAD_chain_armor_helmet.png", "JS_Male/png/slash/WEAPON_dagger.png"]
+
+male-bow.ani.json
+["JS_Male/png/bow/BODY_male.png","JS_Male/png/bow/TORSO_leather_armor_torso.png","JS_Male/png/bow/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/bow/FEET_plate_armor_shoes.png","JS_Male/png/bow/LEGS_pants_greenish.png","JS_Male/png/bow/HEAD_chain_armor_helmet.png", "JS_Male/png/bow/WEAPON_bow.png", "JS_Male/png/bow/WEAPON_arrow.png"]
+
+male-thrust.ani.json
+["JS_Male/png/thrust/BODY_male.png","JS_Male/png/thrust/TORSO_leather_armor_torso.png","JS_Male/png/thrust/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/thrust/FEET_plate_armor_shoes.png","JS_Male/png/thrust/LEGS_pants_greenish.png","JS_Male/png/thrust/HEAD_chain_armor_helmet.png", "JS_Male/png/thrust/WEAPON_spear.png"]
+["JS_Male/png/thrust/BODY_male.png","JS_Male/png/thrust/TORSO_leather_armor_torso.png","JS_Male/png/thrust/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/thrust/FEET_plate_armor_shoes.png","JS_Male/png/thrust/LEGS_pants_greenish.png","JS_Male/png/thrust/HEAD_chain_armor_helmet.png", "JS_Male/png/thrust/WEAPON_staff.png"]
+
+male-hurt.ani.json
+["JS_Male/png/hurt/BODY_male.png","JS_Male/png/hurt/TORSO_leather_armor_torso.png","JS_Male/png/hurt/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/hurt/FEET_plate_armor_shoes.png","JS_Male/png/hurt/LEGS_pants_greenish.png","JS_Male/png/hurt/HEAD_chain_armor_helmet.png"]
+
+male-idle.ani.json
+["JS_Male/png/walkcycle/BODY_male.png","JS_Male/png/walkcycle/TORSO_leather_armor_torso.png","JS_Male/png/walkcycle/TORSO_plate_armor_arms_shoulders.png","JS_Male/png/walkcycle/FEET_plate_armor_shoes.png","JS_Male/png/walkcycle/LEGS_pants_greenish.png","JS_Male/png/walkcycle/HEAD_chain_armor_helmet.png"]
+
+
+*******************************************************************************
+*************************  Female Animations **********************************
+*******************************************************************************
+
+female-walk.ani.json
+female-cast.ani.json
+female-hurt.ani.json
+female-idle.ani.json
+female-slash.ani.json
+["LM_Female/examples/dark_mage_elder.png"]
+["LM_Female/examples/dark_mage_queen.png"]
+["LM_Female/examples/forest_mage.png"]
+["LM_Female/examples/gray_mage.png"]
+["LM_Female/examples/red_novice.png"]
+["LM_Female/examples/royal_mage.png"]
+
+["LM_Female/female_base.png", "LM_Female/female_mage_whitehair.png", "LM_Female/robes/female_mage_whiterobe.png", "LM_Female/necklaces/female_mage_bronzenecklace.png", "LM_Female/belts/female_mage_blackbelt.png"]
+
+male-slash.ani.json
+["JS_Male/png/slash/WEAPON_dagger.png"]
+
+*******************************************************************************
+******************** Female Animations  (Equipment Based) *********************
+*******************************************************************************
+
+Order:
+  base robes hair belts buckles slippers tiaras,
+
+Permutations: 1*10*6*6*4*4*4 = 23040
+
+LM_Female:
+LM_Female/female_base.png
+
+LM_Female/belts:
+female_mage_blackbelt.png   female_mage_brownbelt.png  female_mage_ironbelt.png
+female_mage_bronzebelt.png  female_mage_goldbelt.png   female_mage_silverbelt.png
+
+LM_Female/buckles:
+female_mage_bronzebuckle.png  female_mage_ironbuckle.png
+female_mage_goldbuckle.png    female_mage_silverbuckle.png
+
+LM_Female/examples:
+dark_mage_elder.png  dark_mage_queen.png  forest_mage.png  gray_mage.png  red_novice.png  royal_mage.png
+
+LM_Female/hair:
+female_mage_blackhair.png  female_mage_darkblondehair.png  female_mage_lightblondehair.png
+female_mage_brownhair.png  female_mage_grayhair.png        female_mage_whitehair.png
+
+LM_Female/necklaces:
+female_mage_bronzenecklace.png  female_mage_ironnecklace.png
+female_mage_goldnecklace.png    female_mage_silvernecklace.png
+
+LM_Female/robes:
+female_mage_blackrobe.png      female_mage_darkgrayrobe.png   female_mage_redrobe.png
+female_mage_bluerobe.png       female_mage_forestrobe.png     female_mage_whiterobe.png
+female_mage_brownrobe.png      female_mage_lightgrayrobe.png
+female_mage_darkbrownrobe.png  female_mage_purplerobe.png
+
+LM_Female/slippers:
+female_mage_blackslippers.png  female_mage_grayslippers.png
+female_mage_brownslippers.png  female_mage_whiteslippers.png
+
+LM_Female/tiaras:
+female_mage_bronzetiara.png  female_mage_goldtiara.png  female_mage_irontiara.png  female_mage_silvertiara.png
+
+*******************************************************************************
+*********************  Male Animations  (Equipment Based) *********************
+*******************************************************************************
+
+Order:
+  BODY TORSO HEAD LEGS BELT FEET HANDS WEAPON
+
+Permutations: 1*9*6*3*2*2*1*2 = 1296
+
+JS_Male/png/bow:
+BELT_leather.png              HEAD_leather_armor_hat.png           TORSO_leather_armor_shirt_white.png
+BELT_rope.png                 HEAD_plate_armor_helmet.png          TORSO_leather_armor_shoulders.png
+BODY_male.png                 HEAD_robe_hood.png                   TORSO_leather_armor_torso.png
+FEET_plate_armor_shoes.png    LEGS_pants_greenish.png              TORSO_plate_armor_arms_shoulders.png
+FEET_shoes_brown.png          LEGS_plate_armor_pants.png           TORSO_plate_armor_torso.png
+HANDS_plate_armor_gloves.png  LEGS_robe_skirt.png                  TORSO_robe_shirt_brown.png
+HEAD_chain_armor_helmet.png   TORSO_chain_armor_jacket_purple.png  WEAPON_arrow.png
+HEAD_chain_armor_hood.png     TORSO_chain_armor_torso.png          WEAPON_bow.png
+HEAD_hair_blonde.png          TORSO_leather_armor_bracers.png
+
+JS_Male/png/hurt:
+BEHIND_quiver.png             HEAD_chain_armor_hood.png            TORSO_chain_armor_torso.png
+BELT_leather.png              HEAD_hair_blonde.png                 TORSO_leather_armor_bracers.png
+BELT_rope.png                 HEAD_leather_armor_hat.png           TORSO_leather_armor_shirt_white.png
+BODY_male.png                 HEAD_plate_armor_helmet.png          TORSO_leather_armor_shoulders.png
+BODY_skeleton.png             HEAD_robe_hood.png                   TORSO_leather_armor_torso.png
+FEET_plate_armor_shoes.png    LEGS_pants_greenish.png              TORSO_plate_armor_arms_shoulders.png
+FEET_shoes_brown.png          LEGS_plate_armor_pants.png           TORSO_plate_armor_torso.png
+HANDS_plate_armor_gloves.png  LEGS_robe_skirt.png                  TORSO_robe_shirt_brown.png
+HEAD_chain_armor_helmet.png   TORSO_chain_armor_jacket_purple.png
+
+JS_Male/png/slash:
+BEHIND_quiver.png             HEAD_chain_armor_hood.png            TORSO_chain_armor_torso.png
+BELT_leather.png              HEAD_hair_blonde.png                 TORSO_leather_armor_bracers.png
+BELT_rope.png                 HEAD_leather_armor_hat.png           TORSO_leather_armor_shirt_white.png
+BODY_male.png                 HEAD_plate_armor_helmet.png          TORSO_leather_armor_shoulders.png
+BODY_skeleton.png             HEAD_robe_hood.png                   TORSO_leather_armor_torso.png
+FEET_plate_armor_shoes.png    LEGS_pants_greenish.png              TORSO_plate_armor_arms_shoulders.png
+FEET_shoes_brown.png          LEGS_plate_armor_pants.png           TORSO_plate_armor_torso.png
+HANDS_plate_armor_gloves.png  LEGS_robe_skirt.png                  TORSO_robe_shirt_brown.png
+HEAD_chain_armor_helmet.png   TORSO_chain_armor_jacket_purple.png  WEAPON_dagger.png
+
+JS_Male/png/spellcast:
+BEHIND_quiver.png             HEAD_chain_armor_hood.png    TORSO_chain_armor_jacket_purple.png
+BELT_leather.png              HEAD_hair_blonde.png         TORSO_chain_armor_torso.png
+BELT_rope.png                 HEAD_leather_armor_hat.png   TORSO_leather_armor_bracers.png
+BODY_male.png                 HEAD_plate_armor_helmet.png  TORSO_leather_armor_shirt_white.png
+BODY_skeleton.png             HEAD_robe_hood.png           TORSO_leather_armor_shoulders.png
+FEET_plate_armor_shoes.png    HEAD_skeleton_eye_glow.png   TORSO_leather_armor_torso.png
+FEET_shoes_brown.png          LEGS_pants_greenish.png      TORSO_plate_armor_arms_shoulders.png
+HANDS_plate_armor_gloves.png  LEGS_plate_armor_pants.png   TORSO_plate_armor_torso.png
+HEAD_chain_armor_helmet.png   LEGS_robe_skirt.png          TORSO_robe_shirt_brown.png
+
+JS_Male/png/thrust:
+BEHIND_quiver.png             HEAD_leather_armor_hat.png           TORSO_leather_armor_shoulders.png
+BELT_leather.png              HEAD_plate_armor_helmet.png          TORSO_leather_armor_torso.png
+BELT_rope.png                 HEAD_robe_hood.png                   TORSO_plate_armor_arms_shoulders.png
+BODY_male.png                 LEGS_pants_greenish.png              TORSO_plate_armor_torso.png
+FEET_plate_armor_shoes.png    LEGS_plate_armor_pants.png           TORSO_robe_shirt_brown.png
+FEET_shoes_brown.png          LEGS_robe_skirt.png                  WEAPON_shield_cutout_body.png
+HANDS_plate_armor_gloves.png  TORSO_chain_armor_jacket_purple.png  WEAPON_shield_cutout_chain_armor_helmet.png
+HEAD_chain_armor_helmet.png   TORSO_chain_armor_torso.png          WEAPON_spear.png
+HEAD_chain_armor_hood.png     TORSO_leather_armor_bracers.png      WEAPON_staff.png
+HEAD_hair_blonde.png          TORSO_leather_armor_shirt_white.png
+
+JS_Male/png/walkcycle:
+BEHIND_quiver.png             HEAD_hair_blonde.png                 TORSO_leather_armor_shirt_white.png
+BELT_leather.png              HEAD_leather_armor_hat.png           TORSO_leather_armor_shoulders.png
+BELT_rope.png                 HEAD_plate_armor_helmet.png          TORSO_leather_armor_torso.png
+BODY_male.png                 HEAD_robe_hood.png                   TORSO_plate_armor_arms_shoulders.png
+BODY_skeleton.png             LEGS_pants_greenish.png              TORSO_plate_armor_torso.png
+FEET_plate_armor_shoes.png    LEGS_plate_armor_pants.png           TORSO_robe_shirt_brown.png
+FEET_shoes_brown.png          LEGS_robe_skirt.png                  WEAPON_shield_cutout_body.png
+HANDS_plate_armor_gloves.png  TORSO_chain_armor_jacket_purple.png  WEAPON_shield_cutout_chain_armor_helmet.png
+HEAD_chain_armor_helmet.png   TORSO_chain_armor_torso.png
+HEAD_chain_armor_hood.png     TORSO_leather_armor_bracers.png
+
+
+

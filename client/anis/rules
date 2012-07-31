@@ -1,0 +1,26 @@
+class MaleMaker
+  constructor: ->
+    @types = ["BODY", "TORSO", "HEAD", "LEGS", "BELT", "FEET", "HANDS", "WEAPON"]
+    @folders = ["walkcycle", "spellcast", "slash", "bow", "thrust", "hurt", "walkcycle", "weapons"]
+    @animations = ["walkcycle", "spellcast", "slash", "bow", "thrust", "hurt", "idle"]
+    @fileList = resourceloader("male-sets")
+    @character = [];
+    
+  MaleAnimation: (i) ->
+    for f, j in @types
+      search = new RegExp @folders[i] + "/" + @types[j], "g"
+      lns = @fileList.split('\n').filter -> s.match /search/
+
+  MaleAnimations: ->
+    for ani, i in @animations
+      @character.push MaleAnimation(i)
+
+class FemaleMaker
+  constructor: ->
+    @folders = ["robes/", "hair/", "belts/", "buckles/", "slippers/", "tiaras/", "weapons/"]
+    @fileList = "female-sets"
+    @animations = ["walkcycle", "spellcast", "slash", "male-slash", "hurt", "idle"]
+
+
+
+
