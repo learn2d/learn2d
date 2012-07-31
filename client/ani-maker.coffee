@@ -2,13 +2,13 @@
 class aniMaker
   constructor: ->
     @name = 'walk'
-    @filenames = ["LM_Female/female_base.png"]
-    @xtiles = 5
-    @ytiles = 1
+    @filenames = ["null"]
+    @xtiles = 8
+    @ytiles = 8
     @spritewidth = 64
     @spriteheight = 64
-    @xoffset = 1*@spritewidth #remove idle
-    @yoffset = 12*@spriteheight #for female sheets
+    @xoffset = 0*@spritewidth #remove idle
+    @yoffset = 0*@spriteheight #for female sheets
     @frames = []
     @sprites = []
     

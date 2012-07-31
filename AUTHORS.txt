@@ -11,7 +11,7 @@ Asset attribution
 
 Assets were authored by the following people:
 
-The following are licensed under GPLv3 and CC BY-SA 3.0
+The following are licensed under GPLv3 and CC BY-SA 3.0 via LPC
 
 Base Assets
  - base_assets
@@ -234,6 +234,16 @@ Polymorphable
 Thane and Stacey Brimhall
  - Thane_and_Stacey_Brimhall__Clothing, Facial features and UI Elements
  - /fantasy/ui/bar*
+
+
+
+The following is licenced under GPL 2.0, GPL 3.0, and CC-BY-SA 3.0
+
+Clint Bellanger
+  - http://opengameart.org/sites/default/files/icicle_0.png
+  - http://opengameart.org/content/fireball-spell
+  - /fantasy/spells/fireball.png
+  - /fantasy/spells/icicle.png
 
 
 

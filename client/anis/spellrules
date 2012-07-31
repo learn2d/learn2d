@@ -1,0 +1,39 @@
+iceandfire.ani.json
+w, nw, n, ne, e, se, s, sw
+
+psuedoscript
+
+getplayerlocation (x1,y1)
+getclicklockation (x2,y2)
+angle = arctan((y2-y1)/(x2-x1))
+
+#this is the row of the animation to play
+row = (angle + 22.5 + 180)%45
+
+/fantasy/spells/icicle.png
+/fantasy/spells/fireball.png
+/fantasy/spells/firelion.png
+/fantasy/spells/darkmatter.png
+
+
+*******************************************************************************
+
+magic.ani.json
+click spell...?
+need to flip the animation on draw...
+
+fantasy/spells/turtleshell_front.png
+fantasy/spells/magic_snakebite_sheet.png
+fantasy/spells/turtleshell_side.png
+fantasy/spells/magic_firelion_sheet.png
+fantasy/spells/magic_torrentacle.png
+fantasy/spells/magic_iceshield_sheet.png
+
+*******************************************************************************
+
+
+Explosion.ani.json
+fantasy/spells/Explosion.png
+
+
+
