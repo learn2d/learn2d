@@ -28,8 +28,10 @@ Base Assets
  - /fantasy/outside/lavarock.png
  - /fantasy/outside/rock.png
  - /fantasy/outside/hole.png
+ - /fantasy/outside/dirt.png
  - /fantasy/outside/dirt2.png
  - /fantasy/outside/brackish.png
+ - /fantasy/outside/shadow.png
  - /fantasy/outside/cup.png
  - /fantasy/monsters/bee.png
  - /fantasy/monsters/bat.png
@@ -225,5 +227,14 @@ Johnathan Roatch
  - Johnathan_Roatch__Miscellaneous SFX
  - /fantasy/sounds/*
 
+Polymorphable
+ - /fantasy/outside/town_buildings.png
+ - /fantasy/outside/town.png
+ - /fantasy/outside/outside.png
+ - /fantasy/outside/small_objects.png
+ - /fantasy/outside/generic_background.png
+ - /fantasy/inside/inside_objects.png
 
 
+ 
+ 

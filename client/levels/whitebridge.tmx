@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="town" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/town.png" width="864" height="2112"/>
+ </tileset>
+ <tileset firstgid="1783" name="farming_fishing" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/farming_fishing.png" width="640" height="640"/>
+ </tileset>
+ <tileset firstgid="2183" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztkrlPAkEUxgfDYkUBHhgbGytlUbGztfBorW08kk34GzxKQOg9wsryb4lnp2JjAZ6J32Tey042GmB3DSFZkl/m7Zv3vW/eDDUhRA0UQIPiOnDom/OS7REXWXNJtRbVy2+bai1tn6lRnaPtW7Rn08paS6tnve7P2n5/fE6H+vPMDs3KZ2lQzPM7Hn/bp78gHc9pC3f2+h/1fD7dvxDQn++gCEo9aGTNFkiMqrXo07sVF+IEawWUqW8//tPkL/Uv6GUmhJjtgte/KhT9+FfJP0f+JfKfQ//5Lnj92beirVfIN8E1uAG34A48gEfS6P5l0tyDJ/BMsa5tUq6pxbIXzyyRbyHfso18B7yBd/ABPsE3iBu/+0vNV1zdQ4tiXduhXEeLZa8S6eWdvhIp5NNgDIyDCTAJpsCMoWqSMeUvV9ZkDNc/49GmaT+txdyLWY0pssibIAcWwCJYAstgxVA1SQ3W5A31DvJe8x6tSfumFnOvMGnTvYbdt1dSdK+D8s/+071GDAdrePt1sAE2B/A/2IHnLtgD+wH8/c5xgNpDcASOA/j7neMUtWfgHFwE8A9rDr+ENUdERETEMPADbUNAYg==
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQwX8A+L/IAYj9cy8xwbBxKiTBNorBcTSjMTpIWQnqWZIsgPtB2JpdvLtpgSM2j+y7TcBpntTIDajYv4bBYMfPGBiYHjINNCuoA4YTn7BBUJZ6WfXVix1WAGV7CfGHxfQ7G8E6ummkv0gf2wjUEe/RpOfA9SzDM1+a2B5bUtkmV0P1NvCCqFB/rhIQTsDBvyBdgcSaf8soJ3zWSE0yB9vqGB/MtDuVDrXWU+AefwpED8D4nKg3ZVQ+0nN/0pAfco43A6KVxukuEXno5uBThMDzIDqzHGoBcVrAFLcovPRzUCniQH43AqK1xSkuEXno5tBbf+D4rUCKW7R+ehmkON/aoJfwLz0mw1B0xvwAf3Mz46gqQ2Q8xwIDIW6FgBVNzw4
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlrlKA0Ech4ewJmkUb0sbIR5J1Fhp4dFopYWaR9EH0EpBfBojPoBHEuzscmhKwaNTs7HwCyy4rJl1XHdnF/EHH1MsO9/852KEiG4Wk0IswTKsJL9+fzKESMWFGFdkAp4Ndf8mzi3YhnwH/yN9ZehzTJEsPEj8slrcxuynX9aXl3/c/LJ48atG1T/J9ykHaR/89r5kqeCoQg3qcAt30ID7X/pV8oLjFd6gCSa04B2MruD9fTj6YQAGYQiGYQRGNfjTODKQhWmYgVnIwYIG/3/kOY8JcRELexT+JIxa5hPs4URw/e9xR5xwRgpwCvuO+2od90aAfmfyjvNq97vNxXd1eI3d/5O5cNbhNTv4di3nAe2hxrVop4nP1Oy0p5u3W0+H91uQKXLGS1CGHO45y/+X7rJValqDY2ttr2gvoahprUt4ruHG8lVpK1DT5K/jacCR5SvQppiPsxD3epRj8v5txT9bv2M/c+1E8az1RmxvfABoTVp7
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlksOgCAMRFl6c6/tyoWEKf04LUQnYaNp3xRKtTWs83iu/h1Ts/xs/s1g14/ya/geDxJLirE8n/ElX2hl8CVfVXxvzM78/ty1/EjPjGI1uVCvWns5Ilben5+Tn61RX1bxK8SsX3PHd+F75hWafYgfrcUjK7/3ksXP0JtetN9L9rl+le/xWcFfRVn/YdKsXW3fLwbUcEg=
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="To Permafrost" type="teleport" x="353" y="4" width="95" height="25">
+   <properties>
+    <property name="warp" value="permafrost,500,980"/>
+   </properties>
+  </object>
+  <object name="Set Sail" type="teleport" x="231" y="35" width="51" height="29">
+   <properties>
+    <property name="warp" value="isles,500,500"/>
+   </properties>
+  </object>
+  <object name="To Fields" type="teleport" x="105" y="992" width="496" height="31">
+   <properties>
+    <property name="warp" value="fields, 50,1000"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="contest-art" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/contest-art.png" width="544" height="412"/>
+ </tileset>
+ <tileset firstgid="205" name="chimney" tilewidth="32" tileheight="32">
+  <tileoffset x="1" y="1"/>
+  <image source="../images/fantasy/outside/chimney.png" width="32" height="64"/>
+ </tileset>
+ <tileset firstgid="207" name="treetop" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/treetop.png" width="192" height="224"/>
+ </tileset>
+ <tileset firstgid="249" name="grass" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/grass.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="267" name="dirt" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/dirt.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="285" name="house" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/house.png" width="288" height="224"/>
+ </tileset>
+ <tileset firstgid="348" name="plants" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/plants.png" width="288" height="384"/>
+ </tileset>
+ <tileset firstgid="456" name="trunk" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/trunk.png" width="192" height="96"/>
+ </tileset>
+ <tileset firstgid="474" name="plowed_soil" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/plowed_soil.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="492" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <tileset firstgid="507" name="rock" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/rock.png" width="64" height="32"/>
+ </tileset>
+ <tileset firstgid="509" name="signs" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/signs.png" width="96" height="64"/>
+ </tileset>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzl1kWT1EAYxvGERTLBqmZxd3cuyOJc2F0Y9IC7u7u7u7O4y+J+wvVD4PAx+HeRrmlSnUwmmeXCVv2q3pr09pOku99KwjCM/hiARIjaT5B50s3MMQ3Pv3+RP4T8PA8bub4Jm7Elg/m5SkY+9vHbfsUBHMQhHMYRHM1g/iVcxhVcxTmcV1zARc24TOU/wmM8wVPcw33FAzzUjAuaX930H/sO7/EBH11jhDd4qxkXJF9s52LIQnGUQEmUgoUYbJRGGZRFOZRX8sOeXVHHkY0KqIhKqIwqqIpq4v2gBmqiFmqjDuqiXsT8+miAhmiExmiCpmiG5miBlmiF1miDtmiH9hHzVSKnAzqiEzojB13QFd3QHT3QE73QO4P5Qh/kIg/56It+rv8diEEY7KxdlPxlSvZQDMNwjMBIjMJojMFYjMN4TMBETIqYPxlTMBXTMB0zMBOzMBtzMBfzMB8LsBCLsDhi/hIsdd7DcqzASqzCaqzBWqzDemwwwvV5r3ortmE7dmAndmE39mCvkez3Qft8zEyyTP/8YziOEyjASZzCaZzBWSPZ74P2+VSZan0N13EDhbiJW7iNO7hrJPt9lD7vVYveL8k1eIbneIGXeIXXRrQ+71WL8yv6v9iHcWcN1F7j930l54q6/7Od7LizBuq8uvl1ou5/mV/gekZb2cei9rqPsPnq/pdnQL3uznS/+zCZft8/ha7rhmZM0PyY5t5T5WeZf3zC5zR9cX1HWRHyv+Jbmr6bqdfuf8iXvd+dKc+SrSiKfNuj/9vKOZa1V/4P/EzTL80zJzS56nvwyg97nnW1Zf59D5ZDdz6LIl/uRfncMeX5fwNPYoEw
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzNV8FOwzAMbRvG2t25IAE3QOIA3PlffoFPKByAA/ABSPARFAa2lAdvIW2WrKE8yavXJX6O49hZXRZFI7IlMgWU26zJ38qYC5GbSF+7gfFvItvy+zzT+t8DdlN4L9NcGQ1XE/NfR46/lRjfidx7Yv2pH5lz/0HsP4o8ZeZprf3Y89FMcPaHzuR/tv0LwlUm8Ll1AXm4THABtTNUa4ZQ2T4QmwtmzdrZBsbM5PcujjoIjsdQDdgUDenf9YRE8yNnDdglvfLYz93bffzoq90f82secT+fkb4nz32RA/bH7lHKuQNOPO98+XYo+pHIMb3DecNzrFj58u1U9DORc4ej78z35XJO8PpDuTy2f+49tC+Xta4ot+ZMXa4K5sM3+BOqzah/H7Qmta97g3fLYlV3ucGv/R++83pCfdEX7xg8W/6dHv4QdM4ioQcBLyPwb3oX4v3h773i8Hc2BqkwNBd5i9z1jXH5G5tHqUD8lHte+u81nIes8/6/Jvqgc8ENmwxeuxsH5m+sbqywbsqf/62G5tRWD9WwPlRkG/aYrya/Fo4feNYOv3uvgj3gC0rcS6w=
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2D4ACXGgbVfe4DtHwWjYBSMglEwOMFIr5+0RuvHYQvOAeP2PBBfoFIcVzCShq8A8VUgvkYl+ysZScPUBlWMpGFqgz5G0vAoGHoAABZ5HZg=
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlTkOwjAQRW2ORAV0rEVY0gFXpmIn7HAUfiQiWZbDDDjGiPhJr4vmO+PoRwiaphRiDCdMp7AtGYOZqPkjQlf5QxgzZnKf+zVqOHMHdp/2YEN5D1mxmz8jdpLtOLvH2HCHc7iAS7ujGImQ1dccaPlbuIOJg3wOJ3iGF0/532IF13DjKX8PD/DoKf8Kb/DuKd+E2g15HUFBdcAr1G5Qe94Xn/R82rH1N3dWJGnHthj/Rlc9G+X0qk5RPWv63qqM3ZelZwP/h03HBgKBcvEAtYwwaA==
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlUkKgDAQBONPBE+C//+F+777FPsByUEYZlS6oG5hChKSOEf+TgkrWBv1ezjA0ai/wg3uRn0JeIbfPsMGtrAz6k9whovgzPzB2gOe8BLsF4KztEginU7ovciU+nwv/MRK+x8iNe7/Gf7R77xzhBA/N6qMJ/E=
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlFEOwCAIQ939r7pD7GuJI+pGBWomTfgxwAMSW8q7zuNDkkGNF392FtlrFFZMyUci+c8eCKOuHe0l87X7e99Qy7/fWnlWvBZfzoKwI+/2V61wQw8fQfhRPofOwWRr+OjMDH7PizQ+3/Mv1t9i81NcRXlVCtcO96t33GHflXUB3deOkw==
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="To Fields" type="teleport" x="2" y="23" width="27" height="976">
+   <properties>
+    <property name="warp" value="fields,980,500"/>
+   </properties>
+  </object>
+  <object name="test" type="teleport" x="994" y="25" width="27" height="976">
+   <properties>
+    <property name="warp" value="test,100,100"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="town" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/town.png" width="864" height="2112"/>
+ </tileset>
+ <tileset firstgid="1783" name="cherry_blossom_trees" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/cherry_blossom_trees.png" width="224" height="128"/>
+ </tileset>
+ <tileset firstgid="1811" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJyVl1luFjEQhC34H+ASBAlugYBDmCgkh0BCwB28jO+MR3Ip39T0EPFQms3u6r09LaVUJ8bENtEmykRf1x15oS70hbb2NezXng3Xjqv2j/V94H1d7+riG7ZXz9KnYB/3S5cKm/K6UlZLRx0yZHTI0Fp9o90tnXUvkF3AXwL+LZ31lz9oZzGuZvu2CxmSE72XDPpWPPKbwLjoXU7H3NC6nI45RM4O2Xo3An3yBX/7B38NuCSrgIe2iV92a498rvsNOtHPJZ11ZX34lbJkE+vBc3v/9mrip+HHAp91/zqIPfMvsoUxc/u+Tdwm7oAbrjd7d4/4sC5YN/K7nukfxrwvfnKR03URfzeZema/YS9hLrJ/7d8ewPl54kuAr1hzj72Uy5z1vGbuMqcy/L/j+8SbibcTj8AT/CH+Dplbes5/74WsO9aLdHyAf3f+DxMfA37a302m6sjzgLXIfKEOzv8Y4AlrlH/sPyWde4h6EePk/bKl5/y7e4Gf+VeNq6RjT5F/3A+yW3nSjf/XxO8Af4xfMR7p7APGhn3X+6385fUX1RzrUvnH2e+zjPOV+vhsVf1FnBHEH8159oIK+aw78Wesfz/x6T/wDvazt/lcjGaP+8j7GOeW18nVrGTv8XmknsCcZG5uJrcbF2XmdO4j9DNrgHPYzyYjHfX0c6FmGGfngOwtxXF239Menh2lP8+ztJszi/zKc+rGM1E3Pp4tejrrQx9FZzPGWLqS1+ubs12yaaPsZ63QZurA2T0gMwcyvPdWk+0+8Pj4/8PAmuj8Kx2Yn16DWsP/ENpIm9jDinFSV55lvX55/mI86XfqyXndLxD1CP6zdONir6OtDp6rPX41nWPksdC7FvBHOvIMxj5U8Y25rJxh/rHvidvPVKyvzb5x5nCv+4n6vKRr1G+UA9W4vAacn+vcx/lCvv9zDMjU/V/wBeGe
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhYIMDOwCAIxELsA+wQOgJ8fm5mZmBoYSbNPB6gObxAzAfE/BSG40cS7SYGkOMnQoDUdEMLf9EaDAY3o8fdCxzqHuMQ9wXq9SPCH6SmYXR3PSWshWKAy4+DCdAir4HAM+obiRMQm2aoCWhZD9EqTrABfGmU0vIE2Wxc5QA9wT0mBob7TBA2rd0zEGmS3oCa6ZScNslgqO8GAyAm7EBhRUx8jYR0S00wGl60B5TUtdTs6wwWMJB9YAANnB5g
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztl10SwiAMhCMotXobvZSe096p/uv6xnQUkhKkOH4z+1aSsoQAbUO0gtbQWHpHdIRO0NnFvzfIZaF5Qk6fO3I+XnkRb8aI2QbmvLNEexuPcUG+K3SDFojjoAZaKs0phsRD7pwkhDysEWkNa/OphlPXboOxW8Z4aQ3nqKlfYKwvfj8pgd9PuDWjSc5+8q/VPBwMUWdK/8V7ptrPQ2jWacqdpEbvNOF6x1mvEr20Zr7hV8pZq7E3Ut4/GntjeNZK/Mjx1tF+D0rRuHtM6f4m4Qmmkjpc
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh4IMw+0C6gP8DlZ5A4ueExWMOREj+NgoEFlMYdqfqJVYtu7mj6goDhkNcGyg+0snM4xMlgBKPhSl1Ai/AcjR/aAWLiazSPkAZGw4s+gNIwHm5xNFD+AQAhlAOp
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="To Minitown" type="teleport" x="1003" y="7" width="17" height="1017">
+   <properties>
+    <property name="warp" value="minitown,50,500"/>
+   </properties>
+  </object>
+  <object name="Epitaph" type="message" x="484" y="547" width="52" height="28">
+   <properties>
+    <property name="text" value="&quot;Here lies Balthazar.  The world would not see him leave, so it left with him.&quot;"/>
+   </properties>
+  </object>
+  <object name="To the Underworld" type="teleport" x="399" y="331" width="198" height="167">
+   <properties>
+    <property name="warp" value="underworld,500,500"/>
+   </properties>
+  </object>
+  <object name="To WhiteBridge" type="teleport" x="1" y="0" width="23" height="1020">
+   <properties>
+    <property name="warp" value="whitebridge,980,500"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

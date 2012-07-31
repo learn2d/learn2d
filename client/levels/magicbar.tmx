@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="inside-contest" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/inside/inside-contest.png" width="496" height="399"/>
+ </tileset>
+ <tileset firstgid="181" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztz8lTz3EAxvEvWYpsFUmSXUXKLkWFshRpDyFminEzQ7hJopudGxFJ2ZI/0Ovg8Lv8bp+bzzPzOr/nSZK4uCSZw1wymMd8FrCQTLJYxGKyWcJSlgXqL2cFOeSSx0pWkc9qClhDIWspYl2gfjHr2cBGNrGZLWxlGyWUUsZ2dlAeqL+TCirZxW72sJd97OcAB6niENXUBOof5gi11FHPUY5xnAYaOcFJTnGapkD9Zs5wlhbO0Uob7XTQSRfd9HCeC4H6F+nlEpe5Qh9XuUZ/igGuc+OfELuZpP9/K6V9mzsMcpd7gfr3k/T/HzDEQ4Z5xAiPeRKoP5qk//+UZzznBS95xWveBOq/TdL/f8d7xvjAR8b5xOdA/Qm+MMlXppjmG9/5wU9+McNvZvkTqB8XFxcXFxf3/+wvAJE7Ug==
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDDTYSiSmpf3EqKGVm8g1Z6DtpxYYqv4ftZ969uPLXwNRJoyCUTAKRsEoGAWjYHgCAC7lHbM=
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="To Magetown" type="teleport" x="512" y="323" width="31" height="30">
+   <properties>
+    <property name="warp" value="magetown,500,500"/>
+   </properties>
+  </object>
+  <object name="To WhiteBridge" type="teleport" x="290" y="482" width="32" height="29">
+   <properties>
+    <property name="warp" value="whitebridge,700,370"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
