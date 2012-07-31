@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Mage City" tilewidth="32" tileheight="32">
+  <image source="../../TestMap/fantasy/magecity_0.png" width="256" height="1450"/>
+ </tileset>
+ <tileset firstgid="361" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <layer name="background" width="32" height="32" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzFl7lP60AQh3fdEaDgeg2HFO7rcQgaID2KKBBQhfyndFwFvPaVlClz/QnMKDvyz6M9bM5In+zs7sy3Hq9t7bMx5rUkT8QD8VwhJpXvkVgl1iLsEevEvfP7YjYSOfQ4yce56sQyseuOwl84X1H+uhq/r8b72HXj+HwT/FvEdoId4sXV7V/JmBgH4LclkZqvV4iJUdXPNT+3o3vxU/6uo+lqfmlH9+IC+rpf5D9W/QMic1wR18AN9NWI4Qfmov0N5ea8faIT8HN7D+ZRdS4h/3/I9ebaWsQt0Ia4DqDnM/yEv++J6cH1hfLKPGqJOaD/kDgljsDP1z5GnTWbx0hfZop19s2nZ+J1QP+J8585h9R+ijqnwY9rUuNzYB3eIv6GG9NwfuMZL9d+6OqUef7rGKxDyt9xR/z5/DJXRNrYMU6DJ4hJm8fhWg755Zjyx2DHDA2eJeaIPzaP0/fnu/zzNHiBWCSWnL9tRzX4Cv+xxyttvvsv9c9K+uvG/50RPz8rev2dJfy+90nIj9+Z2DOt8b2v0F92/fUS+fT7dujOfWPxnVHWb03xPZv6lsjYmLvK8xeqtZ6PMAj0c3vT5t9RPbeUX2rtu+c1k69pxnjGMC2buweqTuiPIdfH15KBl/M2TfF3YYpro69y4HuorF9yybVIfu67Uv6bQA6socyprB/nodtaprgvaEfisR4f8YdAf9U4jrn7Jdgve5rfgPdRqb3nd8L7qLrJ95qI3oem9pb8veL9paD3nbqN4e/bOwMJJI0=
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUkAMmA/EUPPKy9HIIlcFQdfdAgNGwGgUDBfqAuH8A7Z8GxNPRxEbzA+3AQIQtoTpuKIHRtDmwIIGR/nYOp/Q7CkYBtQEA9kUGzw==
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh8YCYV9eoyMjDoMVJuLrnAFGi3GSNtzK4G4hraGI0VLIPSy6F0MxC3UNF8MRLVdwNxDx55USxicnjU45OjFiDGDmzuphTwkmD/QAAxNJpYQK2wkkOjRyLIIkFtKRCXAXE5EFdQyf4iKL0TiHcB8W48amuBuA6I64G4gYC5pMbpQSA+BMSH8ahpBeI2IG4H4o4BsL8XiT0BiU1qmYcNnATiU0B8Go+aqUjsGQTMI9V+FSBWBWI1BurUcZTkaeQ6jtyyhhL7CdVxtLafXCAExMJoYrSo13ABKSCWJkF9MhpNLUBs+s1Go0kB+MpLYttoxWg0KQBfeUVK+iW17ifGflLASKz7dw6g3fjqd3qDj0D8CYg/45DH1XfE16ckRc9PIP4FxL/xmEcK0CFSHQB3SjWi
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztljEOgzAMRZNCu3TPmCN07VV6vI69HhSQKLTqH4rkyTFCyKniJz1lsOEnEgp2riwu2hsolEDUIP7Uyl/QzjcMCXem1sAWXr1zHdYeDkx/IKv0DngwtRG+4ARn+IYfQX4kbsHj3AdYwRoe4cmn87XYM/+snC8hl/xc/oFbv3/jP7kxd5RhlMgyyzxXPCOZeaS9dJbh9kPfk5p5Ur20/gUgACw0
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlksOgCAMRPG43v8Cbkkz6fRHCWoTUgXKm2JVxvhtp92Xr0ViLGt6tVbmHuV74pF2dM/WkF6LQWMZfsakdo2/UofU1JU/40drO6O5gp+xU/nsPUbzEUNez57xLX1sLMpH8Wyeh299FmiOZ280PouzMlbxI/UX4Vv0MMvU/8pvQrb+rWvPfV18i32Br9Vvx/9GY1SdP6J7V5V/5uzyFv7sT+PvbA+7UWPL
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="Lightning spell" type="spell" x="95" y="445" width="33" height="22">
+   <properties>
+    <property name="spell" value="function"/>
+   </properties>
+  </object>
+  <object name="To MagicBar" type="teleport" x="386" y="193" width="29" height="28">
+   <properties>
+    <property name="warp" value="magicbar,300,300"/>
+   </properties>
+  </object>
+  <object name="To Fields" type="teleport" x="579" y="833" width="27" height="28">
+   <properties>
+    <property name="warp" value="fields,500,100"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
