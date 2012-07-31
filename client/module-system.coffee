@@ -1,6 +1,4 @@
-define [
-  'cs!trigger'
-], ->
+define ->
   class System
     constructor: ({@trigger}) ->
     onMouseDown: (mouse) ->
