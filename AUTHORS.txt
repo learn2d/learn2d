@@ -143,7 +143,7 @@ Emilio J Sanchez-Sierra
 Jonas Klinger
  - Jonas__Klinger_Skorpio's SciFi Sprite Pack
  - /fantasy/outside/Lightning*
- - /fantasy/spells/Explosion.png
+ - /fantasy/spells/explosion_fire.png
 
 Guido Bos
  - Guido_Bos__Flowers, buildings and boxes
@@ -235,6 +235,49 @@ Thane and Stacey Brimhall
  - Thane_and_Stacey_Brimhall__Clothing, Facial features and UI Elements
  - /fantasy/ui/bar*
 
+Michael Kummer (Same license) simply a derivative work
+ - Colored versions of Luke Mehl's robes
+ - /LM_Female/belts/female_mage_redbelt.png
+ - /LM_Female/belts/female_mage_purplebelt.png
+ - /LM_Female/belts/female_mage_royalbluebelt.png
+ - /LM_Female/belts/female_mage_yellowbelt.png
+ - /LM_Female/belts/female_mage_greenbelt.png
+ - /LM_Female/belts/female_mage_tealbelt.png
+ - /LM_Female/robes/female_mage_brightgreenrobe.png
+ - /LM_Female/robes/female_mage_brightnavybluerobe.png
+ - /LM_Female/robes/female_mage_brightorangerobe.png
+ - /LM_Female/robes/female_mage_brightpurplerobe.png
+ - /LM_Female/robes/female_mage_brightredrobe.png
+ - /LM_Female/robes/female_mage_brightroyalbluerobe.png
+ - /LM_Female/robes/female_mage_brighttealrobe.png
+ - /LM_Female/robes/female_mage_brightyellowrobe.png
+ - /LM_Female/hair/female_mage_fireredhair.png
+ - /LM_Female/hair/female_mage_forestgreenhair.png
+ - /LM_Female/hair/female_mage_goldenhair.png
+ - /LM_Female/hair/female_mage_midnightbluehair.png
+ - /LM_Female/hair/female_mage_pinkhair.png
+ - /LM_Female/hair/female_mage_purplehair.png
+ - /LM_Female/hair/female_mage_skyblue.png
+ - /LM_Female/hair/female_mage_tealblue.png
+ -
+ - Derivatives of Clint Bellanger
+ - /fantasy/spells/blast_charm.png
+ - /fantasy/spells/blast_chrono.png
+ - /fantasy/spells/blast_darkmatter.png
+ - /fantasy/spells/blast_iceball.png
+ - /fantasy/spells/blast_lion.png
+ - /fantasy/spells/blast_poison.png
+ - /fantasy/spells/shard_time.png
+ -
+ - Derivatives of Jonas Klinger's work
+ - /fantasy/spells/explosion_charm.png
+ - /fantasy/spells/explosion_darkmatter.png
+ - /fantasy/spells/explosion_ice.png
+ - /fantasy/spells/explosion_lava.png
+ - /fantasy/spells/explosion_poison.png
+ - /fantasy/spells/explosion_teal.png
+ - /fantasy/spells/explosion_time.png
+
 
 
 The following is licenced under GPL 2.0, GPL 3.0, and CC-BY-SA 3.0
@@ -242,8 +285,8 @@ The following is licenced under GPL 2.0, GPL 3.0, and CC-BY-SA 3.0
 Clint Bellanger
   - http://opengameart.org/sites/default/files/icicle_0.png
   - http://opengameart.org/content/fireball-spell
-  - /fantasy/spells/fireball.png
-  - /fantasy/spells/icicle.png
+  - /fantasy/spells/blast_fireball.png
+  - /fantasy/spells/shard_ice.png
 
 
 

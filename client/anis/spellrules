@@ -10,11 +10,15 @@ angle = arctan((y2-y1)/(x2-x1))
 #this is the row of the animation to play
 row = (angle + 22.5 + 180)%45
 
-/fantasy/spells/icicle.png
-/fantasy/spells/fireball.png
-/fantasy/spells/firelion.png
-/fantasy/spells/darkmatter.png
-
+fantasy/spells/blast_poison.png
+fantasy/spells/blast_chrono.png
+fantasy/spells/blast_lion.png
+fantasy/spells/blast_iceball.png
+fantasy/spells/blast_charm.png
+fantasy/spells/blast_darkmatter.png
+fantasy/spells/blast_fireball.png
+fantasy/spells/shard_time.png
+fantasy/spells/shard_ice.png
 
 *******************************************************************************
 
@@ -31,9 +35,29 @@ fantasy/spells/magic_iceshield_sheet.png
 
 *******************************************************************************
 
+explosion.ani.json
+fantasy/spells/explosion_time.png
+fantasy/spells/explosion_darkmatter.png
+fantasy/spells/explosion_lava.png
+fantasy/spells/explosion_fire.png
+fantasy/spells/explosion_charm.png
+fantasy/spells/explosion_teal.png
+fantasy/spells/explosion_ice.png
+fantasy/spells/explosion_poison.png
 
-Explosion.ani.json
-fantasy/spells/Explosion.png
+*******************************************************************************
 
+This takes the explosion sprite and plays 9-17 then 16-10
 
+explosion-status.ani.json
+fantasy/spells/explosion_time.png
+fantasy/spells/explosion_darkmatter.png
+fantasy/spells/explosion_lava.png
+fantasy/spells/explosion_fire.png
+fantasy/spells/explosion_charm.png
+fantasy/spells/explosion_teal.png
+fantasy/spells/explosion_ice.png
+fantasy/spells/explosion_poison.png
+
+haste blind fireproof onfire (charmed or heal) teal? ice (poison or heal)
 

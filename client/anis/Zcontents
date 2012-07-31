@@ -59,42 +59,58 @@ male-slash.ani.json
 Order:
   base robes hair belts buckles slippers tiaras,
 
-Permutations: 1*10*6*6*4*4*4 = 23040
+Permutations: 1*10*6*6*4*4*4 = 23040, now 1*12*4*14*4*18*4*4 = 774144
 
 LM_Female:
 LM_Female/female_base.png
 
 LM_Female/belts:
-female_mage_blackbelt.png   female_mage_brownbelt.png  female_mage_ironbelt.png
-female_mage_bronzebelt.png  female_mage_goldbelt.png   female_mage_silverbelt.png
+female_mage_blackbelt.png   female_mage_purplebelt.png
+female_mage_bronzebelt.png  female_mage_redbelt.png
+female_mage_brownbelt.png   female_mage_royalbluebelt.png
+female_mage_goldbelt.png    female_mage_silverbelt.png
+female_mage_greenbelt.png   female_mage_tealbelt.png
+female_mage_ironbelt.png    female_mage_yellowbelt.png
 
 LM_Female/buckles:
 female_mage_bronzebuckle.png  female_mage_ironbuckle.png
 female_mage_goldbuckle.png    female_mage_silverbuckle.png
 
 LM_Female/examples:
-dark_mage_elder.png  dark_mage_queen.png  forest_mage.png  gray_mage.png  red_novice.png  royal_mage.png
+dark_mage_elder.png  forest_mage.png  red_novice.png
+dark_mage_queen.png  gray_mage.png    royal_mage.png
 
 LM_Female/hair:
-female_mage_blackhair.png  female_mage_darkblondehair.png  female_mage_lightblondehair.png
-female_mage_brownhair.png  female_mage_grayhair.png        female_mage_whitehair.png
+female_mage_blackhair.png        female_mage_lightblondehair.png
+female_mage_brownhair.png        female_mage_midnightbluehair.png
+female_mage_darkblondehair.png   female_mage_pinkhair.png
+female_mage_fireredhair.png      female_mage_purplehair.png
+female_mage_forestgreenhair.png  female_mage_skybluehair.png
+female_mage_goldenhair.png       female_mage_tealhair.png
+female_mage_grayhair.png         female_mage_whitehair.png
 
 LM_Female/necklaces:
 female_mage_bronzenecklace.png  female_mage_ironnecklace.png
 female_mage_goldnecklace.png    female_mage_silvernecklace.png
 
 LM_Female/robes:
-female_mage_blackrobe.png      female_mage_darkgrayrobe.png   female_mage_redrobe.png
-female_mage_bluerobe.png       female_mage_forestrobe.png     female_mage_whiterobe.png
-female_mage_brownrobe.png      female_mage_lightgrayrobe.png
-female_mage_darkbrownrobe.png  female_mage_purplerobe.png
+female_mage_blackrobe.png            female_mage_brightyellowrobe.png
+female_mage_bluerobe.png             female_mage_brownrobe.png
+female_mage_brightgreenrobe.png      female_mage_darkbrownrobe.png
+female_mage_brightnavybluerobe.png   female_mage_darkgrayrobe.png
+female_mage_brightorangerobe.png     female_mage_forestrobe.png
+female_mage_brightpurplerobe.png     female_mage_lightgrayrobe.png
+female_mage_brightredrobe.png        female_mage_purplerobe.png
+female_mage_brightroyalbluerobe.png  female_mage_redrobe.png
+female_mage_brighttealrobe.png       female_mage_whiterobe.png
 
 LM_Female/slippers:
 female_mage_blackslippers.png  female_mage_grayslippers.png
 female_mage_brownslippers.png  female_mage_whiteslippers.png
 
 LM_Female/tiaras:
-female_mage_bronzetiara.png  female_mage_goldtiara.png  female_mage_irontiara.png  female_mage_silvertiara.png
+female_mage_bronzetiara.png  female_mage_irontiara.png
+female_mage_goldtiara.png    female_mage_silvertiara.png
 
 *******************************************************************************
 *********************  Male Animations  (Equipment Based) *********************

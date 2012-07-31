@@ -56,10 +56,6 @@ NPCs
 Chat
 Monsters
   they need animations 11 should be the same
-Extra Spells
-  Need animations and files
-    http://opengameart.org/content/icicle-spell
-    http://opengameart.org/content/fireball-spell
 
 All Animations need to be testable...
 
