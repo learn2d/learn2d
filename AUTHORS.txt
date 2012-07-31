@@ -11,6 +11,8 @@ Asset attribution
 
 Assets were authored by the following people:
 
+The following are licensed under GPLv3 and CC BY-SA 3.0
+
 Base Assets
  - base_assets
  - /fantasy/outside/signs.png
@@ -60,11 +62,6 @@ Base Assets
  - /fantasy/npcs/soldier.png
  - /fantasy/npcs/soldier_altcolor.png
 
-Hyptosis
- - Mage City Arcanos
- - /fantasy/outside/magecity_0.png
-   http://opengameart.org/content/mage-city-arcanos
-
 Johannes Sjolund
  - Johannes_Sjolund__Character animations, clothes, armor, weapons, skeleton enemy, combat dummy
  - JS_Male/*
@@ -92,8 +89,6 @@ Daniel Eddeland
  - /fantasy/oustide/farming_fishing.png
  - /fantasy/ui/scrollsandblocks.png
  - /fantasy/weapons/sword_sheet_128.png
-
-
 
 Mark Weyer 
  - Mark_Weyer__Caeles' LPC art
@@ -236,5 +231,18 @@ Polymorphable
  - /fantasy/inside/inside_objects.png
  - /fantasy/ui/bar*
 
- 
- 
+Thane and Stacey Brimhall
+ - Thane_and_Stacey_Brimhall__Clothing, Facial features and UI Elements
+ - /fantasy/ui/bar*
+
+
+
+The following is licensed under Public Domain:
+
+Hyptosis
+ - Mage City Arcanos
+ - /fantasy/outside/magecity_0.png
+   http://opengameart.org/content/mage-city-arcanos
+
+
+

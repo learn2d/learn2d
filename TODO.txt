@@ -1,3 +1,4 @@
+/*
 Character animations
 - The character animation format will look something like this JSON:
 
@@ -30,5 +31,36 @@ Attribution
   http://lpc.opengameart.org/content/properly-licensing-your-liberated-pixel-cup-game-entry
   We need license information for all the art we use in our project.
   Please add both of us as contributors to the code portion.
+*/  
   I will go ahead and gather the license information for all other
   software libraries being used so far.
+
+Animation Maker
+  Needs a UI
+User Interface
+  Healthbar
+  Spell Icons (overlay sprite position on scrollsandblocks.png?)
+    http://opengameart.org/content/painterly-spell-icons-part-3
+User Experience
+  Click -> click find grid position for inventory and/or spell casting
+Movement
+  Collisions
+  Teleport
+Controls
+  arrows+mouse?
+  keyboard only?
+  option either?
+  bindable keys?
+NPCs
+  need maps with npcs via some file name associated with fantasy/npcs
+Chat
+Monsters
+  they need animations 11 should be the same
+Extra Spells
+  Need animations and files
+    http://opengameart.org/content/icicle-spell
+    http://opengameart.org/content/fireball-spell
+
+All Animations need to be testable...
+
+
