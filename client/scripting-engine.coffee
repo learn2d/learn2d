@@ -38,6 +38,8 @@ define [
       @inputApi = new InputApi(@input)
 
     addClientModule: (module) ->
+      if typeof module.onCreated is 'function'
+        @timerCheck module, module.onCreated.bind(module)
       if typeof module.onMouseDown is 'function'
         @mouseDownListeners.push (coords) =>
           @timerCheck module, module.onMouseDown.bind(module, coords)
