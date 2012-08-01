@@ -29,16 +29,8 @@ define [
       # Handle input here
       @input.loop()
 
-      player = @sceneGraph.getPlayer()
-
-      # Networking
-      @network.beforeScripting player
-
       # Run scripts here
       @scriptingEngine.loop(timeDelta)
-
-      # Networking
-      @network.afterScripting player
 
       # Render scene
       @sceneRenderer.render(timeDelta)
