@@ -8,7 +8,7 @@ define [
       @lastFrame = 0
       @nextTime = new Date().getTime()
       @delay = 20
-      @files = ["LM_Female/female_base.png"]
+      @files = ["LM_Female/examples/royal_mage.png"]
 
     getDirection: ->
       @entity.getDirection()

@@ -150,7 +150,9 @@ Guido Bos
  - /fantasy/outside/contest-art.png
  - Guido_Bos__Interior wooden tiles
  - /fantasy/inside/inside-contest.png
-
+ - /fantasy/outside/housey.png
+ - /fantasy/outside/flowers_2.png
+ 
 Matthew Nash
  - Matthew_Nash__Public Toilet Tileset
  - /fantasy/inside/toilets.png
@@ -305,6 +307,8 @@ Michael Kummer (Same license) simply a derivative work
  - LM_Female/female_base_iceblue.png
  - LM_Female/female_base_purple.png
 
+
+
 The following is licenced under GPL 2.0, GPL 3.0, and CC-BY-SA 3.0
 
 Clint Bellanger
@@ -313,6 +317,17 @@ Clint Bellanger
   - /fantasy/spells/blast_fireball.png
   - /fantasy/spells/shard_ice.png
 
+
+The following is licenced under CC-BY-SA 3.0 and GPL 3.0
+ - http://opengameart.org/content/lpc-heroine-2
+ - /fantasy/npcs/shura.png
+
+
+The following is licenced under CC-BY-SA 3.0
+ - http://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident
+ - /fantasy/weapons/dragonspear.png
+ - /fantasy/weapons/greatbow.png
+ - /fantasy/weapons/recurvebow_sheet.png
 
 
 The following is licensed under Public Domain:
