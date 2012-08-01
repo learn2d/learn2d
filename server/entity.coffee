@@ -1,7 +1,9 @@
+uuid = require 'node-uuid'
 util = require './util'
 
-class Player
-  constructor: ({@level, @x, @y}) ->
+class Entity
+  constructor: ({@id, @level, @x, @y}) ->
+    @id ?= uuid.v1()
 
   getX: ->
     @x
@@ -11,10 +13,11 @@ class Player
     @level
 
   toJSON: ->
+    id: @id
     level: @level.getName()
     x: @x
     y: @y
     direction: util.DIR_UP
     aniName: 'female-walk'
 
-module.exports = Player
+module.exports = Entity

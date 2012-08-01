@@ -1,4 +1,4 @@
-Player = require './player'
+Entity = require './entity'
 SceneGraph = require './scene-graph'
 
 class Game
@@ -13,17 +13,22 @@ class Game
       level: @sceneGraph.getLevel().getName()
       entities: @sceneGraph.getEntities()
     socket.on 'trigger', ({target, action, params}) =>
-      entity = new Player
+      entity = new Entity
         level: @sceneGraph.getLevel()
         x: params.x
         y: params.y
       @sceneGraph.addEntity entity
+      @grantControl socket, entity
 
   entityAdded: (entity) ->
     console.log 'entity added?'
     for own id, socket of @clients
       console.log entity
       socket.emit 'entityAdded', entity
-  
+
+  grantControl: (socket, entity) ->
+    console.log "granting control of entity: #{entity.id}"
+    socket.emit 'controlEntity',
+      id: entity.id
 
 module.exports = Game
