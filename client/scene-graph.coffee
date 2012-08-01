@@ -21,7 +21,7 @@ define [
 
       throw new Error "Could not set player to #{id}" unless @player
 
-    getLevel: () ->
+    getPlayerLevel: () ->
       @level
 
     addEntity: (entity) ->

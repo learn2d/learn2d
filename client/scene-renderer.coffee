@@ -11,7 +11,8 @@ define [
       @aniRenderer = new AniRenderer(@loader, @context)
 
     render: (timeDelta) ->
-      level = @sceneGraph.getLevel()
+      level = @sceneGraph.getPlayerLevel()
+      return unless level.getLevelData()
       @levelRenderer.render(level, "background")
 
       entities = @sceneGraph.getEntities()
