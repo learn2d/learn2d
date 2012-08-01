@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="town" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/town.png" width="864" height="2112"/>
+ </tileset>
+ <tileset firstgid="1783" name="cherry_blossom_trees" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/cherry_blossom_trees.png" width="224" height="128"/>
+ </tileset>
+ <tileset firstgid="1811" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJzt1rENgCAQheHTTglrqGO4A0QLhnAXt3EQ19AVPBJILiS295or/lB+eYSCQEQP94IK3NARjaDQfr6Dm3C+ZVmWZVmWZhfw35PtCWz3oP2O29iOAF9uPwC+E/aq7NftsfhJ0W/vPW+fFf365nbhn0r+33av5Mvt1V6U9rfbU3F9OT/CjVkj
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlzsOgDAIhkkcXHzfSy+lNzW6ewPpaqxSgRajX8JiAvL4KxYgLU0O0KJ1eeJEInJV85gBTFlYvALjlGgVWs3s4xb4bgpParojVDcadWljIWfq7GbP8x59B4J/qIaPeS33Lmx8NVpC46w5VvmQXqiakURzD2nN5IwrjXK/J2/QvxYpNBkbSZ0++SexsO8sQOmd6xVlXl/QrSR/v/Th7FrJu44VUt6BdwQ1Gec=
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztl9EOwiAMRaso2/Rv9Kfc/z9s0029vhEToV2LG8aT3DdoQ7kUaCqiA3SE5tJ5oh4aoKtPj98il4N2ipwhd+R8vPIi3oYRs4ms+eKIWpeOcUO+EZqgPeJ4qIJqozWlkNSQuyYJsRqWiNTD1nzysHbvTph7ZsyXejiHp36BuXUJ+8kShP2E6xlLcvaTv1fLR+rJtfbzGJY+1bxJSqydJdzacfZriV5aMt+ol+autTgbmv+Pxdl4v2sl9cjx17H+D0qxeHus6f0m4Qm+pTk8
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztkzEOACAIA918gP//q3E1MRCxRdAbiQFbSin+tOr9Az4rzaO+68etPlo0SX0/WLS7O5Vn7du5LyMLEfKGujUmXhpQM5l6kHOi58pChruSQGjM7hkSyTvNvl7I7Um+XxysHmfbkZeeDsF1BEU=
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="To Fields1" type="teleport" x="1003" y="7" width="17" height="1017">
+   <properties>
+    <property name="warp" value="fields1,950,500"/>
+   </properties>
+  </object>
+  <object name="To Fields5" type="teleport" x="-3" y="3" width="1035" height="17">
+   <properties>
+    <property name="warp" value="fields5,500,950"/>
+   </properties>
+  </object>
+  <object name="To Fields7" type="teleport" x="2" y="-2" width="17" height="1017">
+   <properties>
+    <property name="warp" value="fields7,50,500"/>
+   </properties>
+  </object>
+  <object name="To Fields1" type="teleport" x="-7" y="1000" width="1035" height="17">
+   <properties>
+    <property name="warp" value="fields1,500,950"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

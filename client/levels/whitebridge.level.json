@@ -83,6 +83,18 @@
                  "width":496,
                  "x":105,
                  "y":992
+                }, 
+                {
+                 "height":28,
+                 "name":"To Magic Bar",
+                 "properties":
+                    {
+                     "warp":"magicbar,400,500"
+                    },
+                 "type":"teleport",
+                 "width":33,
+                 "x":672,
+                 "y":324
                 }],
          "opacity":1,
          "type":"objectgroup",

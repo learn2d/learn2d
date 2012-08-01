@@ -11,12 +11,12 @@
  </tileset>
  <layer name="background" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJyVl1luFjEQhC34H+ASBAlugYBDmCgkh0BCwB28jO+MR3Ip39T0EPFQms3u6r09LaVUJ8bENtEmykRf1x15oS70hbb2NezXng3Xjqv2j/V94H1d7+riG7ZXz9KnYB/3S5cKm/K6UlZLRx0yZHTI0Fp9o90tnXUvkF3AXwL+LZ31lz9oZzGuZvu2CxmSE72XDPpWPPKbwLjoXU7H3NC6nI45RM4O2Xo3An3yBX/7B38NuCSrgIe2iV92a498rvsNOtHPJZ11ZX34lbJkE+vBc3v/9mrip+HHAp91/zqIPfMvsoUxc/u+Tdwm7oAbrjd7d4/4sC5YN/K7nukfxrwvfnKR03URfzeZema/YS9hLrJ/7d8ewPl54kuAr1hzj72Uy5z1vGbuMqcy/L/j+8SbibcTj8AT/CH+Dplbes5/74WsO9aLdHyAf3f+DxMfA37a302m6sjzgLXIfKEOzv8Y4AlrlH/sPyWde4h6EePk/bKl5/y7e4Gf+VeNq6RjT5F/3A+yW3nSjf/XxO8Af4xfMR7p7APGhn3X+6385fUX1RzrUvnH2e+zjPOV+vhsVf1FnBHEH8159oIK+aw78Wesfz/x6T/wDvazt/lcjGaP+8j7GOeW18nVrGTv8XmknsCcZG5uJrcbF2XmdO4j9DNrgHPYzyYjHfX0c6FmGGfngOwtxXF239Menh2lP8+ztJszi/zKc+rGM1E3Pp4tejrrQx9FZzPGWLqS1+ubs12yaaPsZ63QZurA2T0gMwcyvPdWk+0+8Pj4/8PAmuj8Kx2Yn16DWsP/ENpIm9jDinFSV55lvX55/mI86XfqyXndLxD1CP6zdONir6OtDp6rPX41nWPksdC7FvBHOvIMxj5U8Y25rJxh/rHvidvPVKyvzb5x5nCv+4n6vKRr1G+UA9W4vAacn+vcx/lCvv9zDMjU/V/wBeGe
+   eJydV9ttw0AM8wTtHOkabdcIskbbKS5OM28uwBkQCD6EfAg4J6cXRQr22LZtTLsuO877Ou/EBvHZy7nGqHaFmOzZ/V5zVtvhGe+NEq+eMQ76sfqxRrzHalLnIXIxn4oH6wf7YnNjPWMe5cPOanZ4n2HqeIK8UzFVfIaDmiubeQcfpQ1XV5qx4oLjSMLfcYDdV5xmOZLOHZ6uPhWL7Y5BzmknOCwSZz+nfRH7hrsdraNumZ7w+Tztbdr7tNuy/2kX0VPaAWxeShtj5T9N+1h5n/nvK3/az2qHMC0pvZ8h7730j3ldPZgH+cM4cfR/K3mPGVyIj+Mzak3ViFj9TPsl9id8MCeLyTijanEcV7nd/mNzUHdRL4pXrhbHb6cVpZ/ujmM7U+1Pp1P1m8KA+SHW6l0r8aC7O13NjmOp144Pm3/Cle0RxzdXm+Kx2i9uZomnia9M+0oznTk6TST/pKkOzx02Dg+2dzvcTnrq1KV4kDja/Z/V4d49kHuv9NTBSvVQ8zucVZ6OTpJf+l5weDgdJn0iD9i3qeOwer/p4vj0fwBnUUNo
   </data>
  </layer>
  <layer name="background" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJxjYBhYIMDOwCAIxELsA+wQOgJ8fm5mZmBoYSbNPB6gObxAzAfE/BSG40cS7SYGkOMnQoDUdEMLf9EaDAY3o8fdCxzqHuMQ9wXq9SPCH6SmYXR3PSWshWKAy4+DCdAir4HAM+obiRMQm2aoCWhZD9EqTrABfGmU0vIE2Wxc5QA9wT0mBob7TBA2rd0zEGmS3oCa6ZScNslgqO8GAyAm7EBhRUx8jYR0S00wGl60B5TUtdTs6wwWMJB9YAANnB5g
+   eJztl0sSQDAMhjMsbLzvxaU4Jxvs3UBsjZK2SZsZvplszCTN4ycKEJc6A2jQ2ixyIgF5qnlIAcbULl6OcQq0Eq3y7ONueTYFl5resNWNRF3SaMiZOrvF8LxD357gb6vha17ru4s3pho1IfGunWz8IY1QNcOJ5B6SmskdTxr1/Z5o0/+UAMxJmLNiaDI0nDp1+SfRsO80QOnd2SvKvL6gW07+fsnjs2s57zpaiHkHPgDmNRus
   </data>
  </layer>
  <layer name="foreground" width="32" height="32">
@@ -32,22 +32,22 @@
  <objectgroup name="event" width="32" height="32">
   <object name="To Minitown" type="teleport" x="1003" y="7" width="17" height="1017">
    <properties>
-    <property name="warp" value="minitown,50,500"/>
+    <property name="warp" value="field2,50,500"/>
    </properties>
   </object>
   <object name="Epitaph" type="message" x="484" y="547" width="52" height="28">
    <properties>
-    <property name="text" value="&quot;Here lies Balthazar.  The world would not see him leave, so it left with him.&quot;"/>
+    <property name="text" value="&quot;Here lies Balthazar, in the forge of the earth.&quot;"/>
    </properties>
   </object>
-  <object name="To the Underworld" type="teleport" x="399" y="331" width="198" height="167">
+  <object name="To the Underworld" type="damage" x="399" y="331" width="198" height="167">
    <properties>
-    <property name="warp" value="underworld,500,500"/>
+    <property name="burn" value="2"/>
    </properties>
   </object>
-  <object name="To WhiteBridge" type="teleport" x="1" y="0" width="23" height="1020">
+  <object name="To Fields4" type="teleport" x="8" y="1004" width="990" height="22">
    <properties>
-    <property name="warp" value="whitebridge,980,500"/>
+    <property name="warp" value="fields4,500,50"/>
    </properties>
   </object>
  </objectgroup>
