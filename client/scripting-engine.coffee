@@ -1,10 +1,10 @@
 define [
-  'cs!modules/system'
+  'cs!modules/default/system'
   'cs!trigger'
 ], ->
   Trigger = require 'trigger'
   modules = {}
-  modules.System = require 'cs!modules/system'
+  modules.System = require 'cs!modules/default/system'
 
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->

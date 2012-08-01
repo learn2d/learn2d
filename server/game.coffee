@@ -6,6 +6,11 @@ class Game
     @clients = {}
 
     @sceneGraph = new SceneGraph(this)
+    defaultEntity = new Entity
+      level: 'default'
+      x: 300
+      y: 300
+    @sceneGraph.addEntity defaultEntity
 
   addClient: (socket) ->
     @clients[socket.id] = socket

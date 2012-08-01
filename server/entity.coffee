@@ -14,7 +14,6 @@ class Entity
 
   toJSON: ->
     id: @id
-    level: @level.getName()
     x: @x
     y: @y
     direction: util.DIR_UP

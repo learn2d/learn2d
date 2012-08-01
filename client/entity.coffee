@@ -13,6 +13,7 @@ define [
           x: -32
           y: -60
       ]
+
     getAnis: =>
       @anis
 
