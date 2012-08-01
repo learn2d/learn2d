@@ -3,6 +3,9 @@ require.config({
   shim: {
     'flywheel': {
       exports: 'flywheel'
+    },
+    'uuid': {
+      exports: 'uuid'
     }
   }
 });

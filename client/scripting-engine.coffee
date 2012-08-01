@@ -1,4 +1,6 @@
 define [
+  'uuid'
+
   'cs!api/trigger'
   'cs!api/player'
   'cs!api/timer'
@@ -7,6 +9,8 @@ define [
 
   'cs!modules/player/movement'
 ], ->
+  uuid = require 'uuid'
+
   Trigger = require 'api/trigger'
   Player = require 'api/player'
   Timer = require 'api/timer'
@@ -65,13 +69,17 @@ define [
 
       @moduleList = []
       for key, Module of modules[type]
-        @moduleList.push new Module
+        scriptModule = new Module
           trigger: @triggerApi
           player: @playerApi
           timer: @timerApi
+        scriptModule.id = uuid.v1()
+        @moduleList.push scriptModule
 
       for module in @moduleList
         @addClientModule(module)
+
+      undefined
 
     callMouseDownListeners: ->
       for listener in @mouseDownListeners
