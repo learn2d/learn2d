@@ -1,6 +1,6 @@
 define ->
   class Movement
-    constructor: ({@player, @timer, @util}) ->
+    constructor: ({@player, @timer, @util, @input}) ->
       @timer.delay = 50
 
     onMouseDown: (mouse) ->
@@ -12,6 +12,6 @@ define ->
       @timer.delay = 50
 
     onTimer: ->
-      console.log 'timer done'
+      console.log @input.isKeyDown(@util.KEY_UP)
 
       @timer.delay = 50

@@ -3,3 +3,8 @@ define ->
   DIR_LEFT: 1
   DIR_DOWN: 2
   DIR_RIGHT: 3
+
+  KEY_UP: 38
+  KEY_LEFT: 37
+  KEY_DOWN: 40
+  KEY_RIGHT: 39

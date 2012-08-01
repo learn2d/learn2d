@@ -6,6 +6,7 @@ define [
   'cs!api/trigger'
   'cs!api/player'
   'cs!api/timer'
+  'cs!api/input'
 
   'cs!modules/default/system'
 
@@ -18,6 +19,7 @@ define [
   Trigger = require 'api/trigger'
   Player = require 'api/player'
   Timer = require 'api/timer'
+  InputApi = require 'api/input'
 
   # all modules loaded up front for now
   modules =
@@ -33,6 +35,7 @@ define [
       @triggerApi = new Trigger(@network)
       @playerApi = new Player(@sceneGraph)
       @timerApi = new Timer()
+      @inputApi = new InputApi(@input)
 
     addClientModule: (module) ->
       if typeof module.onMouseDown is 'function'
@@ -74,6 +77,7 @@ define [
           player: @playerApi
           timer: @timerApi
           util: util
+          input: @inputApi
         scriptModule.id = uuid.v1()
         @moduleList.push scriptModule
 
