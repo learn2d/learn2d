@@ -15,6 +15,6 @@ class Player
     x: @x
     y: @y
     direction: util.DIR_RIGHT
-    aniName: 'male-walk'
+    aniName: 'female-down'
 
 module.exports = Player
