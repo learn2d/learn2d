@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="town" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/town.png" width="864" height="2112"/>
+ </tileset>
+ <tileset firstgid="1783" name="cherry_blossom_trees" tilewidth="32" tileheight="32">
+  <image source="../images/fantasy/outside/cherry_blossom_trees.png" width="224" height="128"/>
+ </tileset>
+ <tileset firstgid="1811" name="tiled_collision" tilewidth="32" tileheight="32">
+  <image source="../images/tiled_collision.png" width="480" height="32"/>
+ </tileset>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJyFl1mO5DAMQ3VHAzmTvN150kCIfmHkng/BlcQWJWpzjYjot+xb1i3jlrxlPuuPtEdGIRvrwpmFdWLtz7qf7xvv+/OuP3jbzg6s49nH3x061/Msn2T/Av6Itw0NOiZ0bGAk/O3xtiNtT+J3Mz6kUxjdsMVBMz0deBee10GH9FTvpU/2TOCINwnjMoDfoH9gD3OImBO69c65nPHNt8QeScPqPkmPdCVw6Jvw5bfOiPNpPF94Zmy9LjxftSoHZJPXA2N+FTKLd9VexoIxWcAnV4yZ+0r/Ze+FPRV+xjvvFBvW0sYz+WF+uT9p36T7Ks6wLhVX9hvlBvNHcVD/aoeYKxa013mYpnfEt5dmvHntwB2GT37c5wQm8aVzxW/+ey9k3bFePA6Me4XHZ66sKc8D1iLzpZneytdTjQzby3pmD1EvYvz7AZu6pmFXcXeshDAuzoO4V57MAsPzPOPLv/bt+HLA/PcZ5vb+xbPnmPcMzn6fZZyvtIe5oRhVuKwZ2urCOc9eIH8bnjnbvaef+u8JVz2Evc3nYjV7nKNZYFY18VcdsPf4PFJPYByZm6xPzsOTeB8hz6wBzmG/m6hHj3jHRrWpGcbZuaF7RR1n5z6Bw7uj7Od9lvdOziziK89pm3hr2M9+yzuh20OOqrsZa1a2Etfrm3Uq3fRR/rNW6DNt4Oze0NkKHd57u+l2Djw+/v9hY091/5UNzHmvQe3h/xD6SJ/Yw9IwaSvvsl6/vH8xnuSddnJez4M4hs5VNcQc5PcspMW3X9Nvj5HHQu9GgV/ZyDuYzxPOQZ+nzD/epXhHYv9gfS37xpnDs84T7fmfrVW/UQ50w/IacHzuc47bQT/7z4Iu5vo/Kb77Tg==
+  </data>
+ </layer>
+ <layer name="background" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlzsOgDAIhkkcXHzfSy+lNzW6ewPpaqxSgRajX8JiAvL4KxYgLU0O0KJ1eeJEInJV85gBTFlYvALjlGgVWs3s4xb4bgpParojVDcadWljIWfq7GbP8x59B4J/qIaPeS33Lmx8NVpC46w5VvmQXqiakURzD2nN5IwrjXK/J2/QvxYpNBkbSZ0++SexsO8sQOmd6xVlXl/QrSR/v/Th7FrJu44VUt6BdwQ1Gec=
+  </data>
+ </layer>
+ <layer name="foreground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztl9EOwiAMRaso2/Rv9Kfc/z9s0029vhEToV2LG8aT3DdoQ7kUaCqiA3SE5tJ5oh4aoKtPj98il4N2ipwhd+R8vPIi3oYRs4ms+eKIWpeOcUO+EZqgPeJ4qIJqozWlkNSQuyYJsRqWiNTD1nzysHbvTph7ZsyXejiHp36BuXUJ+8kShP2E6xlLcvaTv1fLR+rJtfbzGJY+1bxJSqydJdzacfZriV5aMt+ol+autTgbmv+Pxdl4v2sl9cjx17H+D0qxeHus6f0m4Qm+pTk8
+  </data>
+ </layer>
+ <layer name="collisions" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztkzEOACAIA918gP//q3E1MRCxRdAbiQFbSin+tOr9Az4rzaO+68etPlo0SX0/WLS7O5Vn7du5LyMLEfKGujUmXhpQM5l6kHOi58pChruSQGjM7hkSyTvNvl7I7Um+XxysHmfbkZeeDsF1BEU=
+  </data>
+ </layer>
+ <objectgroup name="event" width="32" height="32">
+  <object name="To Fields8" type="teleport" x="1003" y="7" width="17" height="1017">
+   <properties>
+    <property name="warp" value="fields7,950,500"/>
+   </properties>
+  </object>
+  <object name="To Fields3" type="teleport" x="-3" y="3" width="1035" height="17">
+   <properties>
+    <property name="warp" value="fields3,500,950"/>
+   </properties>
+  </object>
+  <object name="To Fields9" type="teleport" x="-20" y="1002" width="1035" height="17">
+   <properties>
+    <property name="warp" value="fields9,50,500"/>
+   </properties>
+  </object>
+  <object name="To Fields5" type="teleport" x="2" y="-2" width="17" height="1017">
+   <properties>
+    <property name="warp" value="fields5,50,500"/>
+   </properties>
+  </object>
+  <object name="To Fields9" type="teleport" x="-20" y="1002" width="1035" height="17">
+   <properties>
+    <property name="warp" value="fields9,50,500"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

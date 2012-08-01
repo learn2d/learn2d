@@ -45,5 +45,10 @@
     <property name="warp" value="fields, 50,1000"/>
    </properties>
   </object>
+  <object name="To Magic Bar" type="teleport" x="672" y="324" width="33" height="28">
+   <properties>
+    <property name="warp" value="magicbar,400,500"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
