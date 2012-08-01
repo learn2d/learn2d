@@ -42,12 +42,6 @@ define [
 
         @network.beforeScripting player
 
-        # Run timers
-        oldTimerCallbacks = @timerCallbacks
-        @timerCallbacks = []
-        for callback in oldTimerCallbacks
-          callback()
-
       if @input.isMouseDown()
         if not @mouseDown
           @mouseDown = true
@@ -65,7 +59,9 @@ define [
       @mouseDownListeners = []
       @keyDownListeners = []
 
-      @timerCallbacks = []
+      for key, val of @timerCallbacks
+        clearTimeout val
+      @timerCallbacks = {}
 
       @moduleList = []
       for key, Module of modules[type]
@@ -92,6 +88,9 @@ define [
       callback()
       if @timerApi.delay isnt 0
         if typeof module.onTimer is 'function'
-          setTimeout @timerCheck.bind(this, module, module.onTimer.bind(module))
-          , @timerApi.delay
+          clearTimeout @timerCallbacks[module.id]
+          @timerCallbacks[module.id] = setTimeout(
+            @timerCheck.bind(this, module, module.onTimer.bind(module))
+            @timerApi.delay
+          )
         @timerApi.delay = 0
