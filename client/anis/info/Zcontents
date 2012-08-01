@@ -59,7 +59,7 @@ male-slash.ani.json
 Order:
   base robes hair belts buckles slippers tiaras,
 
-Permutations: 1*10*6*6*4*4*4 = 23040, now 1*12*4*14*4*18*4*4 = 774144
+Permutations: 1*10*6*6*4*4*4 = 23040, then 1*12*4*14*4*18*4*4 = 774144
 
 LM_Female:
 LM_Female/female_base.png

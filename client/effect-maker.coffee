@@ -16,6 +16,7 @@ class aniMaker
       for dir in [1..@ytiles]
         for pos in [1..@xtiles]
           @frames.push
+            id: 0
             x: (pos - 1)*@spritewidth + @xoffset
             y: @spriteheight*(dir - 1) + @yoffset
 
