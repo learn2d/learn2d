@@ -34,6 +34,7 @@ define [
         aniName: entityData.aniName
         direction: entityData.direction
         id: entityData.id
+        visible: entityData.visible
       @addEntity entity
 
     getEntities: () ->

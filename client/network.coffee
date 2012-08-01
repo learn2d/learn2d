@@ -13,6 +13,7 @@ define ->
         @game.sceneGraph.addEntityFromData data
       @socket.on 'controlEntity', (data) =>
         @game.sceneGraph.setPlayerById data.id
+        console.log "Server granted control of entity: #{data.id}"
 
     on: (eventName, callback) ->
       @socket.on eventName, callback

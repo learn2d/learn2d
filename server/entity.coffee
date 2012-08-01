@@ -2,8 +2,11 @@ uuid = require 'node-uuid'
 util = require './util'
 
 class Entity
-  constructor: ({@id, @level, @x, @y}) ->
+  constructor: ({@id, @level, @x, @y, @aniName, @direction, @visible}) ->
+    @direction ?= util.DIR_UP
+    @aniName ?= 'female-walk'
     @id ?= uuid.v1()
+    @visible ?= true
 
   getX: ->
     @x
@@ -16,7 +19,8 @@ class Entity
     id: @id
     x: @x
     y: @y
-    direction: util.DIR_UP
-    aniName: 'female-walk'
+    direction: @direction
+    aniName: @aniName
+    visible: @visible
 
 module.exports = Entity

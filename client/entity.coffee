@@ -18,7 +18,7 @@ define [
       @anis
 
   class Entity
-    constructor: ({@x, @y, @aniName, @direction, @id}) ->
+    constructor: ({@x, @y, @aniName, @direction, @id, @visible}) ->
       @components = {}
       @components.ani = new AniComponent(this)
 
@@ -35,6 +35,9 @@ define [
 
     getDirection: ->
       @direction
+
+    isVisible: ->
+      @visible
 
     toString: ->
       "[Entity:#{@id}]"

@@ -16,6 +16,8 @@ define [
 
       entities = @sceneGraph.getEntities()
       for entity in entities
+        continue unless entity.isVisible()
+
         getAnis = entity.components.ani?.getAnis
 
         if typeof getAnis is 'function'
