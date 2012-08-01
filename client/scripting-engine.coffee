@@ -8,10 +8,7 @@ define [
 
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
-      @mouseDown = false
-      @keyDown = {}
-      @mouseDownListeners = []
-      @keyDownListeners = []
+      @reset()
 
       @trigger = new Trigger(@network)
 
@@ -33,6 +30,12 @@ define [
           @callMouseDownListeners()
       else
         @mouseDown = false
+
+    reset: ->
+      @mouseDown = false
+      @keyDown = {}
+      @mouseDownListeners = []
+      @keyDownListeners = []
 
     callMouseDownListeners: ->
       for listener in @mouseDownListeners
