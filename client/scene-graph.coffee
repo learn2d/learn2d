@@ -10,7 +10,7 @@ define [
   Entity = require 'entity'
 
   class SceneGraph
-    constructor: ->
+    constructor: (@loader) ->
       @reset {}
 
     getPlayer: ->
@@ -47,14 +47,16 @@ define [
 
       undefined
 
-    reset: ({level, entities}) ->
+    reset: ({levelName, entities}) ->
       @player = undefined
       @entities = []
       if typeof entities is 'object'
         for entityData in entities
           @addEntityFromData entityData
 
-      if level
-        @level = new Level(level)
+      if levelName
+        @level = new Level
+          loader: @loader
+          levelName: levelName
       else
         @level = null

@@ -5,7 +5,7 @@ define ->
     render: (level, layername) ->
       return if level is null
 
-      levelData = @loader.loadLevel "#{level.getName()}"
+      levelData = level.getLevelData()
       return unless levelData
 
       @drawLayers(levelData, layername)

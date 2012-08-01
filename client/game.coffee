@@ -16,7 +16,7 @@ define [
       @fw = flywheel @loop, @context.canvas
       @timeAccumulator = 0
 
-      @sceneGraph = new SceneGraph()
+      @sceneGraph = new SceneGraph(@loader)
       @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
 
       @input = new Input(@context)
@@ -43,4 +43,6 @@ define [
         @sceneRenderer.render(targetDelta)
 
     reset: (data) ->
-      @sceneGraph.reset(data)
+      @sceneGraph.reset
+        levelName: data.level
+        entities: data.entities

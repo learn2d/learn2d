@@ -73,8 +73,6 @@ define [
       @mouseDownListeners = []
       @keyDownListeners = []
 
-      for key, val of @timerCallbacks
-        clearTimeout val
       @timerCallbacks = {}
 
       @moduleList = []
