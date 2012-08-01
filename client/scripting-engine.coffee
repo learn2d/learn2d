@@ -1,9 +1,10 @@
 define [
-  'cs!module-system'
+  'cs!modules/system'
   'cs!trigger'
 ], ->
   Trigger = require 'trigger'
-  ModuleSystem = require 'cs!module-system'
+  modules = {}
+  modules.System = require 'cs!modules/system'
 
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
@@ -15,7 +16,7 @@ define [
       @trigger = new Trigger(@network)
 
       @moduleList = []
-      @moduleList.push new ModuleSystem
+      @moduleList.push new modules.System
         trigger: @trigger
 
       for module in @moduleList
