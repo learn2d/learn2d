@@ -11,6 +11,8 @@ define [
   'cs!modules/default/system'
 
   'cs!modules/player/movement'
+
+  'cs!modules/sound/soundblaster'
 ], ->
   uuid = require 'uuid'
 
@@ -27,7 +29,10 @@ define [
       System: require 'cs!modules/default/system'
     player:
       Movement: require 'cs!modules/player/movement'
-
+    sound:
+      SoundBlaster: require 'cs!modules/sound/soundblaster'
+      #soundManager.sounds.aSound.play()
+      
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
       @initialized = false

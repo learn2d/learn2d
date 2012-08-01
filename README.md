@@ -27,10 +27,12 @@ Get nvm and switch to node 0.6.20:
   node -v 
   should say now say v0.6.20
 
-Get coffee-script:
-  npm install -g coffee-script
-
 In the Learn2D clone directory:
   npm install
 
+Get coffee-script:
+  npm install -g coffee-script
+
+Run in Learn2D with:
+  ./server/server.sh
 
