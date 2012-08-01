@@ -1,23 +1,17 @@
 define [
-  'cs!modules/default/system'
   'cs!trigger'
+
+  'cs!modules/default/system'
 ], ->
   Trigger = require 'trigger'
   modules = {}
-  modules.System = require 'cs!modules/default/system'
+
+  modules.default =
+    System: require 'cs!modules/default/system'
 
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
-      @reset()
-
       @trigger = new Trigger(@network)
-
-      @moduleList = []
-      @moduleList.push new modules.System
-        trigger: @trigger
-
-      for module in @moduleList
-        @addClientModule(module)
 
     addClientModule: (module) ->
       if typeof module.onMouseDown is 'function'
@@ -31,11 +25,19 @@ define [
       else
         @mouseDown = false
 
-    reset: ->
+    reset: (type) ->
       @mouseDown = false
       @keyDown = {}
       @mouseDownListeners = []
       @keyDownListeners = []
+
+      @moduleList = []
+      for key, Module of modules[type]
+        @moduleList.push new Module
+          trigger: @trigger
+
+      for module in @moduleList
+        @addClientModule(module)
 
     callMouseDownListeners: ->
       for listener in @mouseDownListeners

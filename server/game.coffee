@@ -13,6 +13,7 @@ class Game
       visible: false
       x: 300
       y: 300
+      type: 'default'
     @sceneGraph.addEntity @defaultEntity
 
   addClient: (socket) ->
@@ -30,8 +31,11 @@ class Game
       entity = new Entity
         x: params.x
         y: params.y
+        type: 'player'
       @sceneGraph.addEntity entity
+
       @grantControl socket, entity
+      @resetClient socket
 
   resetClient: (socket) ->
     entity = @control[socket.id]
@@ -45,6 +49,7 @@ class Game
     console.log "informing client control of entity: #{entity.id}"
     socket.emit 'controlEntity',
       id: entity.id
+      type: entity.type
 
   entityAdded: (entity) ->
     console.log 'entity added?'

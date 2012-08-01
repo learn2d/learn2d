@@ -2,7 +2,7 @@ uuid = require 'node-uuid'
 util = require './util'
 
 class Entity
-  constructor: ({@id, @level, @x, @y, @aniName, @direction, @visible}) ->
+  constructor: ({@id, @level, @x, @y, @aniName, @direction, @visible, @type}) ->
     @direction ?= util.DIR_UP
     @aniName ?= 'female-walk'
     @id ?= uuid.v1()

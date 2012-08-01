@@ -14,6 +14,7 @@ define ->
       @socket.on 'controlEntity', (data) =>
         @game.sceneGraph.setPlayerById data.id
         console.log "Server granted control of entity: #{data.id}"
+        @game.scriptingEngine.reset(data.type)
 
     on: (eventName, callback) ->
       @socket.on eventName, callback
