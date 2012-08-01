@@ -5,7 +5,7 @@ define [
 
   class Movement
     constructor: ({@player, @timer}) ->
-      @timer.set 50
+      @timer.delay = 50
 
     onMouseDown: (mouse) ->
       @player.x = mouse.x
@@ -13,8 +13,8 @@ define [
       @player.setAni 'female-idle'
       @player.direction = util.DIR_LEFT
 
-      @timer.set 50
+      @timer.delay = 50
 
     onTimer: ->
       console.log 'timer done'
-      @timer.set 50
+      @timer.delay = 50

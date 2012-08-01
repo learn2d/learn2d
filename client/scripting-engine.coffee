@@ -29,8 +29,7 @@ define [
     addClientModule: (module) ->
       if typeof module.onMouseDown is 'function'
         @mouseDownListeners.push (coords) =>
-          @timeoutCheck ->
-            module.onMouseDown.call(module, coords)
+          @timerCheck module, module.onMouseDown.bind(module, coords)
 
     loop: (timeDelta) ->
       if @initialized
@@ -38,6 +37,12 @@ define [
         player = @sceneGraph.getPlayer()
 
         @network.beforeScripting player
+
+        # Run timers
+        oldTimerCallbacks = @timerCallbacks
+        @timerCallbacks = []
+        for callback in oldTimerCallbacks
+          callback()
 
       if @input.isMouseDown()
         if not @mouseDown
@@ -56,6 +61,8 @@ define [
       @mouseDownListeners = []
       @keyDownListeners = []
 
+      @timerCallbacks = []
+
       @moduleList = []
       for key, Module of modules[type]
         @moduleList.push new Module
@@ -72,9 +79,11 @@ define [
           x: @input.getMouseX()
           y: @input.getMouseY()
 
-    timeoutCheck: (callback) ->
-      @timerApi.set 0
+    timerCheck: (module, callback) ->
+      @timerApi.delay = 0
       callback()
-      if @timerApi.get isnt 0
-        console.log 'detected a change in timer'
-        @timerApi.set 0
+      if @timerApi.delay isnt 0
+        if typeof module.onTimer is 'function'
+          setTimeout @timerCheck.bind(this, module, module.onTimer.bind(module))
+          , @timerApi.delay
+        @timerApi.delay = 0

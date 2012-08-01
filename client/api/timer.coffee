@@ -1,9 +1,13 @@
 define ->
   class Timer
     constructor: () ->
-      @milliseconds = 0
+      Object.defineProperty this, 'delay',
+        get: @getDelay
+        set: @setDelay
+        enumerable: true
+        configurable: false
 
-    get: ->
-      @milliseconds
+    getDelay: ->
+      @seconds
 
-    set: (@milliseconds) ->
+    setDelay: (@seconds) ->
