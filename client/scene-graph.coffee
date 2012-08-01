@@ -14,6 +14,7 @@ define [
       @reset {}
 
     getPlayer: ->
+      @player
 
     setPlayerById: (id) ->
       @player = @getEntityById id
