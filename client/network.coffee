@@ -11,6 +11,8 @@ define ->
         @game.reset(data)
       @socket.on 'entityAdded', (data) =>
         @game.sceneGraph.addEntityFromData data
+      @socket.on 'controlEntity', (data) =>
+        @game.sceneGraph.setPlayerById data.id
 
     on: (eventName, callback) ->
       @socket.on eventName, callback

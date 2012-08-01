@@ -17,9 +17,11 @@ define [
       @anis
 
   class Entity
-    constructor: ({@x, @y, @aniName, @direction}) ->
+    constructor: ({@x, @y, @aniName, @direction, @id}) ->
       @components = {}
       @components.ani = new AniComponent(this)
+
+      console.log @toString()
 
     getX: ->
       @x
@@ -32,3 +34,6 @@ define [
 
     getDirection: ->
       @direction
+
+    toString: ->
+      "[Entity:#{@id}]"
