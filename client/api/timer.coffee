@@ -1,6 +1,6 @@
 define ->
   class Timer
-    constructor: () ->
+    constructor: (@timer) ->
       Object.defineProperty this, 'delay',
         get: @getDelay
         set: @setDelay
@@ -8,6 +8,7 @@ define ->
         configurable: false
 
     getDelay: ->
-      @seconds
+      @timer.getSeconds()
 
-    setDelay: (@seconds) ->
+    setDelay: (seconds) ->
+      @timer.setSeconds(seconds)

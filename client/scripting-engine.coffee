@@ -2,6 +2,7 @@ define [
   'uuid'
 
   'cs!util'
+  'cs!timer'
 
   'cs!api/trigger'
   'cs!api/player'
@@ -12,15 +13,16 @@ define [
 
   'cs!modules/player/movement'
 
-  'cs!modules/sound/soundblaster'
+  #'cs!modules/sound/soundblaster'
 ], ->
   uuid = require 'uuid'
 
   util = require 'util'
+  Timer = require 'timer'
 
   Trigger = require 'api/trigger'
   Player = require 'api/player'
-  Timer = require 'api/timer'
+  TimerApi = require 'api/timer'
   InputApi = require 'api/input'
 
   # all modules loaded up front for now
@@ -29,25 +31,27 @@ define [
       System: require 'cs!modules/default/system'
     player:
       Movement: require 'cs!modules/player/movement'
-    sound:
-      SoundBlaster: require 'cs!modules/sound/soundblaster'
+    #sound:
+      #SoundBlaster: require 'cs!modules/sound/soundblaster'
       #soundManager.sounds.aSound.play()
       
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
       @initialized = false
 
+      @timer = new Timer()
+
       @triggerApi = new Trigger(@network)
       @playerApi = new Player(@sceneGraph)
-      @timerApi = new Timer()
+      @timerApi = new TimerApi(@timer)
       @inputApi = new InputApi(@input)
 
     addClientModule: (module) ->
       if typeof module.onCreated is 'function'
-        @timerCheck module, module.onCreated.bind(module)
+        @timer.timerCheck module, module.onCreated.bind(module)
       if typeof module.onMouseDown is 'function'
         @mouseDownListeners.push (coords) =>
-          @timerCheck module, module.onMouseDown.bind(module, coords)
+          @timer.timerCheck module, module.onMouseDown.bind(module, coords)
 
     loop: (timeDelta) ->
       if @initialized
@@ -56,10 +60,28 @@ define [
 
         @network.beforeScripting player
 
+        # process timeouts
+        for moduleId, delay of @timer.timerDelays
+          delay -= timeDelta
+          if delay <= 0
+            delete @timer.timerDelays[moduleId]
+
+            module = null
+
+            for moduleElem in @moduleList
+              if moduleElem.id is moduleId
+                module = moduleElem
+                break
+
+            if module isnt null and typeof module.onTimer is 'function'
+              @timer.timerCheck.call(@timer, module, module.onTimer.bind(module))
+          else
+            @timer.timerDelays[moduleId] = delay
+
       if @input.isMouseDown()
         if not @mouseDown
           @mouseDown = true
-          @callMouseDownListeners()
+          @callMouseDownListeners() if @initialized
       else
         @mouseDown = false
 
@@ -73,7 +95,7 @@ define [
       @mouseDownListeners = []
       @keyDownListeners = []
 
-      @timerCallbacks = {}
+      @timer.reset()
 
       @moduleList = []
       for key, Module of modules[type]
@@ -96,15 +118,3 @@ define [
         listener
           x: @input.getMouseX()
           y: @input.getMouseY()
-
-    timerCheck: (module, callback) ->
-      @timerApi.delay = 0
-      callback()
-      if @timerApi.delay isnt 0
-        if typeof module.onTimer is 'function'
-          clearTimeout @timerCallbacks[module.id]
-          @timerCallbacks[module.id] = setTimeout(
-            @timerCheck.bind(this, module, module.onTimer.bind(module))
-            @timerApi.delay
-          )
-        @timerApi.delay = 0
