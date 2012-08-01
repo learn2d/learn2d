@@ -238,7 +238,7 @@ Thane and Stacey Brimhall
  - /fantasy/ui/bar*
 
 Michael Kummer (Same license) simply a derivative work
- - Colored versions of Luke Mehl's robes
+ - Colored versions of Luke Mehl's stuff
  - /LM_Female/belts/female_mage_redbelt.png
  - /LM_Female/belts/female_mage_purplebelt.png
  - /LM_Female/belts/female_mage_royalbluebelt.png
@@ -261,7 +261,18 @@ Michael Kummer (Same license) simply a derivative work
  - /LM_Female/hair/female_mage_purplehair.png
  - /LM_Female/hair/female_mage_skyblue.png
  - /LM_Female/hair/female_mage_tealblue.png
- -
+ - /LM_Female/female_base_shadow.png
+ - /LM_Female/female_base_blue.png
+ - /LM_Female/female_base_grey.png
+ - /LM_Female/female_base_yellow.png
+ - /LM_Female/female_base_white.png
+ - /LM_Female/female_base_pink.png
+ - /LM_Female/female_base_brown.png
+ - /LM_Female/female_base_green.png
+ - /LM_Female/female_base_glow.png
+ - /LM_Female/female_base_iceblue.png
+ - /LM_Female/female_base_purple.png
+ - 
  - Derivatives of Clint Bellanger
  - /fantasy/spells/blast_charm.png
  - /fantasy/spells/blast_chrono.png
@@ -281,32 +292,20 @@ Michael Kummer (Same license) simply a derivative work
  - /fantasy/spells/explosion_time.png
  - 
  - Derivatives of base assets
- - fantasy/monsters/badblueflower.png
- - fantasy/monsters/badfireflower.png
- - fantasy/monsters/badiceflower.png
- - fantasy/monsters/batalbino.png
- - fantasy/monsters/batfire.png
- - fantasy/monsters/batgolden.png
- - fantasy/monsters/batnight.png
- - fantasy/monsters/snakefire.png
- - fantasy/monsters/snakepoison.png
- - fantasy/monsters/snakewater.png
- - fantasy/monsters/snakeshadow.png
- - fantasy/monsters/slimewater.png
- - fantasy/monsters/slimeice.png
- - fantasy/monsters/slimelava.png
- - LM_Female/female_base_shadow.png
- - LM_Female/female_base_blue.png
- - LM_Female/female_base_grey.png
- - LM_Female/female_base_yellow.png
- - LM_Female/female_base_white.png
- - LM_Female/female_base_pink.png
- - LM_Female/female_base_brown.png
- - LM_Female/female_base_green.png
- - LM_Female/female_base_glow.png
- - LM_Female/female_base_iceblue.png
- - LM_Female/female_base_purple.png
-
+ - /fantasy/monsters/badblueflower.png
+ - /fantasy/monsters/badfireflower.png
+ - /fantasy/monsters/badiceflower.png
+ - /fantasy/monsters/batalbino.png
+ - /fantasy/monsters/batfire.png
+ - /fantasy/monsters/batgolden.png
+ - /fantasy/monsters/batnight.png
+ - /fantasy/monsters/snakefire.png
+ - /fantasy/monsters/snakepoison.png
+ - /fantasy/monsters/snakewater.png
+ - /fantasy/monsters/snakeshadow.png
+ - /fantasy/monsters/slimewater.png
+ - /fantasy/monsters/slimeice.png
+ - /fantasy/monsters/slimelava.png
 
 
 The following is licenced under GPL 2.0, GPL 3.0, and CC-BY-SA 3.0
@@ -318,24 +317,45 @@ Clint Bellanger
   - /fantasy/spells/shard_ice.png
 
 
+Bart K.
+ - http://opengameart.org/content/spell-4-fire
+ - /music/foom_0.wav
+
 The following is licenced under CC-BY-SA 3.0 and GPL 3.0
+
+Yamilian
  - http://opengameart.org/content/lpc-heroine-2
  - /fantasy/npcs/shura.png
 
 
 The following is licenced under CC-BY-SA 3.0
+
+daneeklu
  - http://opengameart.org/content/lpc-weapons-two-bows-a-spear-and-a-trident
  - /fantasy/weapons/dragonspear.png
  - /fantasy/weapons/greatbow.png
  - /fantasy/weapons/recurvebow_sheet.png
 
 
+The following is licenced under CC-BY 3.0
+
+ViRiX (David McKee)
+ - http://opengameart.org/content/ui-accept-or-forward
+ - /music/Accept.mp3
+
+
 The following is licensed under Public Domain:
 
 Hyptosis
  - Mage City Arcanos
+ - http://opengameart.org/content/mage-city-arcanos
  - /fantasy/outside/magecity_0.png
-   http://opengameart.org/content/mage-city-arcanos
 
+
+qubodup
+ - http://opengameart.org/content/up-3x
+ - /music/upshort.wav
+ - /music/upmid.wav
+ - /music/uplong.wav
 
 
