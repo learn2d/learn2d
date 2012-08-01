@@ -1,9 +1,8 @@
 define ->
   class Movement
     constructor: ({@player, @timer, @util, @input}) ->
-      @timer.delay = 50
 
-    onKeyDown: ->
+    onCreated: ->
       @timer.delay = 50
 
     onMouseDown: (mouse) ->
