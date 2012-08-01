@@ -1,13 +1,25 @@
 define [
+  'uuid'
+
+  'cs!util'
+
   'cs!api/trigger'
   'cs!api/player'
+  'cs!api/timer'
+  'cs!api/input'
 
   'cs!modules/default/system'
 
   'cs!modules/player/movement'
 ], ->
+  uuid = require 'uuid'
+
+  util = require 'util'
+
   Trigger = require 'api/trigger'
   Player = require 'api/player'
+  Timer = require 'api/timer'
+  InputApi = require 'api/input'
 
   # all modules loaded up front for now
   modules =
@@ -20,12 +32,15 @@ define [
     constructor: (@input, @sceneGraph, @network) ->
       @initialized = false
 
-      @trigger = new Trigger(@network)
-      @player = new Player(@sceneGraph)
+      @triggerApi = new Trigger(@network)
+      @playerApi = new Player(@sceneGraph)
+      @timerApi = new Timer()
+      @inputApi = new InputApi(@input)
 
     addClientModule: (module) ->
       if typeof module.onMouseDown is 'function'
-        @mouseDownListeners.push module.onMouseDown.bind(module)
+        @mouseDownListeners.push (coords) =>
+          @timerCheck module, module.onMouseDown.bind(module, coords)
 
     loop: (timeDelta) ->
       if @initialized
@@ -51,19 +66,40 @@ define [
       @mouseDownListeners = []
       @keyDownListeners = []
 
+      for key, val of @timerCallbacks
+        clearTimeout val
+      @timerCallbacks = {}
+
       @moduleList = []
       for key, Module of modules[type]
-        @moduleList.push new Module
-          trigger: @trigger
-          player: @player
+        scriptModule = new Module
+          trigger: @triggerApi
+          player: @playerApi
+          timer: @timerApi
+          util: util
+          input: @inputApi
+        scriptModule.id = uuid.v1()
+        @moduleList.push scriptModule
 
       for module in @moduleList
         @addClientModule(module)
 
+      undefined
+
     callMouseDownListeners: ->
       for listener in @mouseDownListeners
-        listener.call(
-          null,
+        listener
           x: @input.getMouseX()
           y: @input.getMouseY()
-        )
+
+    timerCheck: (module, callback) ->
+      @timerApi.delay = 0
+      callback()
+      if @timerApi.delay isnt 0
+        if typeof module.onTimer is 'function'
+          clearTimeout @timerCallbacks[module.id]
+          @timerCallbacks[module.id] = setTimeout(
+            @timerCheck.bind(this, module, module.onTimer.bind(module))
+            @timerApi.delay
+          )
+        @timerApi.delay = 0

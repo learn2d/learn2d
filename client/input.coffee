@@ -62,11 +62,15 @@ define [
                 delete @input[keyCode]
 
         bean.add document, 'mousedown', (e) =>
+          return unless e.button is 0
+
           mousePos = @_getPosition(e)
           @mouseX = mousePos.x
           @mouseY = mousePos.y
           @mouseDown = true
         bean.add document, 'mouseup', (e) =>
+          return unless e.button is 0
+
           @mouseDown = false
 
     isKeyDown: (keyCode) ->
