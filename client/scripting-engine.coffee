@@ -1,9 +1,9 @@
 define [
-  'cs!trigger'
+  'cs!api/trigger'
 
   'cs!modules/default/system'
 ], ->
-  Trigger = require 'trigger'
+  Trigger = require 'api/trigger'
   modules = {}
 
   modules.default =
