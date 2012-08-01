@@ -15,6 +15,6 @@ class Player
     x: @x
     y: @y
     direction: util.DIR_UP
-    aniName: 'explosion'
+    aniName: 'explosion-status'
 
 module.exports = Player

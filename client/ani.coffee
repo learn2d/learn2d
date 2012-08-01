@@ -7,8 +7,8 @@ define [
     constructor: ({@entity, @x, @y}) ->
       @lastFrame = 0
       @nextTime = new Date().getTime()
-      @delay = 50
-      @files = ["fantasy/spells/explosion_fire.png"]
+      @delay = 20
+      @files = ["fantasy/spells/explosion_poison.png"]
 
     getDirection: ->
       @entity.getDirection()
