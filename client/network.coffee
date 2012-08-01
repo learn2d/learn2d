@@ -1,6 +1,7 @@
 define ->
   class Network
-    constructor: () ->
+    constructor: ->
+
     start: (@game) ->
       @socket = io.connect 'http://localhost:3001'
       @socket.on 'connect', (data) ->
@@ -20,3 +21,26 @@ define ->
       @socket.on eventName, callback
     emit: (eventName, params) ->
       @socket.emit eventName, params
+
+    beforeScripting: (player) ->
+      @playerCache =
+        x: player.getX()
+        y: player.getY()
+        direction: player.getDirection()
+        aniName: player.getAniName()
+
+    afterScripting: (player) ->
+      oldCache = @playerCache
+      @playerCache =
+        x: player.getX()
+        y: player.getY()
+        direction: player.getDirection()
+        aniName: player.getAniName()
+
+      for key, val of @playerCache
+        if @playerCache[key] isnt oldCache[key]
+          console.log 'need to update:'
+          console.log key
+          console.log val
+
+      undefined
