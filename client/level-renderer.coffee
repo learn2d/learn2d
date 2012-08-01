@@ -2,17 +2,18 @@ define ->
   class LevelRenderer
     constructor: (@loader, @context) ->
 
-    render: (level) ->
+    render: (level, layername) ->
       return if level is null
 
       levelData = @loader.loadLevel "#{level.getName()}"
       return unless levelData
 
-      @drawLayers(levelData)
+      @drawLayers(levelData, layername)
 
-    drawLayers: (levelData) ->
+    drawLayers: (levelData, layername) ->
       for layer in levelData.layers
-        @drawLayer levelData, layer
+        if layer.name == layername
+          @drawLayer levelData, layer
 
     drawLayer: (levelData, layer) ->
       # only draw tile layers

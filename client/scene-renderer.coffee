@@ -12,7 +12,7 @@ define [
 
     render: (timeDelta) ->
       level = @sceneGraph.getLevel()
-      @levelRenderer.render(level)
+      @levelRenderer.render(level, "background")
 
       entities = @sceneGraph.getEntities()
       for entity in entities
@@ -24,3 +24,6 @@ define [
           anis = getAnis()
           for ani in anis
             @aniRenderer.render(ani)
+            
+      @levelRenderer.render(level, "foreground")
+
