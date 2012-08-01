@@ -15,6 +15,11 @@ define ->
         @drawLayer levelData, layer
 
     drawLayer: (levelData, layer) ->
+      # only draw tile layers
+      return unless layer.type is 'tilelayer'
+      # dont draw collision layers
+      return if layer.name in ['collisions', 'collision']
+
       horizontalTiles = levelData.width
       verticalTiles = levelData.height
       tileWidth = levelData.tilewidth

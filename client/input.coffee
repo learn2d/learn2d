@@ -37,6 +37,8 @@ define [
         chatbox = document.getElementById 'chatbox'
 
         bean.add document, 'keydown', (e) =>
+            if e.which is 189
+              debugger
             if e.which is 9
                 e.preventDefault()
 
@@ -68,7 +70,7 @@ define [
           @mouseDown = false
 
     isKeyDown: (keyCode) ->
-        @input[keyCode]
+      @input[keyCode]
 
     isMouseDown: () ->
       @mouseDown
