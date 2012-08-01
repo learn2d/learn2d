@@ -1,6 +1,6 @@
 define ->
   class Movement
-    constructor: ({@player, @timer, @util, @input}) ->
+    constructor: ({@player, @timer, @util, @input, @level}) ->
 
     onCreated: ->
       @timer.delay = 50
@@ -20,5 +20,7 @@ define ->
           @player.y += (@util.vectorY direction) * 8
           @player.direction = direction
           @player.setAni 'female-walk'
+
+          console.log @level.name
 
       @timer.delay = 50

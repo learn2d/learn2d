@@ -8,6 +8,7 @@ define [
   'cs!api/player'
   'cs!api/timer'
   'cs!api/input'
+  'cs!api/level'
 
   'cs!modules/default/system'
 
@@ -24,6 +25,7 @@ define [
   Player = require 'api/player'
   TimerApi = require 'api/timer'
   InputApi = require 'api/input'
+  LevelApi = require 'api/level'
 
   # all modules loaded up front for now
   modules =
@@ -45,6 +47,7 @@ define [
       @playerApi = new Player(@sceneGraph)
       @timerApi = new TimerApi(@timer)
       @inputApi = new InputApi(@input)
+      @levelApi = new LevelApi(@sceneGraph)
 
     addClientModule: (module) ->
       if typeof module.onCreated is 'function'
@@ -103,8 +106,9 @@ define [
           trigger: @triggerApi
           player: @playerApi
           timer: @timerApi
-          util: util
           input: @inputApi
+          level: @levelApi
+          util: util
         scriptModule.id = uuid.v1()
         @moduleList.push scriptModule
 
