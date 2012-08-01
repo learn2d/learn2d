@@ -22,7 +22,7 @@ define [
       @components = {}
       @components.ani = new AniComponent(this)
 
-      console.log @toString()
+      console.log "#{@toString()} created"
 
     getX: ->
       @x
@@ -33,8 +33,14 @@ define [
     getAniName: ->
       @aniName
 
+    setAniName: (aniName) ->
+      @aniName = aniName
+
     getDirection: ->
       @direction
+
+    setDirection: (direction) ->
+      @direction = direction
 
     isVisible: ->
       @visible

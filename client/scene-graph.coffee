@@ -26,7 +26,6 @@ define [
 
     addEntity: (entity) ->
       @entities.push entity
-      console.log 'entity added'
 
     addEntityFromData: (entityData) ->
       entity = new Entity
