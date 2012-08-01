@@ -26,9 +26,15 @@ define [
 
     getX: ->
       @x
+    
+    setX: (x) ->
+      @x = x
 
     getY: ->
       @y
+
+    setY: (y) ->
+      @y = y
 
     getAniName: ->
       @aniName

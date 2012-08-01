@@ -14,13 +14,13 @@ define ->
         configurable: false
 
     getX: ->
-      @sceneGraph.getPlayer().x
+      @sceneGraph.getPlayer().getX()
 
     setX: (x) ->
-      @sceneGraph.getPlayer().x = x
+      @sceneGraph.getPlayer().setX(x)
 
     getY: ->
-      @sceneGraph.getPlayer().y
+      @sceneGraph.getPlayer().getY()
 
     setY: (y) ->
-      @sceneGraph.getPlayer().y = y
+      @sceneGraph.getPlayer().setY(y)
