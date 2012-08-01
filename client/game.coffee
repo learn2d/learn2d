@@ -14,6 +14,7 @@ define [
   class Game
     constructor: (@loader, @context, @network) ->
       @fw = flywheel @loop, @context.canvas
+      @timeAccumulator = 0
 
       @sceneGraph = new SceneGraph()
       @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
@@ -26,14 +27,20 @@ define [
       @fw.start()
 
     loop: (timeDelta) =>
-      # Handle input here
-      @input.loop()
+      @timeAccumulator += timeDelta
+      targetDelta = 50
 
-      # Run scripts here
-      @scriptingEngine.loop(timeDelta)
+      while @timeAccumulator >= targetDelta
+        @timeAccumulator -= targetDelta
 
-      # Render scene
-      @sceneRenderer.render(timeDelta)
+        # Handle input here
+        @input.loop()
+
+        # Run scripts here
+        @scriptingEngine.loop(targetDelta)
+
+        # Render scene
+        @sceneRenderer.render(targetDelta)
 
     reset: (data) ->
       @sceneGraph.reset(data)
