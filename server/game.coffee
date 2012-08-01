@@ -10,7 +10,7 @@ class Game
   addClient: (socket) ->
     @clients[socket.id] = socket
     socket.emit 'reset',
-      level: 'test'
+      level: @sceneGraph.getLevel().getName()
       entities: @sceneGraph.getEntities()
     socket.on 'trigger', ({target, action, params}) =>
       entity = new Player

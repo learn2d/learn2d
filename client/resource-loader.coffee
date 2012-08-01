@@ -29,7 +29,7 @@ define ->
       if cachedLevel is null
         null
       else if not cachedLevel?
-        require ["json!#{levelName}.level.json"], (levelData) =>
+        require ["json!levels/#{levelName}.level.json"], (levelData) =>
           @levelCache[levelName] = levelData
 
         # avoid adding this image to cache again
