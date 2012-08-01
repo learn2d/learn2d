@@ -34,8 +34,6 @@ define [
         @mouseDown = false
 
     reset: (type) ->
-      @mouseDown = false
-      @keyDown = {}
       @mouseDownListeners = []
       @keyDownListeners = []
 
