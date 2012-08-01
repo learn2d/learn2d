@@ -32,8 +32,6 @@ define [
       # Run scripts here
       @scriptingEngine.loop(timeDelta)
 
-      # TODO: handle network updates here
-
       # Render scene
       @sceneRenderer.render(timeDelta)
 

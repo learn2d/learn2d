@@ -1,6 +1,7 @@
 define ->
   class System
     constructor: ({@trigger}) ->
+
     onMouseDown: (mouse) ->
       @trigger.send
         target: 'server/modules/system'

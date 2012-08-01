@@ -13,14 +13,32 @@ define ->
         enumerable: true
         configurable: false
 
+      Object.defineProperty this, 'direction',
+        get: @getDirection
+        set: @setDirection
+        enumerable: true
+        configurable: false
+
     getX: ->
-      @sceneGraph.getPlayer().x
+      @sceneGraph.getPlayer().getX()
 
     setX: (x) ->
-      @sceneGraph.getPlayer().x = x
+      @sceneGraph.getPlayer().setX(x)
 
     getY: ->
-      @sceneGraph.getPlayer().y
+      @sceneGraph.getPlayer().getY()
 
     setY: (y) ->
-      @sceneGraph.getPlayer().y = y
+      @sceneGraph.getPlayer().setY(y)
+
+    getDirection: ->
+      @sceneGraph.getPlayer().getDirection()
+
+    setDirection: (direction) ->
+      @sceneGraph.getPlayer().setDirection(direction)
+
+    getAni: ->
+      @sceneGraph.getPlayer().getAniName()
+
+    setAni: (aniName) ->
+      @sceneGraph.getPlayer().setAniName(aniName)

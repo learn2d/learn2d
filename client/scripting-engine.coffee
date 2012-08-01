@@ -18,6 +18,8 @@ define [
 
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
+      @initialized = false
+
       @trigger = new Trigger(@network)
       @player = new Player(@sceneGraph)
 
@@ -26,6 +28,12 @@ define [
         @mouseDownListeners.push module.onMouseDown.bind(module)
 
     loop: (timeDelta) ->
+      if @initialized
+        # Pre-scripting networking
+        player = @sceneGraph.getPlayer()
+
+        @network.beforeScripting player
+
       if @input.isMouseDown()
         if not @mouseDown
           @mouseDown = true
@@ -33,9 +41,13 @@ define [
       else
         @mouseDown = false
 
+      if @initialized
+        # Post-scripting networking
+        @network.afterScripting player
+
     reset: (type) ->
-      @mouseDown = false
-      @keyDown = {}
+      @initialized = true
+
       @mouseDownListeners = []
       @keyDownListeners = []
 
