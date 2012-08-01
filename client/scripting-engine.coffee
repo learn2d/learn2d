@@ -1,6 +1,7 @@
 define [
   'cs!api/trigger'
   'cs!api/player'
+  'cs!api/timer'
 
   'cs!modules/default/system'
 
@@ -8,6 +9,7 @@ define [
 ], ->
   Trigger = require 'api/trigger'
   Player = require 'api/player'
+  Timer = require 'api/timer'
 
   # all modules loaded up front for now
   modules =
@@ -20,12 +22,15 @@ define [
     constructor: (@input, @sceneGraph, @network) ->
       @initialized = false
 
-      @trigger = new Trigger(@network)
-      @player = new Player(@sceneGraph)
+      @triggerApi = new Trigger(@network)
+      @playerApi = new Player(@sceneGraph)
+      @timerApi = new Timer()
 
     addClientModule: (module) ->
       if typeof module.onMouseDown is 'function'
-        @mouseDownListeners.push module.onMouseDown.bind(module)
+        @mouseDownListeners.push (coords) =>
+          @timeoutCheck ->
+            module.onMouseDown.call(module, coords)
 
     loop: (timeDelta) ->
       if @initialized
@@ -54,16 +59,22 @@ define [
       @moduleList = []
       for key, Module of modules[type]
         @moduleList.push new Module
-          trigger: @trigger
-          player: @player
+          trigger: @triggerApi
+          player: @playerApi
+          timer: @timerApi
 
       for module in @moduleList
         @addClientModule(module)
 
     callMouseDownListeners: ->
       for listener in @mouseDownListeners
-        listener.call(
-          null,
+        listener
           x: @input.getMouseX()
           y: @input.getMouseY()
-        )
+
+    timeoutCheck: (callback) ->
+      @timerApi.set 0
+      callback()
+      if @timerApi.get isnt 0
+        console.log 'detected a change in timer'
+        @timerApi.set 0
