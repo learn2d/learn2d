@@ -1,6 +1,8 @@
 define [
   'uuid'
 
+  'cs!util'
+
   'cs!api/trigger'
   'cs!api/player'
   'cs!api/timer'
@@ -10,6 +12,8 @@ define [
   'cs!modules/player/movement'
 ], ->
   uuid = require 'uuid'
+
+  util = require 'util'
 
   Trigger = require 'api/trigger'
   Player = require 'api/player'
@@ -69,6 +73,7 @@ define [
           trigger: @triggerApi
           player: @playerApi
           timer: @timerApi
+          util: util
         scriptModule.id = uuid.v1()
         @moduleList.push scriptModule
 
