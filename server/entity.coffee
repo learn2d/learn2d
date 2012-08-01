@@ -2,7 +2,7 @@ uuid = require 'node-uuid'
 util = require './util'
 
 class Entity
-  constructor: ({@id, @level, @x, @y, @aniName, @direction, @visible, @type}) ->
+  constructor: ({@id, @x, @y, @aniName, @direction, @visible, @type}) ->
     @direction ?= util.DIR_UP
     @aniName ?= 'female-walk'
     @id ?= uuid.v1()
@@ -10,10 +10,27 @@ class Entity
 
   getX: ->
     @x
+
+  setX: (x) ->
+    @x
+
   getY: ->
     @y
-  getLevel: ->
-    @level
+
+  setY: (y) ->
+    @y = y
+
+  getAniName: ->
+    @aniName
+
+  setAniName: (aniName) ->
+    @aniName = aniName
+
+  getDirection: ->
+    @direction
+
+  setDirection: (direction) ->
+    @direction = direction
 
   toJSON: ->
     id: @id
