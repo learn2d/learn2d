@@ -8,9 +8,11 @@ define ->
     loadImage: (imageName) ->
       cachedImage = @imageCache[imageName]
 
-      if cachedImage is null
+      if cachedImage?
+        cachedImage
+      else if cachedImage is null
         null
-      else if not cachedImage?
+      else
         image = new Image()
         image.addEventListener 'load', =>
           @imageCache[imageName] = image
@@ -20,8 +22,6 @@ define ->
         @imageCache[imageName] = null
 
         null
-      else
-        cachedImage
 
     loadLevel: (levelName) ->
       cachedLevel = @levelCache[levelName]
