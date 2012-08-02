@@ -16,17 +16,14 @@ define [
       aniY = ani.getY()
 
       index = ani.getLastFrame()
-      time = new Date().getTime()
-      nextTime = ani.getNextTime()
-      
-      if time > nextTime
-        index++
-        ani.setNextTime()
-        if index < aniData.frames[direction][0].length
-          ani.setLastFrame(index)
-        else
-          index = 0
-          ani.setLastFrame(0)
+
+      index += 1
+
+      if index < aniData.frames[direction][0].length
+        ani.setLastFrame(index)
+      else
+        index = 0
+        ani.setLastFrame(index)
 
       for file, idx in ani.getFiles()
 

@@ -7,9 +7,7 @@ define [
     constructor: ({@entity, @x, @y}) ->
       @lastFrame = 0
       @nextTime = new Date().getTime()
-      @delay = 20
       @files = @entity.getTest()#["LM_Female/examples/royal_mage.png"]
-      console.log @entity.getTest()
 
     getDirection: ->
       @entity.getDirection()
@@ -23,9 +21,6 @@ define [
     getName: ->
       @entity.getAniName()
 
-    getDelay: ->
-      @delay
-
     getFiles: ->
       @files
 
@@ -33,8 +28,3 @@ define [
       @lastFrame
     setLastFrame: (frameNum) ->
       @lastFrame = frameNum
-
-    getNextTime: ->
-      @nextTime
-    setNextTime: () ->
-      @nextTime = new Date().getTime() + @delay
