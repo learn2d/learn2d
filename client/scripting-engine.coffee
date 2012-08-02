@@ -9,10 +9,12 @@ define [
   'cs!api/timer'
   'cs!api/input'
   'cs!api/level'
+  'cs!api/projectile'
 
   'cs!modules/default/system'
 
   'cs!modules/player/movement'
+  'cs!modules/player/fire-spell'
 
   #'cs!modules/sound/soundblaster'
 ], ->
@@ -26,6 +28,7 @@ define [
   TimerApi = require 'api/timer'
   InputApi = require 'api/input'
   LevelApi = require 'api/level'
+  ProjectileApi = require 'api/projectile'
 
   # all modules loaded up front for now
   modules =
@@ -33,6 +36,7 @@ define [
       System: require 'cs!modules/default/system'
     player:
       Movement: require 'cs!modules/player/movement'
+      FireSpell: require 'cs!modules/player/fire-spell'
     #sound:
       #SoundBlaster: require 'cs!modules/sound/soundblaster'
       #soundManager.sounds.aSound.play()
@@ -48,6 +52,7 @@ define [
       @timerApi = new TimerApi(@timer)
       @inputApi = new InputApi(@input)
       @levelApi = new LevelApi(@sceneGraph)
+      @projectileApi = new ProjectileApi(@sceneGraph)
 
     addClientModule: (module) ->
       if typeof module.onCreated is 'function'
@@ -108,6 +113,7 @@ define [
           timer: @timerApi
           input: @inputApi
           level: @levelApi
+          projectile: @projectileApi
           util: util
         scriptModule.id = uuid.v1()
         @moduleList.push scriptModule
