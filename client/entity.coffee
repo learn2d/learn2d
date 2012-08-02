@@ -18,11 +18,14 @@ define [
       @anis
 
   class Entity
-    constructor: ({@x, @y, @aniName, @direction, @id, @visible}) ->
+    constructor: ({@x, @y, @aniName, @direction, @id, @visible, @test}) ->
       @components = {}
       @components.ani = new AniComponent(this)
 
       console.log "#{@toString()} created"
+
+    getTest: ->
+      @test
 
     getX: ->
       @x
