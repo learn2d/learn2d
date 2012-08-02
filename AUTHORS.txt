@@ -5,6 +5,43 @@ This program was written by the following people:
  - Chris M. Welsh
  - Michael Kummer
 
+The following client libraries are distributed with this project:
+
+- bean.js
+  Jacob Thornton - MIT license
+  https://github.com/fat/bean
+- CoffeeScript
+  Jeremy Ashkenas - MIT license
+  http://coffeescript.org
+- cs
+  The Dojo Foundation - MIT or new BSD license
+  http://github.com/jrburke/require-cs
+- flywheel
+  Hugh FD Jackson - MIT license
+- RequireJS JSON plugin
+  Miller Medeiros - MIT or new BSD license
+- Lo-Dash
+  John-David Dalton - MIT license
+  http://lodash.com
+- RequireJS
+  The Dojo Foundation - MIT or new BSD license
+- socket.io
+  LearnBoost - MIT license
+- RequireJS text plugin
+  The Dojo Foundation - MIT or new BSD license
+- node-uuid
+  Robert Kieffer - MIT or GPL license
+  https://github.com/broofa/node-uuid
+
+The following server libraries are required to use the software:
+
+- Node.js
+- CoffeeScript
+- ejs
+- express
+- socket.io
+- node-uuid
+
 
 Asset attribution
 =================
