@@ -60,4 +60,4 @@ define [
           loader: @loader
           levelName: levelName
       else
-        @level = null
+        @level = null       
