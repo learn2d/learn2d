@@ -43,14 +43,14 @@ define [
 
         @context.drawImage(
           image,
-          srcX,
-          srcY,
-          spriteData.width,
-          spriteData.height,
-          aniX + 0 + @viewport.offsetX(),
-          aniY + 0 + @viewport.offsetY(),
-          spriteData.width,
-          spriteData.height
+          Math.floor(srcX)
+          Math.floor(srcY)
+          Math.floor(spriteData.width)
+          Math.floor(spriteData.height)
+          Math.floor(aniX + 0 + @viewport.offsetX())
+          Math.floor(aniY + 0 + @viewport.offsetY())
+          Math.floor(spriteData.width)
+          Math.floor(spriteData.height)
         )
 
       undefined
