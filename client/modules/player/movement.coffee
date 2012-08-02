@@ -11,7 +11,7 @@ define ->
 
       if aniName is 'female-slash'
         if not @swordDelayed
-          @timer.delay = 1000
+          @timer.delay = 200
           @swordDelayed = true
           return
         else
