@@ -6,4 +6,4 @@ define ->
       console.log keyCode
 
     onMouseDown: (mouse) ->
-      @projectile.testing()
+      @player.setAni 'female-slash'

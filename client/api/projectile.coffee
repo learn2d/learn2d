@@ -1,4 +1,4 @@
 define ->
   class Projectile
-    testing: ->
+    shoot: ->
       console.log 'hello'

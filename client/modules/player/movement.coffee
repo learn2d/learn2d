@@ -4,16 +4,21 @@ define ->
 
     onCreated: ->
       @timer.delay = 50
-
-    onMouseDown: (mouse) ->
-      @player.x = mouse.x
-      @player.y = mouse.y
-      @player.direction = @util.DIR_LEFT
-
-      @timer.delay = 50
+      @swordDelayed = false
 
     onTimer: ->
+      aniName = @player.getAni()
+
+      if aniName is 'female-slash'
+        if not @swordDelayed
+          @timer.delay = 1000
+          @swordDelayed = true
+          return
+        else
+          @swordDelayed = false
+
       aniName = 'female-idle'
+
       playerSpeed = 8
       slideDistance = 2
       playerX = @player.x
