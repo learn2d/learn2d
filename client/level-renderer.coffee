@@ -1,6 +1,6 @@
 define ->
   class LevelRenderer
-    constructor: (@loader, @context) ->
+    constructor: (@loader, @context, @viewport) ->
 
     render: (level, layername) ->
       return if level is null
@@ -39,11 +39,11 @@ define ->
         y = Math.floor(currentPos / verticalTiles)
 
         drawFunc(
-          tileWidth,
-          tileHeight,
-          x * tileWidth,
-          y * tileHeight,
-          tileWidth,
+          tileWidth
+          tileHeight
+          x * tileWidth + @viewport.offsetX()
+          y * tileHeight + @viewport.offsetY()
+          tileWidth
           tileHeight
         )
 
