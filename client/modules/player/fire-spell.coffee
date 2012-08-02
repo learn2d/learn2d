@@ -9,6 +9,6 @@ define ->
       @player.setAni 'female-slash'
 
     onTimer: () ->
-      if @input.isKeyDown(32)
+      if @input.isKeyDown(32) or @input.isKeyDown(68)
         @player.setAni 'female-slash'
       @timer.delay = 50
