@@ -35,6 +35,7 @@ define [
         direction: entityData.direction
         id: entityData.id
         visible: entityData.visible
+        test: entityData.test
       @addEntity entity
 
     getEntities: () ->
