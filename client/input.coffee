@@ -37,6 +37,7 @@ define [
         chatbox = document.getElementById 'chatbox'
 
         bean.add document, 'keydown', (e) =>
+            console.log e.which
             if e.which is 189
               debugger
             if e.which is 9
