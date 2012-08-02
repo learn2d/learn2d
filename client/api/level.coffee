@@ -8,3 +8,6 @@ define ->
 
     getName: ->
       @sceneGraph.getPlayerLevel().getName()
+
+    onWall: (x, y, width, height) ->
+      return false
