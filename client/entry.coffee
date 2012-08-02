@@ -27,12 +27,11 @@ define [
     else
       canvas.height = window.innerHeight
 
-  context = canvas.getContext("2d")
-
   resize()
   window.addEventListener 'resize', lodash.debounce(resize, 200)
 
   resourceLoader = new ResourceLoader()
+  context = canvas.getContext("2d")
   network = new Network()
   game = new Game(resourceLoader, context, network)
 

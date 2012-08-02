@@ -1,8 +1,8 @@
 define ->
   class LevelRenderer
-    constructor: (@loader, @context) ->
+    constructor: (@loader, @context, @viewport) ->
 
-    render: (@player, level, layername) ->
+    render: (level, layername) ->
       return if level is null
 
       levelData = level.getLevelData()
