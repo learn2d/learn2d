@@ -19,6 +19,18 @@ define ->
         enumerable: true
         configurable: false
 
+      Object.defineProperty this, 'width',
+        get: ->
+          24
+        enumerable: true
+        configurable: false
+
+      Object.defineProperty this, 'height',
+        get: ->
+          24
+        set: @setDirection
+        configurable: false
+
     getX: ->
       @sceneGraph.getPlayer().getX()
 
