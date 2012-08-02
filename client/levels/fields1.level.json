@@ -61,30 +61,6 @@
                  "y":7
                 }, 
                 {
-                 "height":28,
-                 "name":"Epitaph",
-                 "properties":
-                    {
-                     "text":"\"Here lies Balthazar, in the forge of the earth.\""
-                    },
-                 "type":"message",
-                 "width":52,
-                 "x":484,
-                 "y":547
-                }, 
-                {
-                 "height":167,
-                 "name":"To the Underworld",
-                 "properties":
-                    {
-                     "burn":"2"
-                    },
-                 "type":"damage",
-                 "width":198,
-                 "x":399,
-                 "y":331
-                }, 
-                {
                  "height":22,
                  "name":"To Fields4",
                  "properties":

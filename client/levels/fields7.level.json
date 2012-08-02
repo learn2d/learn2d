@@ -74,10 +74,10 @@
                 }, 
                 {
                  "height":167,
-                 "name":"To the Underworld",
+                 "name":"To the Underworld (Fields1)",
                  "properties":
                     {
-                     "warp":"underworld,500,500"
+                     "warp":"fields1,200,200"
                     },
                  "type":"teleport",
                  "width":198,
@@ -89,7 +89,7 @@
                  "name":"To Fields4",
                  "properties":
                     {
-                     "warp":"fields4,50,500"
+                     "warp":"fields4,500,950"
                     },
                  "type":"teleport",
                  "width":1035,

@@ -61,18 +61,6 @@
                  "y":2
                 }, 
                 {
-                 "height":1022,
-                 "name":"To Fields4",
-                 "properties":
-                    {
-                     "":""
-                    },
-                 "type":"",
-                 "width":14,
-                 "x":2,
-                 "y":2
-                }, 
-                {
                  "height":20,
                  "name":"To Fields7",
                  "properties":

@@ -49,18 +49,6 @@
          "name":"event",
          "objects":[
                 {
-                 "height":1017,
-                 "name":"To Fields8",
-                 "properties":
-                    {
-                     "warp":"fields7,950,500"
-                    },
-                 "type":"teleport",
-                 "width":17,
-                 "x":1003,
-                 "y":7
-                }, 
-                {
                  "height":17,
                  "name":"To Fields3",
                  "properties":
@@ -89,7 +77,7 @@
                  "name":"To Fields5",
                  "properties":
                     {
-                     "warp":"fields5,50,500"
+                     "warp":"fields5,950,500"
                     },
                  "type":"teleport",
                  "width":17,
@@ -101,7 +89,7 @@
                  "name":"To Fields9",
                  "properties":
                     {
-                     "warp":"fields9,50,500"
+                     "warp":"fields9,500,50"
                     },
                  "type":"teleport",
                  "width":1035,
