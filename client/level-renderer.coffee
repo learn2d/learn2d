@@ -39,11 +39,11 @@ define ->
         y = Math.floor(currentPos / verticalTiles)
 
         drawFunc(
-          tileWidth,
-          tileHeight,
-          x * tileWidth + @player.x,
-          y * tileHeight + @player.y,
-          tileWidth,
+          tileWidth
+          tileHeight
+          x * tileWidth
+          y * tileHeight
+          tileWidth
           tileHeight
         )
 

@@ -29,5 +29,5 @@ define [
           for ani in anis
             @aniRenderer.render(ani)
             
-      @levelRenderer.render(level, "foreground")
+      @levelRenderer.render(player, level, "foreground")
 
