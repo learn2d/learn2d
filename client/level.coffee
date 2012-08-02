@@ -8,3 +8,6 @@ define ->
 
     getLevelData: ->
       @loader.loadLevel @name
+
+    onWall: (x, y, width, height) ->
+      return false
