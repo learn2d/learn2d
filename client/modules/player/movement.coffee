@@ -50,8 +50,8 @@ define ->
 
       for w in [0..1]
         for i in [0...playerSpeed]
-          checkx = ((playerX+8+Math.abs(@util.vectorX(k)*16)-@util.vectorX((k+1)%2)*w*16)+@util.vectorX(k)*(16+i))+(if [0,2].indexOf(k) isnt -1 then 1 else 0)
-          checky = ((playerY+32-Math.abs(@util.vectorX(k)*16)-@util.vectorY((k+1)%2)*w*16)+@util.vectorY(k)*(16+i))+(if [1,3].indexOf(k) isnt -1 then 1 else 0)
+          checkx = ((playerX+5+Math.abs(@util.vectorX(k)*16)-@util.vectorX((k+1)%2)*w*16)+@util.vectorX(k)*(16+i))+(if [0,2].indexOf(k) isnt -1 then 1 else 0)
+          checky = ((playerY+18-Math.abs(@util.vectorX(k)*16)-@util.vectorY((k+1)%2)*w*16)+@util.vectorY(k)*(16+i))+(if [1,3].indexOf(k) isnt -1 then 1 else 0)
 
           check_blocked[w] = @level.onWall(checkx,checky,(if [0,2].indexOf(k) isnt -1 then 15 else 1),(if [1,3].indexOf(k) isnt -1 then 15 else 1))
 

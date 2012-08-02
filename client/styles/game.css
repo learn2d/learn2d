@@ -503,28 +503,32 @@ table {
 
 
 html {
-  height: 100%;
+	height: 100%;
 }
 body {
-  height: 100%;
-    background: white;
+	height: 100%;
+    background: black;
 }
 #container {
     box-sizing: border-box;
     position: relative;
-    background: white;
+    background: black;
     display: block;
+    height: 100%;
+    width: 100%;
+    max-width: 1024px;
+    max-height: 1024px;
     padding-bottom: 28px;
     margin: 0 auto;
 }
 #canvas {
-    background: white;
+    background: black;
     display: block;
+    height: 100%;
+    width: 100%;
     max-width: 1024px;
     max-height: 1024px;
     margin: 0 auto;
-    width: 1024px;
-    height: 1024px;
 }
 
 #chatbox-container {
