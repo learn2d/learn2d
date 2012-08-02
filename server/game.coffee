@@ -50,6 +50,9 @@ class Game
       player.setDirection(direction) if direction?
       player.setAniName(aniName) if aniName?
 
+      if aniName is 'female-slash'
+        console.log 'we got slashing'
+
       # broadcast updates to clients in level
       socket.broadcast.emit 'playerUpdates',
         id: id
