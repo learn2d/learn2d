@@ -20,7 +20,7 @@ class Entity
     @x
 
   setX: (x) ->
-    @x
+    @x = x
 
   getY: ->
     @y
