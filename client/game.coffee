@@ -45,6 +45,35 @@ define [
         # Render scene
         @sceneRenderer.render(targetDelta)
 
+        # Check for warps
+        @handleWarps()
+
+    handleWarps: ->
+      levelData = @sceneGraph.getPlayerLevel()?.getLevelData()
+      return unless levelData
+
+      player = @sceneGraph.getPlayer()
+      playerX = player.getX()
+      playerY = player.getY()
+
+      for warp in levelData.warpData
+        unless warp.x <= playerX + 32
+          continue
+        unless warp.x + warp.width >= playerX
+          continue
+        unless warp.y <= playerY + 32
+          continue
+        unless warp.y + warp.height >= playerY
+          continue
+
+        player.setX(warp.destX)
+        player.setY(warp.destY)
+
+        @sceneGraph.reset
+          levelName: warp.destLevelName
+          entities: [player]
+        @sceneGraph.setPlayerById player.id
+
     reset: (data) ->
       @sceneGraph.reset
         levelName: data.level

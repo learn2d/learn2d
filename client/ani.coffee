@@ -22,9 +22,6 @@ define [
     getName: ->
       @entity.getAniName()
 
-    getDelay: ->
-      @delay
-
     getFiles: ->
       @files
 
@@ -32,8 +29,3 @@ define [
       @lastFrame
     setLastFrame: (frameNum) ->
       @lastFrame = frameNum
-
-    getNextTime: ->
-      @nextTime
-    setNextTime: () ->
-      @nextTime = new Date().getTime() + @delay

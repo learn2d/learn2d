@@ -28,12 +28,7 @@ define [
       for entity in entities
         continue unless entity.isVisible()
 
-        getAnis = entity.components.ani?.getAnis
-
-        if typeof getAnis is 'function'
-          anis = getAnis()
-          for ani in anis
-            @aniRenderer.render(ani)
+        @aniRenderer.render(entity.ani)
             
       @levelRenderer.render(level, "foreground")
 

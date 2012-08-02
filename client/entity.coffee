@@ -8,10 +8,6 @@ define [
   class AniComponent
     constructor: (@entity) ->
       @anis = [
-        new Ani
-          entity: @entity
-          x: -8
-          y: -32
       ]
 
     getAnis: =>
@@ -19,8 +15,10 @@ define [
 
   class Entity
     constructor: ({@x, @y, @aniName, @direction, @id, @visible, @test}) ->
-      @components = {}
-      @components.ani = new AniComponent(this)
+      @ani = new Ani
+        entity: this
+        x: -8
+        y: -32
 
       console.log "#{@toString()} created"
 

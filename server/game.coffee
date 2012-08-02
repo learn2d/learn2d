@@ -40,7 +40,9 @@ class Game
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id
       player = @sceneGraph.getEntityById id
-      console.log "Update attempted on invalid entity ID: #{id}" unless player
+      unless player
+        console.log "Update attempted on invalid entity ID: #{id}"
+        return
 
       # update all attributes
       player.setX(x) if x?

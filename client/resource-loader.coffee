@@ -8,9 +8,11 @@ define ->
     loadImage: (imageName) ->
       cachedImage = @imageCache[imageName]
 
-      if cachedImage is null
+      if cachedImage?
+        cachedImage
+      else if cachedImage is null
         null
-      else if not cachedImage?
+      else
         image = new Image()
         image.addEventListener 'load', =>
           @imageCache[imageName] = image
@@ -20,8 +22,6 @@ define ->
         @imageCache[imageName] = null
 
         null
-      else
-        cachedImage
 
     loadLevel: (levelName) ->
       cachedLevel = @levelCache[levelName]
@@ -31,6 +31,7 @@ define ->
       else if not cachedLevel?
         require ["json!levels/#{levelName}.level.json"], (levelData) =>
           levelData.collisionData = @_buildCollisions(levelData)
+          levelData.warpData = @_buildWarps(levelData)
           @levelCache[levelName] = levelData
 
         # avoid adding this image to cache again
@@ -52,6 +53,26 @@ define ->
               collisionMap[tileIndex] = false
 
       return collisionMap
+
+    _buildWarps: (levelData) ->
+      warps = []
+
+      for layer in levelData.layers
+        if layer.name in ['event']
+          for objectData in layer.objects
+            warpData = objectData.properties?.warp
+            if warpData
+              warpParts = warpData.split ','
+              warps.push
+                x: objectData.x
+                y: objectData.y
+                width: objectData.width
+                height: objectData.height
+                destLevelName: warpParts[0]
+                destX: Number(warpParts[1])
+                destY: Number(warpParts[2])
+
+      return warps
 
     loadAni: (aniName) ->
       cachedAni = @aniCache[aniName]

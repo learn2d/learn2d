@@ -37,12 +37,12 @@ define ->
         y = Math.floor(currentPos / verticalTiles)
 
         drawFunc(
-          tileWidth
-          tileHeight
-          x * tileWidth + @viewport.offsetX()
-          y * tileHeight + @viewport.offsetY()
-          tileWidth
-          tileHeight
+          Math.floor(tileWidth)
+          Math.floor(tileHeight)
+          Math.floor(x * tileWidth + @viewport.offsetX())
+          Math.floor(y * tileHeight + @viewport.offsetY())
+          Math.floor(tileWidth)
+          Math.floor(tileHeight)
         )
 
       undefined
@@ -67,10 +67,10 @@ define ->
       srcY = Math.floor((index - firstgid) / imageTilesX) * tileHeight
 
       drawFunc = @context.drawImage.bind(
-        @context,
-        image,
-        srcX,
-        srcY
+        @context
+        image
+        Math.floor(srcX)
+        Math.floor(srcY)
       )
 
       return drawFunc

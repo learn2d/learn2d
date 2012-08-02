@@ -16,17 +16,14 @@ define [
       aniY = ani.getY()
 
       index = ani.getLastFrame()
-      time = new Date().getTime()
-      nextTime = ani.getNextTime()
-      
-      if time > nextTime
-        index++
-        ani.setNextTime()
-        if index < aniData.frames[direction][0].length
-          ani.setLastFrame(index)
-        else
-          index = 0
-          ani.setLastFrame(0)
+
+      index += 1
+
+      if index < aniData.frames[direction][0].length
+        ani.setLastFrame(index)
+      else
+        index = 0
+        ani.setLastFrame(index)
 
       for file, idx in ani.getFiles()
 
@@ -43,14 +40,14 @@ define [
 
         @context.drawImage(
           image,
-          srcX,
-          srcY,
-          spriteData.width,
-          spriteData.height,
-          aniX + 0 + @viewport.offsetX(),
-          aniY + 0 + @viewport.offsetY(),
-          spriteData.width,
-          spriteData.height
+          Math.floor(srcX)
+          Math.floor(srcY)
+          Math.floor(spriteData.width)
+          Math.floor(spriteData.height)
+          Math.floor(aniX + 0 + @viewport.offsetX())
+          Math.floor(aniY + 0 + @viewport.offsetY())
+          Math.floor(spriteData.width)
+          Math.floor(spriteData.height)
         )
 
       undefined
