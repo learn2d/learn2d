@@ -8,8 +8,7 @@ define [
       @lastFrame = 0
       @nextTime = new Date().getTime()
       @delay = 20
-      @files = @entity.getTest()#["LM_Female/examples/royal_mage.png"]
-      console.log @entity.getTest()
+      @files = @entity.getTest()
 
     getDirection: ->
       @entity.getDirection()
