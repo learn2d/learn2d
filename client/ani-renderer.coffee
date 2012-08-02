@@ -4,7 +4,7 @@ define [
   util = require 'util'
 
   class AniRenderer
-    constructor: (@loader, @context) ->
+    constructor: (@loader, @context, @viewport) ->
 
     render: (ani) ->
       aniData = @loader.loadAni(ani.getName())
@@ -47,8 +47,8 @@ define [
           srcY,
           spriteData.width,
           spriteData.height,
-          aniX + 0,
-          aniY + 0,
+          aniX + 0 + @viewport.offsetX(),
+          aniY + 0 + @viewport.offsetY(),
           spriteData.width,
           spriteData.height
         )

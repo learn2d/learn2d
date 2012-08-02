@@ -9,16 +9,17 @@ define [
 
   class SceneRenderer
     constructor: (@sceneGraph, @loader, @context) ->
+      @viewport = new Viewport(@context)
       @levelRenderer = new LevelRenderer(@loader, @context, @viewport)
-      @aniRenderer = new AniRenderer(@loader, @context)
-      @viewport = new Viewport()
+      @aniRenderer = new AniRenderer(@loader, @context, @viewport)
 
     render: (timeDelta) ->
-      player = @sceneGraph.getPlayer()
-      @viewport.setPlayer player
-
       level = @sceneGraph.getPlayerLevel()
       return unless level.getLevelData()
+
+      player = @sceneGraph.getPlayer()
+      @viewport.setPlayer player
+      @viewport.setLevel level
 
       @levelRenderer.render(level, "background")
 

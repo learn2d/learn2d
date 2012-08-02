@@ -41,8 +41,8 @@ define ->
         drawFunc(
           tileWidth
           tileHeight
-          x * tileWidth
-          y * tileHeight
+          x * tileWidth + @viewport.offsetX()
+          y * tileHeight + @viewport.offsetY()
           tileWidth
           tileHeight
         )
