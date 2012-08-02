@@ -20,6 +20,8 @@ define ->
       return unless layer.type is 'tilelayer'
       # dont draw collision layers
       return if layer.name in ['collisions', 'collision']
+      # disable for now
+      #return if false and layer.name in ['collisions', 'collision']
 
       horizontalTiles = levelData.width
       verticalTiles = levelData.height

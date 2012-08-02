@@ -19,9 +19,12 @@ define [
       @viewport.setPlayer player
       @viewport.setLevel level
 
+      @levelRenderer.render(level, "collisions")
       @levelRenderer.render(level, "background")
 
-      entities = @sceneGraph.getEntities()
+      entities = @sceneGraph.getEntities().sort (a, b) ->
+        a.y - b.y
+      
       for entity in entities
         continue unless entity.isVisible()
 

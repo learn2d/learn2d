@@ -11,7 +11,7 @@ class SceneGraph
 
   getEntities: ->
     @entities
-
+      
   getEntityById: (id) ->
     for entity in @entities
       if entity.id is id
