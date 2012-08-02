@@ -2,7 +2,7 @@ define ->
   class LevelRenderer
     constructor: (@loader, @context) ->
 
-    render: (level, layername) ->
+    render: (@player, level, layername) ->
       return if level is null
 
       levelData = level.getLevelData()
@@ -41,8 +41,8 @@ define ->
         drawFunc(
           tileWidth,
           tileHeight,
-          x * tileWidth,
-          y * tileHeight,
+          x * tileWidth + @player.x,
+          y * tileHeight + @player.y,
           tileWidth,
           tileHeight
         )
