@@ -14,15 +14,12 @@ define ->
       for layer in levelData.layers
         if layer.name == layername
           @drawLayer levelData, layer
-        if layer.name == 'collisions'
-          @drawLayer levelData, layer
 
     drawLayer: (levelData, layer) ->
       # only draw tile layers
       return unless layer.type is 'tilelayer'
       # dont draw collision layers
-      # disable for now
-      return if false and layer.name in ['collisions', 'collision']
+      return if layer.name in ['collisions', 'collision']
 
       horizontalTiles = levelData.width
       verticalTiles = levelData.height
