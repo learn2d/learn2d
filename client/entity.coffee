@@ -10,8 +10,8 @@ define [
       @anis = [
         new Ani
           entity: @entity
-          x: -32
-          y: -60
+          x: -8
+          y: 0
       ]
 
     getAnis: =>
