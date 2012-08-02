@@ -14,8 +14,6 @@ class Entity
       variety = Math.floor(Math.random()*spritesheet.length)
       @test.push spritesheet[variety]
 
-
-
   getX: ->
     @x
 
