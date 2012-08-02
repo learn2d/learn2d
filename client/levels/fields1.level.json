@@ -53,7 +53,7 @@
                  "name":"To Minitown",
                  "properties":
                     {
-                     "warp":"field2,50,500"
+                     "warp":"fields2,50,500"
                     },
                  "type":"teleport",
                  "width":17,

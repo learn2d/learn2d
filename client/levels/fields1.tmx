@@ -32,7 +32,7 @@
  <objectgroup name="event" width="32" height="32">
   <object name="To Minitown" type="teleport" x="1003" y="7" width="17" height="1017">
    <properties>
-    <property name="warp" value="field2,50,500"/>
+    <property name="warp" value="fields2,50,500"/>
    </properties>
   </object>
   <object name="Epitaph" type="message" x="484" y="547" width="52" height="28">
