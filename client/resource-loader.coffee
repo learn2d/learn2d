@@ -30,6 +30,7 @@ define ->
         null
       else if not cachedLevel?
         require ["json!levels/#{levelName}.level.json"], (levelData) =>
+          levelData.collisionData = @_buildCollisions(levelData)
           @levelCache[levelName] = levelData
 
         # avoid adding this image to cache again
@@ -39,6 +40,18 @@ define ->
       else
         cachedLevel
 
+    _buildCollisions: (levelData) ->
+      collisionMap = []
+
+      for layer in levelData.layers
+        if layer.name in ['collision', 'collisions']
+          for tileData, tileIndex in layer.data
+            if tileData isnt 0
+              collisionMap[tileIndex] = true
+            else if collisionMap[tileIndex] is undefined
+              collisionMap[tileIndex] = false
+
+      return collisionMap
 
     loadAni: (aniName) ->
       cachedAni = @aniCache[aniName]

@@ -10,7 +10,4 @@ define ->
       @sceneGraph.getPlayerLevel().getName()
 
     onWall: (x, y, width, height) ->
-      levelData = @sceneGraph.getPlayerLevel().getLevelData()
-      return false unless levelData
-
       @sceneGraph.getPlayerLevel().onWall(x, y, width, height)
