@@ -1,20 +1,18 @@
 define [
   'cs!level-renderer'
   'cs!ani-renderer'
-  'cs!viewport'
 ], ->
   LevelRenderer = require 'level-renderer'
   AniRenderer = require 'ani-renderer'
-  Viewport = require 'viewport'
 
   class SceneRenderer
-    constructor: (@sceneGraph, @loader, @context) ->
-      @viewport = new Viewport(@context)
+    constructor: (@sceneGraph, @loader, @context, @viewport) ->
       @levelRenderer = new LevelRenderer(@loader, @context, @viewport)
       @aniRenderer = new AniRenderer(@loader, @context, @viewport)
 
     render: (timeDelta) ->
       level = @sceneGraph.getPlayerLevel()
+      return if level is null
       return unless level.getLevelData()
 
       player = @sceneGraph.getPlayer()

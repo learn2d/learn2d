@@ -4,12 +4,14 @@ define [
   'cs!scene-renderer'
   'cs!input'
   'cs!scripting-engine'
+  'cs!viewport'
 ], ->
   flywheel = require 'flywheel'
   SceneGraph = require 'scene-graph'
   SceneRenderer = require 'scene-renderer'
   ScriptingEngine = require 'scripting-engine'
   Input = require 'input'
+  Viewport = require 'viewport'
 
   class Game
     constructor: (@loader, @context, @network) ->
@@ -17,9 +19,10 @@ define [
       @timeAccumulator = 0
 
       @sceneGraph = new SceneGraph(@loader)
-      @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context)
+      @viewport = new Viewport(@context)
+      @sceneRenderer = new SceneRenderer(@sceneGraph, @loader, @context, @viewport)
 
-      @input = new Input(@context)
+      @input = new Input(@context, @viewport)
       @scriptingEngine = new ScriptingEngine(@input, @sceneGraph, @network)
 
     start: ->

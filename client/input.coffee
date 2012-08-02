@@ -4,7 +4,7 @@ define [
   bean = require 'bean'
 
   class Input
-    constructor: (@context) ->
+    constructor: (@context, @viewport) ->
         @input = {}
         @chatHasFocus = false
         @playerChat = undefined
@@ -89,12 +89,28 @@ define [
       @mouseY
 
     # get mouse position
-    _getPosition: (event) ->
-      x = event.clientX + document.body.scrollLeft +
-           document.documentElement.scrollLeft
-      y = event.pageY
+    _getPosition: (e) ->
+      findPos = (obj) ->
+        curleft = 0
+        curtop = 0
 
-      x -= @context.canvas.offsetLeft
+        if obj.offsetParent
+          loop
+            curleft += obj.offsetLeft
+            curtop += obj.offsetTop
+
+            break unless obj = obj.offsetParent
+
+          return {
+            x: curleft
+            y: curtop
+          }
+
+        undefined
+
+      pos = findPos(@context.canvas)
+      x = e.pageX - pos.x - @viewport.offsetX()
+      y = e.pageY - pos.y - @viewport.offsetY()
 
       x: x
       y: y
