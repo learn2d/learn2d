@@ -89,7 +89,7 @@
                  "name":"To Fields2",
                  "properties":
                     {
-                     "warp":"fields2,50,500"
+                     "warp":"fields2,950,500"
                     },
                  "type":"teleport",
                  "width":17,
