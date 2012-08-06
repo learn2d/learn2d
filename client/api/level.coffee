@@ -11,3 +11,6 @@ define ->
 
     onWall: (x, y, width, height) ->
       @sceneGraph.getPlayerLevel().onWall(x, y, width, height)
+      
+    collisionCheck: (x,y) ->
+      @sceneGraph.getPlayerLevel().collisionCheck(x,y)

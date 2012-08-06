@@ -33,3 +33,30 @@ define ->
           return true if levelData.collisionData[tileIndex]
 
       false
+      
+    collisionCheck: (x, y) ->
+      levelData = @getLevelData()
+      return false unless levelData
+      
+      if x > 0 -16 and x < 1024 - 24 and y > 0 and y < 1024
+
+        tileWidth = levelData.tilewidth
+        tileHeight = levelData.tileheight
+        
+        xpos = Math.floor((x - 8)/tileWidth) + 1
+        yposB = Math.floor((y - 2)/tileHeight) + 1
+        yposT = Math.floor((y - 19)/tileHeight) + 1
+
+        Colls = levelData.collisionData
+
+        if Colls[xpos + yposB*32]? or Colls[xpos + yposT*32]?
+          tileTop = Colls[xpos + yposT*32]
+          tileBot = Colls[xpos + yposB*32]
+        
+        if tileBot or tileTop
+          return true
+        else
+          return false
+        
+      else
+        return true
