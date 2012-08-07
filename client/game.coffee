@@ -55,6 +55,7 @@ define [
       player = @sceneGraph.getPlayer()
       playerX = player.getX()
       playerY = player.getY()
+      keepVal = 500
 
       for warp in levelData.warpData
         unless warp.x <= playerX + 32
@@ -66,8 +67,16 @@ define [
         unless warp.y + warp.height >= playerY
           continue
 
-        player.setX(warp.destX)
-        player.setY(warp.destY)
+        if warp.destX == keepVal
+          player.setX(playerX)
+        else
+          player.setX(warp.destX)
+        if warp.destY == keepVal
+          player.setY(playerY)
+        else
+          player.setY(warp.destY)
+
+#        player.setLevelName(warp.destLevelName)
 
         @sceneGraph.reset
           levelName: warp.destLevelName
