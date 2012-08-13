@@ -1,7 +1,5 @@
 define ->
-  class Movement
-    constructor: ({@player, @timer, @util, @input, @level}) ->
-
+  class Movement extends PlayerModule
     onCreated: ->
       @timer.delay = 50
       @swordDelayed = false

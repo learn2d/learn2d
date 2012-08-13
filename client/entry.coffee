@@ -1,3 +1,7 @@
+# define this as a global so we can have prettier module scripts
+class window.PlayerModule
+  constructor: ({@player, @timer, @util, @input, @level, @trigger}) ->
+
 define [
   'cs!game'
   'cs!resource-loader'

@@ -1,7 +1,5 @@
 define ->
-  class System
-    constructor: ({@trigger}) ->
-
+  class System extends PlayerModule
     onMouseDown: (mouse) ->
       @trigger.send
         target: 'server/modules/system'
