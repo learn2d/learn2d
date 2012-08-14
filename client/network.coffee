@@ -17,6 +17,9 @@ define ->
       @socket.on 'entityAdded', (data) =>
         @game.sceneGraph.addEntityFromData data
 
+      @socket.on 'updateLevelInfo', (data) =>
+        console.log data.lvl
+
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id
         unless entity

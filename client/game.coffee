@@ -76,13 +76,13 @@ define [
         else
           player.setY(warp.destY)
 
-#        player.setLevelName(warp.destLevelName)
-
         @sceneGraph.reset
           levelName: warp.destLevelName
           entities: [player]
         @sceneGraph.setPlayerById player.id
 
+        @network.sendLevelName {id: player.id, lvl: warp.destLevelName}
+        
     reset: (data) ->
       @sceneGraph.reset
         levelName: data.level

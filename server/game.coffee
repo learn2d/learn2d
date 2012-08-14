@@ -37,6 +37,14 @@ class Game
       @grantControl socket, entity
       @resetClient socket
 
+    socket.on 'updateLevelInfo', (data) =>
+      # find player by id
+      console.log data.lvl
+      console.log data.lvl
+      console.log data.id
+      console.log data.lvl
+      socket.broadcast.emit 'updateLevelInfo', (data)
+
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id
       player = @sceneGraph.getEntityById id
@@ -68,7 +76,7 @@ class Game
 
     socket.emit 'reset',
       level: level.getName()
-      entities: @sceneGraph.getEntities()
+      entities: @sceneGraph.getEntities @sceneGraph.entities
 
     console.log "informing client control of entity: #{entity.id}"
     socket.emit 'controlEntity',
