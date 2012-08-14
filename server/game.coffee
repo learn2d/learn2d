@@ -52,22 +52,23 @@ class Game
       console.log data.levelinfo.newlevel
       console.log data.ent.id
       console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      @sceneGraph.removeEntity data #BROKEN
       
-      #perhaps 
-        #@grantControl socket, entity
-        #@resetClient socket
-
-#      @sceneGraph.removeEntity data #BROKEN
+      console.log @sceneGraph.entities
+      console.log socket.id
+      console.log socket.id
+      console.log data.ent.id
+      console.log data.ent
+      console.log "Orange you glad I didn't say banana again?"
+      #@grantControl socket, data.ent
+      socket.emit 'reset',
+        level: data.levelinfo.newlevel
+        entities: @sceneGraph.getEntities data.levelinfo.newlevel
+      socket.emit 'controlEntity',
+        id: data.ent.id
+        type: data.ent.type
 
       socket.broadcast.emit 'updateLevelInfo', (data)
-
-    socket.on 'getEntitiesByLevel', (level) =>
-      entities = @sceneGraph.getEntities level
-      console.log level
-      console.log level
-      console.log level
-      console.log entities
-#      socket.emit 'entities', (entities)
 
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id
@@ -114,6 +115,10 @@ class Game
       socket.emit 'entityAdded', (data)
 
   grantControl: (socket, entity) ->
+    console.log socket.id
+    console.log socket.id
+    console.log entity
+    console.log "TOASTED BANANAS!"
     @control[socket.id] = entity
 
 

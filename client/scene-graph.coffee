@@ -61,6 +61,7 @@ define [
       undefined
 
     reset: ({levelName, entities}) ->
+      console.log "INITIATING RESET!!!!!!!!!!!"
       @player = undefined
       @entities = []
       if typeof entities is 'object'

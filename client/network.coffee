@@ -15,7 +15,6 @@ define ->
         @game.reset(data)
 
       @socket.on 'entityAdded', (data) =>
-#        if dat == @game.sceneGraph.getPlayerLevel().name
         @game.sceneGraph.addEntityFromData data.ent
 
       @socket.on 'updateLevelInfo', (data) =>
@@ -26,9 +25,6 @@ define ->
         if data.levelinfo.newlevel == levelName
           @game.sceneGraph.addEntityFromData data.ent
           console.log "Entity added? " + @game.sceneGraph.entities.length
-
-      @socket.on 'getEntitiesByLevel', (data) =>
-        console.log data
 
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id
@@ -52,9 +48,6 @@ define ->
 
     playerWarped: (data) ->
       @socket.emit "updateLevelInfo", data
-
-    getEntitiesByLevel: (level) ->
-      @socket.emit "getEntitiesByLevel", level
 
     beforeScripting: (player) ->
       @playerCache =
