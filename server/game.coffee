@@ -61,14 +61,17 @@ class Game
       console.log data.ent
       console.log "Orange you glad I didn't say banana again?"
       #@grantControl socket, data.ent
-      socket.emit 'reset',
-        level: data.levelinfo.newlevel
-        entities: @sceneGraph.getEntities data.levelinfo.newlevel
-      socket.emit 'controlEntity',
-        id: data.ent.id
-        type: data.ent.type
 
       socket.broadcast.emit 'updateLevelInfo', (data)
+
+      info =
+          levelName: data.levelinfo.newlevel
+          entities: @sceneGraph.getEntities data.levelinfo.newlevel
+          
+      socket.emit 'reset', (info)
+#      socket.emit 'setPlayerById', (data.ent.id)
+      console.log "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+
 
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id

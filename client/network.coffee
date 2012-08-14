@@ -12,10 +12,17 @@ define ->
         console.log 'socket disconnected'
 
       @socket.on 'reset', (data) =>
+        console.log data
         @game.reset(data)
 
       @socket.on 'entityAdded', (data) =>
         @game.sceneGraph.addEntityFromData data.ent
+
+      @socket.on 'setPlayerById', (id) =>
+        console.log "RESETTING PLAYER BY ID" 
+        console.log id
+        console.log @game.sceneGraph.entities
+        @game.sceneGraph.setPlayerById id
 
       @socket.on 'updateLevelInfo', (data) =>
         levelName = @game.sceneGraph.getPlayerLevel().name
