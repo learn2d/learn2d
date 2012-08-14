@@ -55,19 +55,19 @@ class Game
         id: data.ent.id
       data.ent = entity
       
+      @sceneGraph.removeEntity data
       @sceneGraph.addEntity data
       console.log data.levelinfo.oldlevel
       console.log data.levelinfo.newlevel
       console.log data.ent.id
       console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      @sceneGraph.removeEntity data
       
       console.log @sceneGraph.entities
       console.log socket.id
       console.log socket.id
       console.log data.ent.id
       console.log data.ent
-      console.log "Orange you glad I didn't say banana again?"
+      console.log "Testing Player updates"
 
       socket.broadcast.emit 'updateLevelInfo', (data)
 

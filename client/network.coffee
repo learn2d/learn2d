@@ -27,12 +27,24 @@ define ->
 
       @socket.on 'updateLevelInfo', (data) =>
         levelName = @game.sceneGraph.getPlayerLevel().name
+        console.log levelName
+        console.log data.levelinfo.oldlevel 
+        console.log data.levelinfo.newlevel 
         console.log "UpdatingLevelInformation... Set us up the bomb!"
         if data.levelinfo.oldlevel == levelName
+          console.log "Updating to remove"
           @game.sceneGraph.removeEntity data.ent.id
+          return undefined
         if data.levelinfo.newlevel == levelName
+          console.log "Updating to add"
           @game.sceneGraph.addEntityFromData data.ent
           console.log "Entity added? " + @game.sceneGraph.entities.length
+        else
+          @game.sceneGraph.removeEntity data.ent.id
+          @game.sceneGraph.removeEntity data.ent.id
+         
+        console.log "End up warp"
+        undefined
 
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id

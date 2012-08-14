@@ -28,11 +28,24 @@ define [
       @level
 
     addEntity: (entity) ->
+      console.log "Adding Entity inspite of best intentions"
       @entities.push entity
 
     removeEntity: (id) ->
       index = @getEntityIndex id
+      console.log "Removing Entity!"
+      console.log "Removing Entity!"
+      console.log "Removing Entity!"
+      console.log "Removing Entity!"
+      console.log index
+      console.log @entities.length
       @entities.splice(index,1)
+      console.log @entities.length
+      console.log "Entity Removed!"
+      console.log "Entity Removed!"
+      console.log "Entity Removed!"
+      console.log "Entity Removed!"
+      console.log "Entity Removed!"
       console.log "Entity Removed! " + @entities.length
       undefined
 
@@ -70,10 +83,10 @@ define [
       if typeof entities is 'object'
         for entityData in entities
           @addEntityFromData entityData
-      console.log "in reset mode"
+      console.log "in scenegraph reset mode"
       console.log @entities
       console.log levelName
-      console.log "/in reset mode"
+      console.log "/end reset mode"
       if levelName
         @level = new Level
           loader: @loader

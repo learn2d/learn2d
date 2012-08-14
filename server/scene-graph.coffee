@@ -17,7 +17,18 @@ class SceneGraph
     entity = data.ent
     levelName = data.levelinfo.oldlevel
     index = @getEntityIndex entity.id, levelName
+    console.log "Removing Entity!"
+    console.log "Removing Entity!"
+    console.log "Removing Entity!"
+    console.log "Removing Entity!"
+    console.log "Removing Entity!"
+    console.log @entities[levelName].length
     @entities[levelName].splice(index,1)
+    console.log @entities[levelName].length
+    console.log "Entity Removed!"
+    console.log "Entity Removed!"
+    console.log "Entity Removed!"
+    console.log "Entity Removed!"
     console.log "Entity Removed!"
     undefined
 
