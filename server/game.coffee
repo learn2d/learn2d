@@ -47,12 +47,20 @@ class Game
       @resetClient socket
 
     socket.on 'updateLevelInfo', (data) =>
+      entity = new Entity
+        test: data.ent.test
+        x: data.ent.x
+        y: data.ent.y
+        type: 'player'
+        id: data.ent.id
+      data.ent = entity
+      
       @sceneGraph.addEntity data
       console.log data.levelinfo.oldlevel
       console.log data.levelinfo.newlevel
       console.log data.ent.id
       console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      @sceneGraph.removeEntity data #BROKEN
+      @sceneGraph.removeEntity data
       
       console.log @sceneGraph.entities
       console.log socket.id
@@ -60,22 +68,24 @@ class Game
       console.log data.ent.id
       console.log data.ent
       console.log "Orange you glad I didn't say banana again?"
-      #@grantControl socket, data.ent
 
       socket.broadcast.emit 'updateLevelInfo', (data)
 
       info =
-          levelName: data.levelinfo.newlevel
+          level: data.levelinfo.newlevel
           entities: @sceneGraph.getEntities data.levelinfo.newlevel
           
       socket.emit 'reset', (info)
-#      socket.emit 'setPlayerById', (data.ent.id)
+      socket.emit 'setPlayerById', (data.ent.id)
+
       console.log "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
 
 
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id
       player = @sceneGraph.getEntityById id
+      console.log player.id
+      console.log "Testing playerUpdates"
       unless player
         console.log "Update attempted on invalid entity ID: #{id}"
         return

@@ -29,7 +29,13 @@ class SceneGraph
 
   getEntities: (levelName) ->
     @entities[levelName]
-    
+
+  getEntityByLevelName: (data) ->
+    for entity in @entities[data.levelName]
+      if data.id == entity.id
+        return true
+    undefined      
+
   getEntityById: (id) ->
     for key of @entities
       if @entities[key]? and @entities[key].length?

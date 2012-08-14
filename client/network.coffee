@@ -21,6 +21,7 @@ define ->
       @socket.on 'setPlayerById', (id) =>
         console.log "RESETTING PLAYER BY ID" 
         console.log id
+        console.log "Entities:"
         console.log @game.sceneGraph.entities
         @game.sceneGraph.setPlayerById id
 
@@ -78,6 +79,8 @@ define ->
         if @playerCache[key] isnt oldCache[key]
           updatesNeeded = true
           updates[key] = val
+
+      updates.levelName = @game.sceneGraph.getPlayerLevel().name
 
       if updatesNeeded
         updates.id = player.id

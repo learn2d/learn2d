@@ -17,8 +17,11 @@ define [
       @player
 
     setPlayerById: (id) ->
+      console.log "SETTING PLAYER BY ID"
       @player = @getEntityById id
-
+      console.log "PLAYER"
+      console.log @player
+      console.log @level
       throw new Error "Could not set player to #{id}" unless @player
 
     getPlayerLevel: () ->
@@ -67,7 +70,10 @@ define [
       if typeof entities is 'object'
         for entityData in entities
           @addEntityFromData entityData
+      console.log "in reset mode"
       console.log @entities
+      console.log levelName
+      console.log "/in reset mode"
       if levelName
         @level = new Level
           loader: @loader
