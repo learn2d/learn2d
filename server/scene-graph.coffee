@@ -5,19 +5,29 @@ class SceneGraph
     @entities = {}
     @level = new Level('default')
 
-  addEntity: (entity) ->
-    if @level?
-      levelName = @level.getName()
-      if not @entities.hasOwnProperty levelName
-        @entities[levelName] = []
-      @entities[levelName].push entity
-      @game.entityAdded(entity)
+  addEntity: (data) ->
+    entity = data.ent
+    levelName = data.levelinfo.newlevel
+    if not @entities.hasOwnProperty levelName
+      @entities[levelName] = []
+    @entities[levelName].push entity
+    @game.entityAdded data
+
+  removeEntity: (data) ->
+    entity = data.ent
+    levelName = data.levelinfo.oldlevel
+    index = @getEntityIndex entity.id, levelName
+    @entities[levelName].splice(index,1)
+    console.log "Entity Removed!"
+    undefined
+
+  getEntityIndex: (id, levelName) ->
+    for checkid, i in @entities[levelName]
+      if id == @entities[levelName][i].id
+        return i
+    undefined
 
   getEntities: (levelName) ->
-    console.log "Bubbly toast"
-    console.log "Bubbly toast"
-    console.log levelName = @level.getName()
-    console.log @entities["default"].length
     @entities[levelName]
     
   getEntityById: (id) ->

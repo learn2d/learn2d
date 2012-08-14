@@ -51,6 +51,7 @@ define [
     handleWarps: ->
       levelData = @sceneGraph.getPlayerLevel()?.getLevelData()
       return unless levelData
+      oldmap = @sceneGraph.getPlayerLevel().name
 
       player = @sceneGraph.getPlayer()
       playerX = player.getX()
@@ -75,13 +76,31 @@ define [
           player.setY(playerY)
         else
           player.setY(warp.destY)
+        
+        newmap = warp.destLevelName
+        entity = @sceneGraph.getEntityById player.id
 
+        data =
+          ent:
+            id: entity.id
+            x: entity.x
+            y: entity.y
+            direction: entity.direction
+            aniName: entity.aniName
+            visible: entity.visible
+            test: entity.test
+          levelinfo:
+            oldlevel: oldmap, newlevel: newmap
+
+        @network.playerWarped data
+#        @network.getEntitiesByLevel newmap
+#        entityList.push entity
+        
         @sceneGraph.reset
-          levelName: warp.destLevelName
+          levelName: newmap
           entities: [player]
         @sceneGraph.setPlayerById player.id
 
-        @network.sendLevelName {id: player.id, lvl: warp.destLevelName}
         
     reset: (data) ->
       @sceneGraph.reset

@@ -14,7 +14,11 @@ class Game
       x: 300
       y: 300
       type: 'default'
-    @sceneGraph.addEntity @defaultEntity
+    data = 
+      ent: @defaultEntity
+      levelinfo:
+        newlevel: "default"
+    @sceneGraph.addEntity data
 
   addClient: (socket) ->
     # save socket variable
@@ -32,18 +36,38 @@ class Game
         x: params.x
         y: params.y
         type: 'player'
-      @sceneGraph.addEntity entity
+      data = 
+        ent: entity
+        levelinfo:
+          oldlevel: "default"
+          newlevel: "default"
+      @sceneGraph.addEntity data
 
       @grantControl socket, entity
       @resetClient socket
 
     socket.on 'updateLevelInfo', (data) =>
-      # find player by id
-      console.log data.lvl
-      console.log data.lvl
-      console.log data.id
-      console.log data.lvl
+      @sceneGraph.addEntity data
+      console.log data.levelinfo.oldlevel
+      console.log data.levelinfo.newlevel
+      console.log data.ent.id
+      console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      
+      #perhaps 
+        #@grantControl socket, entity
+        #@resetClient socket
+
+#      @sceneGraph.removeEntity data #BROKEN
+
       socket.broadcast.emit 'updateLevelInfo', (data)
+
+    socket.on 'getEntitiesByLevel', (level) =>
+      entities = @sceneGraph.getEntities level
+      console.log level
+      console.log level
+      console.log level
+      console.log entities
+#      socket.emit 'entities', (entities)
 
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id
@@ -76,18 +100,18 @@ class Game
 
     socket.emit 'reset',
       level: level.getName()
-      entities: @sceneGraph.getEntities @sceneGraph.entities
+      entities: @sceneGraph.getEntities level.getName()
 
     console.log "informing client control of entity: #{entity.id}"
     socket.emit 'controlEntity',
       id: entity.id
       type: entity.type
 
-  entityAdded: (entity) ->
+  entityAdded: (data) ->
     console.log 'entity added?'
     for own id, socket of @clients
-      console.log entity
-      socket.emit 'entityAdded', entity
+      console.log data.ent
+      socket.emit 'entityAdded', (data)
 
   grantControl: (socket, entity) ->
     @control[socket.id] = entity

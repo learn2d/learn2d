@@ -3,7 +3,7 @@ define ->
     constructor: ->
 
     start: (@game) ->
-      @socket = io.connect "http://#{location.hostname}:3001"
+      @socket = io.connect 'http://localhost:3001'
 
       @socket.on 'connect', (data) ->
         console.log 'socket connected'
@@ -15,10 +15,20 @@ define ->
         @game.reset(data)
 
       @socket.on 'entityAdded', (data) =>
-        @game.sceneGraph.addEntityFromData data
+#        if dat == @game.sceneGraph.getPlayerLevel().name
+        @game.sceneGraph.addEntityFromData data.ent
 
       @socket.on 'updateLevelInfo', (data) =>
-        console.log data.lvl
+        levelName = @game.sceneGraph.getPlayerLevel().name
+        console.log "UpdatingLevelInformation... Set us up the bomb!"
+        if data.levelinfo.oldlevel == levelName
+          @game.sceneGraph.removeEntity data.ent.id
+        if data.levelinfo.newlevel == levelName
+          @game.sceneGraph.addEntityFromData data.ent
+          console.log "Entity added? " + @game.sceneGraph.entities.length
+
+      @socket.on 'getEntitiesByLevel', (data) =>
+        console.log data
 
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id
@@ -39,6 +49,12 @@ define ->
       @socket.on eventName, callback
     emit: (eventName, params) ->
       @socket.emit eventName, params
+
+    playerWarped: (data) ->
+      @socket.emit "updateLevelInfo", data
+
+    getEntitiesByLevel: (level) ->
+      @socket.emit "getEntitiesByLevel", level
 
     beforeScripting: (player) ->
       @playerCache =

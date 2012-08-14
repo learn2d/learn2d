@@ -27,6 +27,18 @@ define [
     addEntity: (entity) ->
       @entities.push entity
 
+    removeEntity: (id) ->
+      index = @getEntityIndex id
+      @entities.splice(index,1)
+      console.log "Entity Removed! " + @entities.length
+      undefined
+
+    getEntityIndex: (id) ->
+      for checkid, i in @entities
+        if id == @entities[i].id
+          return i
+      undefined
+
     addEntityFromData: (entityData) ->
       entity = new Entity
         x: entityData.x
@@ -54,7 +66,7 @@ define [
       if typeof entities is 'object'
         for entityData in entities
           @addEntityFromData entityData
-
+      console.log @entities
       if levelName
         @level = new Level
           loader: @loader
