@@ -31,11 +31,11 @@ define ->
         levelName = @game.sceneGraph.getPlayerLevel().name
 
         console.log "UpdatingLevelInformation... Set us up the bomb!"
-        if data.levelinfo.oldlevel == levelName
-          @game.sceneGraph.removeEntity data.ent.id
-          return undefined
         if data.levelinfo.newlevel == levelName
           @game.sceneGraph.addEntityFromData data.ent
+          return undefined
+        if data.levelinfo.oldlevel == levelName
+          @game.sceneGraph.removeEntity data.ent.id
          
         undefined
 
