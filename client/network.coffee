@@ -26,30 +26,23 @@ define ->
         @game.sceneGraph.setPlayerById id
 
       @socket.on 'updateLevelInfo', (data) =>
+        console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
         levelName = @game.sceneGraph.getPlayerLevel().name
-        console.log levelName
-        console.log data.levelinfo.oldlevel 
-        console.log data.levelinfo.newlevel 
+
         console.log "UpdatingLevelInformation... Set us up the bomb!"
         if data.levelinfo.oldlevel == levelName
-          console.log "Updating to remove"
           @game.sceneGraph.removeEntity data.ent.id
           return undefined
         if data.levelinfo.newlevel == levelName
-          console.log "Updating to add"
           @game.sceneGraph.addEntityFromData data.ent
-          console.log "Entity added? " + @game.sceneGraph.entities.length
-        else
-          @game.sceneGraph.removeEntity data.ent.id
-          @game.sceneGraph.removeEntity data.ent.id
          
-        console.log "End up warp"
         undefined
 
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id
         unless entity
-          throw new Error "Server updated weird entity ID: #{data.id}"
+          throw new Error "User on Another Map: Server updated weird entity ID: #{data.id}"
 
         entity.setX(data.x) if data.x?
         entity.setY(data.y) if data.y?
@@ -91,8 +84,6 @@ define ->
         if @playerCache[key] isnt oldCache[key]
           updatesNeeded = true
           updates[key] = val
-
-      updates.levelName = @game.sceneGraph.getPlayerLevel().name
 
       if updatesNeeded
         updates.id = player.id

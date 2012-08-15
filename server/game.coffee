@@ -17,8 +17,10 @@ class Game
     data = 
       ent: @defaultEntity
       levelinfo:
+        oldlevel: null
         newlevel: "default"
     @sceneGraph.addEntity data
+    @entityAdded data
 
   addClient: (socket) ->
     # save socket variable
@@ -42,6 +44,7 @@ class Game
           oldlevel: "default"
           newlevel: "default"
       @sceneGraph.addEntity data
+      @entityAdded data
 
       @grantControl socket, entity
       @resetClient socket
@@ -53,23 +56,11 @@ class Game
         y: data.ent.y
         type: 'player'
         id: data.ent.id
-      data.ent = entity
-      
-      @sceneGraph.removeEntity data
-      @sceneGraph.addEntity data
-      console.log data.levelinfo.oldlevel
-      console.log data.levelinfo.newlevel
-      console.log data.ent.id
-      console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      
-      console.log @sceneGraph.entities
-      console.log socket.id
-      console.log socket.id
-      console.log data.ent.id
-      console.log data.ent
-      console.log "Testing Player updates"
+        direction: data.ent.direction
 
-      socket.broadcast.emit 'updateLevelInfo', (data)
+      @sceneGraph.removeEntity data
+      data.ent = entity
+      @sceneGraph.addEntity data
 
       info =
           level: data.levelinfo.newlevel
@@ -78,14 +69,13 @@ class Game
       socket.emit 'reset', (info)
       socket.emit 'setPlayerById', (data.ent.id)
 
-      console.log "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+      socket.broadcast.emit 'updateLevelInfo', (data)
 
 
     socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
       # find player by id
       player = @sceneGraph.getEntityById id
-      console.log player.id
-      console.log "Testing playerUpdates"
+      console.log "Testing playerUpdates : " + player.id
       unless player
         console.log "Update attempted on invalid entity ID: #{id}"
         return
@@ -124,14 +114,11 @@ class Game
   entityAdded: (data) ->
     console.log 'entity added?'
     for own id, socket of @clients
-      console.log data.ent
-      socket.emit 'entityAdded', (data)
+      socket.emit 'updateLevelInfo', (data)
 
   grantControl: (socket, entity) ->
     console.log socket.id
-    console.log socket.id
-    console.log entity
-    console.log "TOASTED BANANAS!"
+    console.log entity.id
     @control[socket.id] = entity
 
 

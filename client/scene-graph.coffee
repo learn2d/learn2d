@@ -35,17 +35,10 @@ define [
       index = @getEntityIndex id
       console.log "Removing Entity!"
       console.log "Removing Entity!"
-      console.log "Removing Entity!"
-      console.log "Removing Entity!"
       console.log index
       console.log @entities.length
       @entities.splice(index,1)
       console.log @entities.length
-      console.log "Entity Removed!"
-      console.log "Entity Removed!"
-      console.log "Entity Removed!"
-      console.log "Entity Removed!"
-      console.log "Entity Removed!"
       console.log "Entity Removed! " + @entities.length
       undefined
 
