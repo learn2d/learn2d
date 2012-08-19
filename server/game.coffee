@@ -51,7 +51,8 @@ class Game
 
     socket.on 'updateLevelInfo', (data) =>
       entity = new Entity
-        test: data.ent.test
+        SpriteList: data.ent.SpriteList
+        health: data.ent.health
         x: data.ent.x
         y: data.ent.y
         type: 'player'
@@ -72,7 +73,7 @@ class Game
       socket.broadcast.emit 'updateLevelInfo', (data)
 
 
-    socket.on 'playerUpdates', ({id, x, y, direction, aniName}) =>
+    socket.on 'playerUpdates', ({id, x, y, direction, aniName, health}) =>
       # find player by id
       player = @sceneGraph.getEntityById id
       console.log "Testing playerUpdates : " + player.id
@@ -85,6 +86,7 @@ class Game
       player.setY(y) if y?
       player.setDirection(direction) if direction?
       player.setAniName(aniName) if aniName?
+      player.setHealth(health) if health?
 
       if aniName is 'female-slash'
         console.log 'we got slashing'
@@ -96,6 +98,7 @@ class Game
         y: y
         direction: direction
         aniName: aniName
+        health: health
 
   resetClient: (socket) ->
     entity = @control[socket.id]

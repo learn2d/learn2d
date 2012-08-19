@@ -14,7 +14,7 @@ define [
       @anis
 
   class Entity
-    constructor: ({@x, @y, @aniName, @direction, @id, @visible, @test}) ->
+    constructor: ({@x, @y, @aniName, @direction, @id, @visible, @SpriteList, @health}) ->
       @ani = new Ani
         entity: this
         x: -8
@@ -22,8 +22,14 @@ define [
 
       console.log "#{@toString()} created"
 
-    getTest: ->
-      @test
+    getSpriteList: ->
+      @SpriteList
+
+    getHealth: ->
+      @health
+      
+    setHealth: (changeHealth)->
+      @health += changeHealth
 
     getX: ->
       @x

@@ -54,3 +54,9 @@ define ->
 
     setAni: (aniName) ->
       @sceneGraph.getPlayer().setAniName(aniName)
+      
+    getHealth: ->
+      @sceneGraph.getPlayer().getHealth()
+
+    setHealth: (deltaHealth) ->
+      @sceneGraph.getPlayer().setHealth(deltaHealth)

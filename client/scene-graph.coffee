@@ -45,7 +45,8 @@ define [
         direction: entityData.direction
         id: entityData.id
         visible: entityData.visible
-        test: entityData.test
+        SpriteList: entityData.SpriteList
+        health: entityData.health
       @addEntity entity
 
     getEntities: () ->

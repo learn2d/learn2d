@@ -41,6 +41,7 @@ define ->
         entity.setY(data.y) if data.y?
         entity.setDirection(data.direction) if data.direction?
         entity.setAniName(data.aniName) if data.aniName?
+        entity.setHealth(data.health - entity.getHealth()) if data.health?
 
       @socket.on 'controlEntity', (data) =>
         @game.sceneGraph.setPlayerById data.id
@@ -61,6 +62,7 @@ define ->
         y: player.getY()
         direction: player.getDirection()
         aniName: player.getAniName()
+        health: player.getHealth()
 
     afterScripting: (player) ->
       oldCache = @playerCache
@@ -69,6 +71,7 @@ define ->
         y: player.getY()
         direction: player.getDirection()
         aniName: player.getAniName()
+        health: player.getHealth()
 
       updates = {}
       updatesNeeded = false

@@ -6,7 +6,7 @@ define [
   class AniRenderer
     constructor: (@loader, @context, @viewport) ->
 
-    render: (ani) ->
+    render: (ani, health) ->
       aniData = @loader.loadAni(ani.getName())
       return unless aniData
 
@@ -25,7 +25,7 @@ define [
         index = 0
         ani.setLastFrame(index)
 
-      for file, idx in ani.getFiles()
+      for file, idx in ani.getSpriteList()
 
         frame = aniData.frames[direction][0][index]
         sprite = frame
@@ -56,12 +56,12 @@ define [
         image,
         0
         0
-        image.width
+        Math.floor((health/100)*image.width)
         image.height
         Math.floor(aniX + 0 + @viewport.offsetX())
         Math.floor(aniY + Math.floor(spriteData.height) + @viewport.offsetY())
-        Math.floor(spriteData.width)
+        Math.floor((health/100)*spriteData.width)
         10
-      )      
-
+      )
+#      console.log health
       undefined

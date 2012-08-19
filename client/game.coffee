@@ -88,7 +88,8 @@ define [
             direction: entity.direction
             aniName: entity.aniName
             visible: entity.visible
-            test: entity.test
+            SpriteList: entity.SpriteList
+            health: entity.health
           levelinfo:
             oldlevel: oldmap, newlevel: newmap
 

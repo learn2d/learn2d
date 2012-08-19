@@ -6,6 +6,7 @@ define ->
       @timer.delay = 50
 
     onMouseDown: (mouse) ->
+      @player.setHealth -5
       @player.setAni 'female-slash'
 
     onTimer: () ->

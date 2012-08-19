@@ -8,7 +8,8 @@ define [
       @lastFrame = 0
       @nextTime = new Date().getTime()
       @delay = 20
-      @files = @entity.getTest()
+      @SpriteList = @entity.getSpriteList()
+      @health = @entity.getHealth()
 
     getDirection: ->
       @entity.getDirection()
@@ -22,8 +23,11 @@ define [
     getName: ->
       @entity.getAniName()
 
-    getFiles: ->
-      @files
+    getHealth: ->
+      @health
+
+    getSpriteList: ->
+      @SpriteList
 
     getLastFrame: ->
       @lastFrame
