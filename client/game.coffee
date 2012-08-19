@@ -93,13 +93,6 @@ define [
             oldlevel: oldmap, newlevel: newmap
 
         @network.playerWarped data
-        console.log "Wanting to WARRRRRRRRRRRRRRRRP"
-        
-#        @sceneGraph.reset
-#          levelName: newmap
-#          entities: [player]
-#        @sceneGraph.setPlayerById player.id
-
         
     reset: (data) ->
       @sceneGraph.reset

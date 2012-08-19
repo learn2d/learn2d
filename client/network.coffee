@@ -12,25 +12,18 @@ define ->
         console.log 'socket disconnected'
 
       @socket.on 'reset', (data) =>
-        console.log data
         @game.reset(data)
 
       @socket.on 'entityAdded', (data) =>
         @game.sceneGraph.addEntityFromData data.ent
 
       @socket.on 'setPlayerById', (id) =>
-        console.log "RESETTING PLAYER BY ID" 
-        console.log id
-        console.log "Entities:"
-        console.log @game.sceneGraph.entities
         @game.sceneGraph.setPlayerById id
 
       @socket.on 'updateLevelInfo', (data) =>
-        console.log "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
         levelName = @game.sceneGraph.getPlayerLevel().name
 
-        console.log "UpdatingLevelInformation... Set us up the bomb!"
         if data.levelinfo.newlevel == levelName
           @game.sceneGraph.addEntityFromData data.ent
           return undefined
@@ -42,7 +35,7 @@ define ->
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id
         unless entity
-          throw new Error "User on Another Map: Server updated weird entity ID: #{data.id}"
+          throw new Error "Entity on Another Map: #{data.id}"
 
         entity.setX(data.x) if data.x?
         entity.setY(data.y) if data.y?
