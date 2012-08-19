@@ -50,4 +50,18 @@ define [
           Math.floor(spriteData.height)
         )
 
+      image = @loader.loadImage "fantasy/ui/bar_hp.png"
+      return unless image
+      @context.drawImage(
+        image,
+        0
+        0
+        image.width
+        image.height
+        Math.floor(aniX + 0 + @viewport.offsetX())
+        Math.floor(aniY + Math.floor(spriteData.height) + @viewport.offsetY())
+        Math.floor(spriteData.width)
+        10
+      )      
+
       undefined
