@@ -2,7 +2,7 @@ define ->
   class System extends PlayerModule
     onMouseDown: (mouse) ->
       @trigger.send
-        target: 'server/modules/system'
+        target: 'system'
         action: 'createPlayer'
         params:
           x: mouse.x

@@ -32,6 +32,16 @@ define ->
          
         undefined
 
+      @socket.on 'healthChanged', (data) =>
+        for ent in data
+          entity = @game.sceneGraph.getEntityById ent.id
+          unless entity
+            throw new Error "Entity on Another Map: #{data.id}"
+          console.log ent
+          entity.setHealth(ent.health) if ent.health?
+          console.log entity.getHealth()
+
+
       @socket.on 'playerUpdates', (data) =>
         entity = @game.sceneGraph.getEntityById data.id
         unless entity
@@ -75,7 +85,6 @@ define ->
 
       updates = {}
       updatesNeeded = false
-
       for key, val of @playerCache
         if @playerCache[key] isnt oldCache[key]
           updatesNeeded = true

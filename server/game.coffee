@@ -1,12 +1,18 @@
 Entity = require './entity'
 SceneGraph = require './scene-graph'
+System = require './modules/system'
+Slash = require './modules/slash'
 
 class Game
   constructor: ->
     @clients = {}
     @control = {}
 
+    @modules = {}
+
     @sceneGraph = new SceneGraph(this)
+    @modules.system = new System(this)
+    @modules.slash = new Slash(this)
     @defaultEntity = new Entity
       level: 'default'
       aniName: 'invisible'
@@ -34,20 +40,12 @@ class Game
 
     # events from client
     socket.on 'trigger', ({target, action, params}) =>
-      entity = new Entity
-        x: params.x
-        y: params.y
-        type: 'player'
       data = 
-        ent: entity
-        levelinfo:
-          oldlevel: "default"
-          newlevel: "default"
-      @sceneGraph.addEntity data
-      @entityAdded data
-
-      @grantControl socket, entity
-      @resetClient socket
+        params: params
+        id: @control[socket.id].id
+        socket: socket
+      
+      @modules[target][action] data
 
     socket.on 'updateLevelInfo', (data) =>
       entity = new Entity
@@ -76,7 +74,6 @@ class Game
     socket.on 'playerUpdates', ({id, x, y, direction, aniName, health}) =>
       # find player by id
       player = @sceneGraph.getEntityById id
-      console.log "Testing playerUpdates : " + player.id
       unless player
         console.log "Update attempted on invalid entity ID: #{id}"
         return
@@ -120,8 +117,6 @@ class Game
       socket.emit 'updateLevelInfo', (data)
 
   grantControl: (socket, entity) ->
-    console.log socket.id
-    console.log entity.id
     @control[socket.id] = entity
 
 

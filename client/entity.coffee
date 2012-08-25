@@ -28,8 +28,8 @@ define [
     getHealth: ->
       @health
       
-    setHealth: (changeHealth)->
-      @health += changeHealth
+    setHealth: (newHealth)->
+      @health = newHealth
 
     getX: ->
       @x

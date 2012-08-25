@@ -3,6 +3,7 @@ Level = require './level'
 class SceneGraph
   constructor: (@game) ->
     @entities = {}
+    @sockets = {}
     @level = new Level('default')
 
   addEntity: (data) ->
@@ -30,10 +31,19 @@ class SceneGraph
   getEntities: (levelName) ->
     @entities[levelName]
 
+  getLevelNameById: (id) ->
+    for key of @entities
+      if @entities[key]? and @entities[key].length?
+        for entity in @entities[key]
+          if (entity.id is id)
+            return key
+              
+    undefined    
+
   getEntityByLevelName: (data) ->
     for entity in @entities[data.levelName]
       if data.id == entity.id
-        return true
+        return entity
         
     undefined      
 
