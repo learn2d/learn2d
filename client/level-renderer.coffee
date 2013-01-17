@@ -1,26 +1,45 @@
-define ->
+define [
+  'cs!graphics/sprite-sheet'
+], ->
+  SpriteSheet = require 'graphics/sprite-sheet'
+
   class LevelRenderer
     constructor: (@loader, @context, @viewport) ->
 
-    render: (level, layername) ->
+    renderLayers: (level, layername) ->
+      # when does this happen?
       return if level is null
 
+      # check if exported Tiled map data is available
       levelData = level.getLevelData()
       return unless levelData
 
-      @drawLayers(levelData, layername)
+      # check if sprite sheet has been created
+      if level.spriteSheets[layername] is undefined
+        # need to initialize new sprite sheet
+        level.spriteSheets[layername] = new SpriteSheet()
 
-    drawLayers: (levelData, layername) ->
+        # configure sprite sheet for these layers
+        @configureLayers(levelData, layername, level.spriteSheets[layername])
+
+      # render these layers combined into sprite sheet
+      level.spriteSheets[layername].render(
+        @canvas
+        @viewport.offsetX()
+        @viewport.offsetY()
+      )
+
+    configureLayers: (levelData, layername, spriteSheet) ->
       for layer in levelData.layers
         if layer.name == layername
-          @drawLayer levelData, layer
+          @configureLayer levelData, layer, spriteSheet
 
-    drawLayer: (levelData, layer) ->
+    configureLayer: (levelData, layer, spriteSheet) ->
       # only draw tile layers
       return unless layer.type is 'tilelayer'
       # dont draw collision layers
       return if layer.name in ['collisions', 'collision']
-      # disable for now
+      # comment next line to hide collision map
       #return if false and layer.name in ['collisions', 'collision']
 
       horizontalTiles = levelData.width
@@ -31,21 +50,21 @@ define ->
       for index, currentPos in layer.data
         continue unless index != 0
 
-        drawFunc = @getDrawFuncForIndex levelData, index
-        continue unless drawFunc
+        [sprite, srcX, srcY] = @getDrawFuncForIndex levelData, index
 
         x = currentPos % horizontalTiles
         y = Math.floor(currentPos / verticalTiles)
 
-        #return # disable level drawing here
-
-        drawFunc(
-          Math.floor(tileWidth)
-          Math.floor(tileHeight)
-          Math.floor(x * tileWidth + @viewport.offsetX())
-          Math.floor(y * tileHeight + @viewport.offsetY())
-          Math.floor(tileWidth)
-          Math.floor(tileHeight)
+        spriteSheet.addSprite(
+          @viewport
+          @context
+          sprite
+          srcX
+          srcY
+          x
+          y
+          tileWidth
+          tileHeight
         )
 
       undefined
@@ -73,10 +92,4 @@ define ->
       srcX = ((index - firstgid) % imageTilesX) * tileWidth
       srcY = Math.floor((index - firstgid) / imageTilesX) * tileHeight
 
-      drawFunc = sprite.createRenderFunction(
-        @context
-        Math.floor(srcX)
-        Math.floor(srcY)
-      )
-
-      return drawFunc
+      return [sprite, srcX, srcY]

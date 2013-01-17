@@ -19,8 +19,8 @@ define [
       @viewport.setPlayer player
       @viewport.setLevel level
 
-      @levelRenderer.render(level, "collisions")
-      @levelRenderer.render(level, "background")
+      @levelRenderer.renderLayers(level, "collisions")
+      @levelRenderer.renderLayers(level, "background")
 
       entities = @sceneGraph.getEntities().sort (a, b) ->
         a.y - b.y
@@ -30,5 +30,5 @@ define [
         
         @aniRenderer.render(entity.ani, entity.getHealth())
             
-      @levelRenderer.render(level, "foreground")
+      @levelRenderer.renderLayers(level, "foreground")
 

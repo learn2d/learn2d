@@ -2,6 +2,7 @@ define ->
   class Level
     constructor: ({@loader, levelName}) ->
       @name = levelName
+      @spriteSheets = {}
 
     getName: ->
       return @name
