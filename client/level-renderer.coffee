@@ -24,7 +24,7 @@ define [
 
       # render these layers combined into sprite sheet
       level.spriteSheets[layername].render(
-        @canvas
+        @context
         @viewport.offsetX()
         @viewport.offsetY()
       )

@@ -32,6 +32,9 @@ define [
           Math.floor(spriteHeight)
         )
 
-    render: ->
+    render: (context, viewport) ->
       for spriteFunc in @spriteList
         spriteFunc()
+
+      
+      #console.log context.canvas.toDataURL()

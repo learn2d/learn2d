@@ -1,6 +1,4 @@
 define ->
-  noop = ->
-
   class Sprite
     constructor: (filename) ->
       # reset state
@@ -16,13 +14,18 @@ define ->
       @image = @_image
       @_image = undefined
 
+    # this is used by LevelRenderer
+    # it needs to be deleted completely
     createRenderFunction: (context, srcX, srcY) ->
-      if @image is undefined
-        return noop
+      return (args...) =>
+        if @image is undefined
+          return
 
-      return context.drawImage.bind(
-        context
-        @image
-        Math.floor(srcX)
-        Math.floor(srcY)
-      )
+        drawFunc = context.drawImage.bind(
+          context
+          @image
+          Math.floor(srcX)
+          Math.floor(srcY)
+        )
+
+        drawFunc.apply(context, args)
