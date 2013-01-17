@@ -26,20 +26,20 @@ define [
         ani.setLastFrame(index)
 
       for file, idx in ani.getSpriteList()
-
         frame = aniData.frames[direction][0][index]
         sprite = frame
         spriteId = sprite.id
         spriteData = aniData.sprites[spriteId]
 
-        image = @loader.loadImage file
-        return unless image
+        spriteResource = @loader.loadImage file
+        if spriteResource.image is undefined
+          continue
 
         srcX = sprite.x
         srcY = sprite.y
 
         @context.drawImage(
-          image,
+          spriteResource.image,
           Math.floor(srcX)
           Math.floor(srcY)
           Math.floor(spriteData.width)
@@ -50,18 +50,21 @@ define [
           Math.floor(spriteData.height)
         )
 
-      image = @loader.loadImage "fantasy/ui/bar_hp.png"
-      return unless image
+      # load health bar image
+      return
+      sprite = @loader.loadImage "fantasy/ui/bar_hp.png"
+      if sprite.image is undefined
+        return
+      # draw health bar
       @context.drawImage(
-        image,
+        sprite.image,
         0
         0
-        Math.floor((health/100)*image.width)
-        image.height
+        Math.floor((health/100)*sprite.image.width)
+        sprite.image.height
         Math.floor(aniX + 0 + @viewport.offsetX())
         Math.floor(aniY + Math.floor(spriteData.height) + @viewport.offsetY())
         Math.floor((health/100)*spriteData.width)
         10
       )
-#      console.log health
-      undefined
+      return

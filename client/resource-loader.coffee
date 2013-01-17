@@ -1,27 +1,25 @@
-define ->
+define [
+  'cs!graphics/sprite'
+], ->
+  Sprite = require 'graphics/sprite'
+
   class ResourceLoader
     constructor: ->
       @imageCache = {}
       @levelCache = {}
       @aniCache = {}
 
-    loadImage: (imageName) ->
-      cachedImage = @imageCache[imageName]
+    # Load image from the cache or create a new sprite for this location in the
+    # cache
+    # @param {String} filename the image filename
+    # @return {Sprite} the cached sprite
+    loadImage: (filename) ->
+      cachedImage = @imageCache[filename]
 
-      if cachedImage is null
-        return null
-      else if cachedImage isnt undefined
-        return cachedImage
-      else
-        image = new Image()
-        image.addEventListener 'load', =>
-          @imageCache[imageName] = image
-        image.src = "images/#{imageName}"
+      if cachedImage is undefined
+        @imageCache[filename] = cachedImage = new Sprite(filename)
 
-        # avoid adding this image to cache again
-        @imageCache[imageName] = null
-
-        return null
+      return cachedImage
 
     loadLevel: (levelName) ->
       cachedLevel = @levelCache[levelName]

@@ -37,6 +37,8 @@ define ->
         x = currentPos % horizontalTiles
         y = Math.floor(currentPos / verticalTiles)
 
+        #return # disable level drawing here
+
         drawFunc(
           Math.floor(tileWidth)
           Math.floor(tileHeight)
@@ -49,15 +51,19 @@ define ->
       undefined
 
     getDrawFuncForIndex: (levelData, index) ->
+      # loop over tilesets until we match firstgid with the current image index
+      # from the tile data
       for tileset, currentPos in levelData.tilesets
         if tileset.firstgid > index
           break
-
+      # decrease current tileset by one to account for passing the correct
+      # tileset
       tileset = levelData.tilesets[currentPos - 1]
+      # get image filename for index
       imageName = tileset.image
 
-      image = @loader.loadImage imageName
-      return null unless image
+      # load Sprite for this filename
+      sprite = @loader.loadImage imageName
 
       tileWidth = levelData.tilewidth
       tileHeight = levelData.tileheight
@@ -67,9 +73,8 @@ define ->
       srcX = ((index - firstgid) % imageTilesX) * tileWidth
       srcY = Math.floor((index - firstgid) / imageTilesX) * tileHeight
 
-      drawFunc = @context.drawImage.bind(
+      drawFunc = sprite.createRenderFunction(
         @context
-        image
         Math.floor(srcX)
         Math.floor(srcY)
       )
