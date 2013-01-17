@@ -25,8 +25,7 @@ define [
       # render these layers combined into sprite sheet
       level.spriteSheets[layername].render(
         @context
-        @viewport.offsetX()
-        @viewport.offsetY()
+        @viewport
       )
 
     configureLayers: (levelData, layername, spriteSheet) ->
@@ -61,8 +60,8 @@ define [
           sprite
           srcX
           srcY
-          x
-          y
+          x * tileWidth
+          y * tileHeight
           tileWidth
           tileHeight
         )
