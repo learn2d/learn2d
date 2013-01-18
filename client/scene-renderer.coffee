@@ -26,7 +26,7 @@ define [
         a.y - b.y
       
       for entity in entities
-        continue unless entity.isVisible()
+        continue unless entity.visible
         
         @aniRenderer.render(entity.ani, entity.getHealth())
             

@@ -4,7 +4,11 @@ define ->
 
     setPlayer: (@player) ->
 
-    setLevel: (@level) ->
+    setLevel: (level) ->
+      # cache relevant data from Level
+      levelData = level.getLevelData()
+      @levelWidth = levelData.width * levelData.tilewidth
+      @levelHeight = levelData.height * levelData.tileheight
 
     offsetX: ->
       viewportWidth = @_getViewportWidth()
@@ -14,11 +18,8 @@ define ->
       if offsetX > 0
         offsetX = 0
 
-      levelData = @level.getLevelData()
-      levelWidth = levelData.width * levelData.tilewidth
-
-      if offsetX + levelWidth < viewportWidth
-        offsetX = viewportWidth - levelWidth
+      if offsetX + @levelWidth < viewportWidth
+        offsetX = viewportWidth - @levelWidth
 
       return offsetX
 
@@ -30,11 +31,8 @@ define ->
       if offsetY > 0
         offsetY = 0
 
-      levelData = @level.getLevelData()
-      levelHeight = levelData.height * levelData.tileheight
-
-      if offsetY + levelHeight < viewportHeight
-        offsetY = viewportHeight - levelHeight
+      if offsetY + @levelHeight < viewportHeight
+        offsetY = viewportHeight - @levelHeight
 
       return offsetY
 
