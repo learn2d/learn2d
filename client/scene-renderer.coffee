@@ -28,7 +28,7 @@ define [
       for entity in entities
         continue unless entity.visible
         
-        @aniRenderer.render(entity.ani, entity.getHealth())
+        @aniRenderer.render(entity, entity.getHealth())
             
       @levelRenderer.renderLayers(level, "foreground")
 

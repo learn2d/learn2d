@@ -6,29 +6,31 @@ define [
   class AniRenderer
     constructor: (@loader, @context, @viewport) ->
 
-    render: (ani, health) ->
-      aniData = @loader.loadAni(ani.getName())
+    render: (entity, health) ->
+      # get animation data
+      aniData = @loader.loadAni entity.aniName
       return unless aniData
 
-      direction = ani.getDirection()
+      # get entity coordinates
+      aniX = entity.ani.getX()
+      aniY = entity.ani.getY()
+      direction = entity.direction
 
-      aniX = ani.getX()
-      aniY = ani.getY()
+      # get index for next frame
+      index = entity.ani.lastFrame + 1
 
-      index = ani.getLastFrame()
-
-      index += 1
-
-      if index < aniData.frames[direction][0].length
-        ani.setLastFrame(index)
-      else
+      # check if exceeded length of animation
+      if index >= aniData.frames[direction][0].length
         index = 0
-        ani.setLastFrame(index)
 
+      # save current frame to ani
+      entity.ani.lastFrame = index
+
+      # cache the viewport data
       viewportOffsetX = @viewport.offsetX()
       viewportOffsetY = @viewport.offsetY()
 
-      for file, idx in ani.getSpriteList()
+      for file, idx in entity.SpriteList
         frame = aniData.frames[direction][0][index]
         sprite = frame
         spriteId = sprite.id
