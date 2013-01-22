@@ -25,6 +25,9 @@ define [
         index = 0
         ani.setLastFrame(index)
 
+      viewportOffsetX = @viewport.offsetX()
+      viewportOffsetY = @viewport.offsetY()
+
       for file, idx in ani.getSpriteList()
         frame = aniData.frames[direction][0][index]
         sprite = frame
@@ -40,14 +43,14 @@ define [
 
         @context.drawImage(
           spriteResource.image,
-          Math.floor(srcX)
-          Math.floor(srcY)
-          Math.floor(spriteData.width)
-          Math.floor(spriteData.height)
-          Math.floor(aniX + 0 + @viewport.offsetX())
-          Math.floor(aniY + 0 + @viewport.offsetY())
-          Math.floor(spriteData.width)
-          Math.floor(spriteData.height)
+          ~~(srcX)
+          ~~(srcY)
+          ~~(spriteData.width)
+          ~~(spriteData.height)
+          ~~(aniX + viewportOffsetX)
+          ~~(aniY + viewportOffsetY)
+          ~~(spriteData.width)
+          ~~(spriteData.height)
         )
 
       # load health bar image

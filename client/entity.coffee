@@ -5,14 +5,6 @@ define [
   Ani = require 'ani'
   util = require 'util'
 
-  class AniComponent
-    constructor: (@entity) ->
-      @anis = [
-      ]
-
-    getAnis: =>
-      @anis
-
   class Entity
     constructor: ({@x, @y, @aniName, @direction, @id, @visible, @SpriteList, @health}) ->
       @ani = new Ani
