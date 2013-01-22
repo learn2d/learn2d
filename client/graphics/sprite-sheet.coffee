@@ -13,12 +13,12 @@ define [
       @height = 0
 
     addSprite: (context, sprite, srcX, srcY, x, y, spriteWidth, spriteHeight) ->
-      srcX = Math.floor(srcX)
-      srcY = Math.floor(srcY)
-      x = Math.floor(x)
-      y = Math.floor(y)
-      spriteWidth = Math.floor(spriteWidth)
-      spriteHeight = Math.floor(spriteHeight)
+      srcX = ~~(srcX)
+      srcY = ~~(srcY)
+      x = ~~(x)
+      y = ~~(y)
+      spriteWidth = ~~(spriteWidth)
+      spriteHeight = ~~(spriteHeight)
 
       if @width < x + spriteWidth
         @width = x + spriteWidth
@@ -37,7 +37,7 @@ define [
 
       return
 
-    render: (context, viewport) ->
+    render: (context, viewport, renderX = 0, renderY = 0) ->
       unless @width isnt 0 and @height isnt 0
         return
 
@@ -46,8 +46,6 @@ define [
       # have become dirty, i.e. a new tileset image has finished downloading
       timeBetweenRenders = 30000
       if Date.now() - @lastRenderTime > timeBetweenRenders
-        console.log @width
-        console.log @height
         @buffer.canvas.width = @width
         @buffer.canvas.height = @height
 
@@ -78,8 +76,8 @@ define [
         0
         @width
         @height
-        viewport.offsetX()
-        viewport.offsetY()
+        viewport.offsetX() + renderX
+        viewport.offsetY() + renderY
         @width
         @height
       )
