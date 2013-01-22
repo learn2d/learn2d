@@ -12,7 +12,7 @@ define [
       @width = 0
       @height = 0
 
-    addSprite: (viewport, context, sprite, srcX, srcY, x, y, spriteWidth, spriteHeight) ->
+    addSprite: (context, sprite, srcX, srcY, x, y, spriteWidth, spriteHeight) ->
       srcX = Math.floor(srcX)
       srcY = Math.floor(srcY)
       x = Math.floor(x)
