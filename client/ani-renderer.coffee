@@ -1,14 +1,17 @@
 define [
-  'cs!util'
+  'cs!util',
+  'cs!graphics/sprite-sheet'
 ], ->
   util = require 'util'
+  SpriteSheet = require 'graphics/sprite-sheet'
 
   class AniRenderer
     constructor: (@loader, @context, @viewport) ->
 
     render: (entity, health) ->
       # get animation data
-      aniData = @loader.loadAni entity.aniName
+      aniName = entity.aniName
+      aniData = @loader.loadAni aniName
       return unless aniData
 
       # get entity coordinates
@@ -30,30 +33,45 @@ define [
       viewportOffsetX = @viewport.offsetX()
       viewportOffsetY = @viewport.offsetY()
 
-      for file, idx in entity.SpriteList
-        frame = aniData.frames[direction][0][index]
-        sprite = frame
-        spriteId = sprite.id
-        spriteData = aniData.sprites[spriteId]
+      # get pre-rendered animation from cache
+      renderedFrame = entity.renderedFrames[aniName]?[direction]?[index]
 
-        spriteResource = @loader.loadImage file
-        if spriteResource.image is undefined
-          continue
+      if renderedFrame is undefined
+        entity.renderedFrames[aniName] ||= []
+        renderedAni = entity.renderedFrames[aniName]
+        renderedAni[direction] ||= []
+        renderedFrame = new SpriteSheet()
+        renderedAni[direction][index] = renderedFrame
 
-        srcX = sprite.x
-        srcY = sprite.y
+        for file, idx in entity.SpriteList
+          frame = aniData.frames[direction][0][index]
+          sprite = frame
+          spriteId = sprite.id
+          spriteData = aniData.sprites[spriteId]
 
-        @context.drawImage(
-          spriteResource.image,
-          ~~(srcX)
-          ~~(srcY)
-          ~~(spriteData.width)
-          ~~(spriteData.height)
-          ~~(aniX + viewportOffsetX)
-          ~~(aniY + viewportOffsetY)
-          ~~(spriteData.width)
-          ~~(spriteData.height)
-        )
+          spriteResource = @loader.loadImage file
+          if spriteResource.image is undefined
+            continue
+
+          srcX = sprite.x
+          srcY = sprite.y
+
+          renderedFrame.addSprite(
+            spriteResource
+            ~~(srcX)
+            ~~(srcY)
+            0
+            0
+            ~~(spriteData.width)
+            ~~(spriteData.height)
+          )
+
+      renderedFrame.render(
+        @context
+        @viewport
+        aniX
+        aniY
+      )
 
       # load health bar image
       return

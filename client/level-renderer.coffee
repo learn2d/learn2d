@@ -55,7 +55,6 @@ define [
         y = Math.floor(currentPos / verticalTiles)
 
         spriteSheet.addSprite(
-          @context
           sprite
           srcX
           srcY

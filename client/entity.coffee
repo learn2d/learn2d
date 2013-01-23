@@ -12,6 +12,8 @@ define [
         x: -8
         y: -32
 
+      @renderedFrames = {}
+
       console.log "#{@toString()} created"
 
     getSpriteList: ->

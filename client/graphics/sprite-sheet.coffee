@@ -12,7 +12,7 @@ define [
       @width = 0
       @height = 0
 
-    addSprite: (context, sprite, srcX, srcY, x, y, spriteWidth, spriteHeight) ->
+    addSprite: (sprite, srcX, srcY, x, y, spriteWidth, spriteHeight) ->
       srcX = ~~(srcX)
       srcY = ~~(srcY)
       x = ~~(x)
