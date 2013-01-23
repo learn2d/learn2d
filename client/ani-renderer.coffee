@@ -1,20 +1,18 @@
 define [
-  'cs!util',
   'cs!graphics/sprite-sheet'
 ], ->
-  util = require 'util'
   SpriteSheet = require 'graphics/sprite-sheet'
 
   class AniRenderer
     constructor: (@loader, @context, @viewport) ->
 
     render: (entity, health) ->
-      # get animation data
+      # load animation data from JSON file
       aniName = entity.aniName
       aniData = @loader.loadAni aniName
       return unless aniData
 
-      # get entity coordinates
+      # get entity coordinates and direction
       aniX = entity.ani.getX()
       aniY = entity.ani.getY()
       direction = entity.direction
@@ -29,13 +27,11 @@ define [
       # save current frame to ani
       entity.ani.lastFrame = index
 
-      # cache the viewport data
-      viewportOffsetX = @viewport.offsetX()
-      viewportOffsetY = @viewport.offsetY()
-
-      # get pre-rendered animation from cache
+      # get pre-rendered animation frame from Entity
       renderedFrame = entity.renderedFrames[aniName]?[direction]?[index]
 
+      # if this frame doesn't have a SpriteSheet created for it yet,
+      # then create one and save it to the Entity
       if renderedFrame is undefined
         entity.renderedFrames[aniName] ||= []
         renderedAni = entity.renderedFrames[aniName]
@@ -56,12 +52,12 @@ define [
 
           renderedFrame.addSprite(
             spriteResource
-            ~~(srcX)
-            ~~(srcY)
+            srcX
+            srcY
             0
             0
-            ~~(spriteData.width)
-            ~~(spriteData.height)
+            spriteData.width
+            spriteData.height
           )
 
       renderedFrame.render(
@@ -72,6 +68,7 @@ define [
       )
 
       # load health bar image
+      ###
       return
       sprite = @loader.loadImage "fantasy/ui/bar_hp.png"
       if sprite.image is undefined
@@ -88,4 +85,6 @@ define [
         Math.floor((health/100)*spriteData.width)
         10
       )
+      ###
+
       return

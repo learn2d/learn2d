@@ -1,16 +1,14 @@
-define [
-  'cs!graphics/sprite'
-], ->
-  # we don't really need this
-  Sprite = require 'graphics/sprite'
+define ->
+
+  #### SpriteSheet
 
   class SpriteSheet
     constructor: ->
       @spriteList = []
       @buffer = document.createElement('canvas').getContext('2d')
-      @lastRenderTime = 0
       @width = 0
       @height = 0
+      @dirty = false
 
     addSprite: (sprite, srcX, srcY, x, y, spriteWidth, spriteHeight) ->
       srcX = ~~(srcX)
@@ -35,32 +33,44 @@ define [
         spriteHeight
       ]
 
+      # mark the sheet dirty now and also when this sprite finishes loading
+      @dirty = true
+      if sprite.image is undefined
+        sprite.onImageLoaded @markDirty.bind(this)
+
+      return
+
+    markDirty: ->
+      @dirty = true
+
       return
 
     render: (context, viewport, renderX = 0, renderY = 0) ->
-      unless @width isnt 0 and @height isnt 0
+      # at least one valid sprite is required for this operation to succeed
+      if @width is 0 or @height is 0
         return
 
-      # how long to wait before re-rendering the sprite sheet
-      # need to replace this with automatic detection that the layers
-      # have become dirty, i.e. a new tileset image has finished downloading
-      timeBetweenRenders = 30000
-      if Date.now() - @lastRenderTime > timeBetweenRenders
+      renderX = ~~(renderX)
+      renderY = ~~(renderY)
+
+      # sheet has become dirty, i.e. a new image has finished downloading
+      if @dirty
+        @dirty = false
         @buffer.canvas.width = @width
         @buffer.canvas.height = @height
-
-        @lastRenderTime = Date.now()
 
         for spriteData in @spriteList
           [sprite, srcX, srcY, x, y, spriteWidth, spriteHeight] = spriteData
 
-          drawFunc = sprite.createRenderFunction(
-            @buffer
+          # check if image has loaded yet
+          spriteImage = sprite.image
+          if spriteImage is undefined
+            continue
+
+          @buffer.drawImage(
+            spriteImage
             srcX
             srcY
-          )
-
-          drawFunc(
             spriteWidth
             spriteHeight
             x
@@ -82,4 +92,4 @@ define [
         @height
       )
 
-      #console.log context.canvas.toDataURL()
+      return
