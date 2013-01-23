@@ -50,8 +50,6 @@ define [
           spriteData = aniData.sprites[spriteId]
 
           spriteResource = @loader.loadImage file
-          if spriteResource.image is undefined
-            continue
 
           srcX = sprite.x
           srcY = sprite.y
