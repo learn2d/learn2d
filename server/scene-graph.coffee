@@ -4,7 +4,7 @@ class SceneGraph
   constructor: (@game) ->
     @entities = {}
     @sockets = {}
-    @level = new Level('default')
+    @level = new Level('fields5')
 
   addEntity: (data) ->
     entity = data.ent

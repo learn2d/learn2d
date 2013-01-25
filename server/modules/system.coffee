@@ -14,8 +14,8 @@ class System
     data = 
       ent: entity
       levelinfo:
-        oldlevel: "default"
-        newlevel: "default"
+        oldlevel: "fields5"
+        newlevel: "fields5"
     @game.sceneGraph.addEntity data
     @game.entityAdded data
 
