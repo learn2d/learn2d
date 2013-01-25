@@ -28,7 +28,7 @@
          "name":"foreground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":32,
          "x":0,
          "y":0
@@ -57,8 +57,8 @@
                     },
                  "type":"teleport",
                  "width":17,
-                 "x":1003,
-                 "y":7
+                 "x":1001,
+                 "y":5
                 }, 
                 {
                  "height":17,

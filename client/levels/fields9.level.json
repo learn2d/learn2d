@@ -69,8 +69,8 @@
                     },
                  "type":"teleport",
                  "width":17,
-                 "x":2,
-                 "y":-2
+                 "x":1,
+                 "y":-17
                 }],
          "opacity":1,
          "type":"objectgroup",
