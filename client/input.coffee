@@ -68,9 +68,20 @@ define [
           @mouseX = mousePos.x
           @mouseY = mousePos.y
           @mouseDown = true
+
+        bean.add document, 'touchstart', (e) =>
+          mousePos = @_getPosition(e)
+          console.log(mousePos)
+          @mouseX = mousePos.x
+          @mouseY = mousePos.y
+          @mouseDown = true
+
         bean.add document, 'mouseup', (e) =>
           return unless e.button is 0
 
+          @mouseDown = false
+
+        bean.add document, 'touchend', (e) =>
           @mouseDown = false
 
     isKeyDown: (keyCode) ->
@@ -108,12 +119,20 @@ define [
 
         undefined
 
-      pos = findPos(@context.canvas)
-      x = e.pageX - pos.x - @viewport.offsetX()
-      y = e.pageY - pos.y - @viewport.offsetY()
+      pageX = e.pageX
+      pageY = e.pageY
+      if pageX is undefined
+        pageX = e.touches[0].pageX
+        pageY = e.touches[0].pageY
 
-      x: x
-      y: y
+      pos = findPos(@context.canvas)
+      x = pageX - pos.x - @viewport.offsetX()
+      y = pageY - pos.y - @viewport.offsetY()
+
+      return {
+        x: x
+        y: y
+      }
 
     # called for each game loop
     loop: ->
