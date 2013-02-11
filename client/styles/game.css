@@ -529,6 +529,7 @@ body {
     max-width: 1024px;
     max-height: 1024px;
     margin: 0 auto;
+    -webkit-user-select: none;
 }
 
 #chatbox-container {

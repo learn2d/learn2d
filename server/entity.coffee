@@ -3,7 +3,7 @@ util = require './util'
 
 class Entity
   constructor: ({@id, @x, @y, @aniName, @direction, @visible, @type, @SpriteList, @health}) ->
-    @direction ?= util.DIR_UP
+    @direction ?= (Math.random() * 4) | 0
     @aniName ?= 'female-walk'
     @id ?= uuid.v1()
     @visible ?= true
