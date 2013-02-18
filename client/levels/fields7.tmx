@@ -11,7 +11,7 @@
  </tileset>
  <layer name="background" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJyVl0uOFDEQRC3oBVyCQYJbIOAQZjSfCwAbJARcAFj4U77zuCWH5lVUNiMWoepy2Rn5T3dLKdWJMbFNtIky0dfzjLxQFz5PfJn4us41nNeZDc+OZ13Psb4PrNe1VhffsLN6/z3xZ+IvzvG8dKmwKa8nZbW01yFDRocM7dW3hrWWjroXyC7gLwH/lo76yx8Z54pxNTu3XZAhOdG6ZNC34pHfBMZFazntc0P7ctrnEDk7ZGttBPrkC/ztH/w14JKsAh7aJn7ZrTPyuX5v0Il+Lumoq2S04ElZson1kINvzya+G74t8F2/nwexZ/5FtjBmbt+nidPEFXDC82Rr14gP64J1I7/rnf5hzPviJxc5XRfxd5Opd/Yb5QbzR3FQ/zp/uwHn+4kPAT5izzXOUi5z1vOaucucyvD/GbcTLyZeTtwB9/CH+Dtkbukx/70Xsu5YL9LxBv4987+ZeBvw0/5uMlVHngesReYLdXD+uwD32KP8Y/8p6dhD1IsYJ++XLT3m39UT/My/alwl7XuK/ON+kN3Kk278PyZ+Bvhl/IrxSEcfMDbsu95v5S+vv6jmWJfKP85+n2Wcr9THZ6vqL+KMIP5ozrMXVMhn3Yk/Y//riXf/gVewn73N52I0e9xH3sc4t7xOLs1K9h6fR+oJzEnm5mZyu3FRZk7HPkI/swY4h/1uMtJeT78XaoZxdg7I3lIcZ/c97eHdUfrzPku7ObPIrzynbrwTdePj3aKnoz70UXQ3Y4ylK3m9vjnbJZs2yn7WCm2mDpzdAzJzIMN7bzXZ7gOPj/9/GNgT3X+lA/PTa1B7+D+ENtIm9rBinNSVd1mvX96/GE/6nXpyXvcLiHoE/7N042Kvo60O3qs9fjUdY+Sx0FoL+CMdeQdjH6r4xlxWzjD/2PfE7Xcq1tdm3zhzeNb9RH2e0jXqN8qBalxeA87Pfe7jfEG+/+cYkKnfD/YO4ZE=
+   eJyVl02O1TAQhC14C7gEgwS3QMAhzGh+LgBskBBwAWAR2/Gdx5Fcmi+VDiMWpbw4dlf/t19NKZWBPrAO1IFloM3nhjxRgM8DXya+4rzOrHg2PMt89vm9Y73MtTL5up3V+4bfA38m/tp56VJgU55Pyqppr0OGjAYZ2qtvFWs1HXVfIHsB/xLwr2nvV3HLB9nkaF+1c+uJDMmJ1iWDvhWP/CYwLlrLaZ8b2pfTPofI2SBbaz3QJ5/w13/wl4BLshbw0Dbxy26dkc/1e4VO9POSjrpKRg2elCWbWA85+PZs4Lvh2wTf9ft5EHvmX2QLY+b2fRq4DFwBFzwvtnaN+LAuWDfyu97pH8a8TX5ykdN1EX8zmXpnv1FuMH8UB/Wv7dsNON8PfAjwEXuucZZymbOe18xd5lSG/zfcDrwYeDlwB9zDH+JvkLmmx/z3Xsi6Y71Ixxv4d+N/M/A24Kf9zWSqjjwPWIvMF+rg/HcB7rFH+cf+s6RjD1Ev8tlGPWp6zL+rJ/iZf8W4lrTvKfKP+0F2K0+a8f8Y+Bngl/Erxj0dfcDYsO96v5W/vP6immNdKv84+32Wcb5SH5+tqr+IM4L4oznPXlAgn3Un/oz9rwfe/QdewX72Np+L0exxH3kf49zyOjmblew9Po/UE5iTzM3V5Dbjosycjn2EfmYNcA773aSnvZ5+L9QM4+zskL2mOM7ue9rDu6P0532WdnNmkV95Tt14J2rGx7tFS0d96KPobsYYS1fyen1ztks2bZT9rBXaTB04uztk5kCG995ist0HHh///9CxJ7r/Sgfmp9eg9vB/CG2kTexhi3FSV95lvX55/2I86XfqyXndThD1CP5nacbFXkdbHbxXe/xKOsbIY6G1GvBHOvIOxj5U8I25rJxh/rHvidvvVKyv1b5x5vCs+4n6PKVr1G+UA8W4vAacn/vcx/lEvv/n6JCp3w9k9OFn
   </data>
  </layer>
  <layer name="background" width="32" height="32">
@@ -26,7 +26,7 @@
  </layer>
  <layer name="collisions" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztk0sOABAMRO0cwP3vKrYS0WhnWvQtRVrzUYo/rXq/gM9K8zg/9SOqjxpNu7kJFml2Vn2W3p3nMrpwQ99Qf42JlwbUTqYe5J5ovWL7Gk2/NQiNr3uGZOedJK8femtJ+sVB6/FrGXnp6TrtBHk=
+   eJxjYCAPCLNjZ1NqFil6kPFQA7jcTIl/Bms40CqOBqt/hxMgNu6olZ6JVYtuLj3SwlBIb0O1PEQGA+UHWtlJT//Q0p7Blq7oHa6Dzf/UBrTw43APM1oCQmFHTHyNhHRLTTAaXvQBA9FnHMxgoPwDAKGCBRU=
   </data>
  </layer>
  <objectgroup name="event" width="32" height="32">
@@ -42,12 +42,12 @@
   </object>
   <object name="To the Underworld" type="teleport" x="399" y="331" width="198" height="167">
    <properties>
-    <property name="warp" value="underworld,500,500"/>
+    <property name="warp" value="fields1,475,385"/>
    </properties>
   </object>
   <object name="To Fields4" type="teleport" x="-3" y="3" width="1035" height="17">
    <properties>
-    <property name="warp" value="fields4,50,500"/>
+    <property name="warp" value="fields4,500,950"/>
    </properties>
   </object>
  </objectgroup>

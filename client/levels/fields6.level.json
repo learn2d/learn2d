@@ -65,12 +65,12 @@
                  "name":"To Fields9",
                  "properties":
                     {
-                     "warp":"fields9,50,500"
+                     "warp":"fields9,500,50"
                     },
                  "type":"teleport",
                  "width":1035,
-                 "x":-20,
-                 "y":1002
+                 "x":4,
+                 "y":1001
                 }, 
                 {
                  "height":1017,
@@ -81,20 +81,8 @@
                     },
                  "type":"teleport",
                  "width":17,
-                 "x":2,
-                 "y":-2
-                }, 
-                {
-                 "height":17,
-                 "name":"To Fields9",
-                 "properties":
-                    {
-                     "warp":"fields9,500,50"
-                    },
-                 "type":"teleport",
-                 "width":1035,
-                 "x":-20,
-                 "y":1002
+                 "x":7,
+                 "y":5
                 }],
          "opacity":1,
          "type":"objectgroup",
