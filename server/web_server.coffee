@@ -28,4 +28,4 @@ app.configure ->
   app.set 'view options'
     layout: false
 
-app.listen 3000
+app.listen 80
