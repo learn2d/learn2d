@@ -66,6 +66,9 @@ define [
         # Pre-scripting networking
         player = @sceneGraph.getPlayer()
 
+        if player is undefined
+          return
+
         @network.beforeScripting player
 
         # process timeouts
