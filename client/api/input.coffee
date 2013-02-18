@@ -1,5 +1,5 @@
 define [
-  'util'
+  'cs!util'
 ], ->
   util = require 'util'
 
