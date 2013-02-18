@@ -1,8 +1,10 @@
-# Learn2D #
+Learn2D
+=======
 
 Learn 2D game development in 2 days with Learn2D
 
-## Installation: ##
+Installation:
+=============
 
 **First get Node**
 
@@ -52,3 +54,7 @@ Learn 2D game development in 2 days with Learn2D
 *  [local host](http://192.168.1.1/)
 *  forward ports 3000 and 3001 to your machine
 
+License
+=======
+
+CC0
