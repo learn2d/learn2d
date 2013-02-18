@@ -11,6 +11,9 @@ io.sockets.on 'connection', (socket) ->
   game.addClient socket
 
 app.get '/', (req, res) ->
+  res.redirect(301, 'http://learn2d.com');
+
+app.get '/play', (req, res) ->
   res.render 'render',
     title: 'Learn2D'
 
