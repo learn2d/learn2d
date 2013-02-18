@@ -14,7 +14,7 @@ class Game
     @modules.system = new System(this)
     @modules.slash = new Slash(this)
     @defaultEntity = new Entity
-      level: 'default'
+      level: 'fields5'
       aniName: 'invisible'
       visible: false
       x: 300
@@ -24,7 +24,7 @@ class Game
       ent: @defaultEntity
       levelinfo:
         oldlevel: null
-        newlevel: "default"
+        newlevel: "fields5"
     @sceneGraph.addEntity data
     @entityAdded data
 

@@ -11,7 +11,7 @@
  </tileset>
  <layer name="background" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJydV9ttw0AM8wTtHOkabdcIskbbKS5OM28uwBkQCD6EfAg4J6cXRQr22LZtTLsuO877Ou/EBvHZy7nGqHaFmOzZ/V5zVtvhGe+NEq+eMQ76sfqxRrzHalLnIXIxn4oH6wf7YnNjPWMe5cPOanZ4n2HqeIK8UzFVfIaDmiubeQcfpQ1XV5qx4oLjSMLfcYDdV5xmOZLOHZ6uPhWL7Y5BzmknOCwSZz+nfRH7hrsdraNumZ7w+Tztbdr7tNuy/2kX0VPaAWxeShtj5T9N+1h5n/nvK3/az2qHMC0pvZ8h7730j3ldPZgH+cM4cfR/K3mPGVyIj+Mzak3ViFj9TPsl9id8MCeLyTijanEcV7nd/mNzUHdRL4pXrhbHb6cVpZ/ujmM7U+1Pp1P1m8KA+SHW6l0r8aC7O13NjmOp144Pm3/Cle0RxzdXm+Kx2i9uZomnia9M+0oznTk6TST/pKkOzx02Dg+2dzvcTnrq1KV4kDja/Z/V4d49kHuv9NTBSvVQ8zucVZ6OTpJf+l5weDgdJn0iD9i3qeOwer/p4vj0fwBnUUNo
+   eJydV9ttwzAM9ATpHM0abbcIiq7RdgrFGTgyKgPE4R5EPwhIjiiSxzvGHtu2jWn3Zed6X+ud2CA+e1nXO6rd4U62d89rzGo77PHcKPfVNd6Dfix/zBHPsZzUeohYzKfiwerBuljfWM0YR/mwteodnmeYOp4g79Sd6n6Gg+or63kHH6UNl1fqseKC40jC33GAnVecZjGSzh2eLj91F5sdg6zTTHBYJM6+TXsn9gFnO1pH3TI94f5z2mXaT7GXaV+ipjQDWL+UNsaKf8S6FTufpfmsZgjTktL7Eet14X1b/biu+BjX5YNxkD+ME2f9j4JB3Xf4XXmsNOKw+t7+ev674te9447iFv4XurmjcnPaTvOP9UGdRb0oXrlcHL+dVpR+ujOOzUw1P51O1TOFAfNDrNW7VuJBd3a6nB3HUq0dH9b/hCubI45vLjfFYzVfXM8STxNfmfaVZjp9dJpI/klTHZ47bBwebO52uJ301MlL8SBxtPs7y8O9eyD3/lNTBytVQ43vcFZxOjpJful7weHhdJj0iTxg36aOw+r9povj4f8EeE1AYw==
   </data>
  </layer>
  <layer name="background" width="32" height="32">
@@ -26,7 +26,7 @@
  </layer>
  <layer name="collisions" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztk0sOABAMRO0cwP3vKrYS0WhnWvQtRVrzUYo/rXq/gM9K8zg/9SOqjxpNu7kJFml2Vn2W3p3nMrpwQ99Qf42JlwbUTqYe5J5ovWL7Gk2/NQiNr3uGZOedJK8femtJ+sVB6/FrGXnp6TrtBHk=
+   eJxjYBh4IMw+0C6gP8DlZ5A4ueExWMOREj8RMncU0BYQG3fUSs/EqkU3lx5pAWYnLkwPQMh+WrsFm/nUthOfebj8Sw37iU3npNpPzfAhZD+t434wgYHId8MZ0MKPwz3MaAkIhR0x8TUS0i01wWh40QdQGsbDLY4Gyj8ALZ4IIQ==
   </data>
  </layer>
  <objectgroup name="event" width="32" height="32">
@@ -38,11 +38,6 @@
   <object name="Epitaph" type="message" x="484" y="547" width="52" height="28">
    <properties>
     <property name="text" value="&quot;Here lies Balthazar, in the forge of the earth.&quot;"/>
-   </properties>
-  </object>
-  <object name="To the Underworld" type="damage" x="399" y="331" width="198" height="167">
-   <properties>
-    <property name="burn" value="2"/>
    </properties>
   </object>
   <object name="To Fields4" type="teleport" x="8" y="1004" width="990" height="22">
