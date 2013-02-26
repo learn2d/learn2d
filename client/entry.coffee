@@ -1,4 +1,6 @@
-# define this as a global so we can have prettier module scripts
+# Define this as a global so we can have prettier module scripts
+# It'll add the API modules as instance properties so we don't have to do it
+# every time in each modules
 class window.PlayerModule
   constructor: ({@player, @timer, @util, @input, @level, @trigger}) ->
 
