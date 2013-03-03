@@ -64,9 +64,9 @@ define [
       if typeof module.onMouseDown is 'function'
         @mouseDownListeners.push (coords) =>
           @timer.timerCheck module, module.onMouseDown.bind(module, coords)
-      if typeof module.onPlayerChat is 'function'
+      if typeof module.on_playerchat is 'function'
         @playerChatListeners.push (playerChat) =>
-            module.onPlayerChat(playerChat)
+            module.on_playerchat(playerChat)
 
     loop: (timeDelta) ->
       if @initialized
