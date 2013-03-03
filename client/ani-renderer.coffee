@@ -1,6 +1,8 @@
 define [
+  'canvastext'
   'cs!graphics/sprite-sheet'
 ], ->
+  CanvasText = require 'canvastext'
   SpriteSheet = require 'graphics/sprite-sheet'
 
   class AniRenderer
@@ -67,24 +69,34 @@ define [
         aniY
       )
 
-      # load health bar image
-      ###
-      return
-      sprite = @loader.loadImage "fantasy/ui/bar_hp.png"
-      if sprite.image is undefined
-        return
-      # draw health bar
-      @context.drawImage(
-        sprite.image,
-        0
-        0
-        Math.floor((health/100)*sprite.image.width)
-        sprite.image.height
-        Math.floor(aniX + 0 + @viewport.offsetX())
-        Math.floor(aniY + Math.floor(spriteData.height) + @viewport.offsetY())
-        Math.floor((health/100)*spriteData.width)
-        10
-      )
-      ###
+      testText = new CanvasText()
+
+      testText.config
+        canvasId: 'canvas'
+        fontFamily: 'Verdana'
+        fontSize: '14px'
+        fontWeight: 'normal'
+        fontColor: '#000'
+        lineHeight: '12'
+
+      testText.defineClass 'blue',
+        fontSize: "24px"
+        fontColor: "#29a1f1"
+        fontFamily: "Impact"
+        fontWeight: "normal"
+
+      testText.defineClass 'pink',
+        fontSize: "24px"
+        fontColor: "#ff5e99"
+        fontFamily: "Times new roman"
+        fontWeight: "bold"
+
+      text = 'I like <class="blue">blue</class> color but I also like <class="pink">pink</class> color!'
+      text = text + '<br />Nevermind, I prefer <class="blue">blue</class> to <class="pink">pink</class>... ;)!'
+
+      testText.drawText
+        text: text
+        x: 20
+        y: 30
 
       return

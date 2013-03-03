@@ -1,6 +1,9 @@
 require.config({
   urlArgs: "bust=" + (new Date()).getTime(),
   shim: {
+    'canvastext': {
+      exports: 'CanvasText'
+    },
     'flywheel': {
       exports: 'flywheel'
     },
@@ -12,6 +15,7 @@ require.config({
 require({
   paths: {
     bean: 'components/bean/bean',
+    canvastext: 'components/canvastext/CanvasText-0.4.1',
     cs: 'components/require-cs/cs',
     'coffee-script': 'components/coffee-script/extras/coffee-script',
     flywheel: 'components/flywheel/src/flywheel',
