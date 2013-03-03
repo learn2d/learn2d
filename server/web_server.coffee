@@ -1,17 +1,20 @@
+http = require 'http'
+
 express = require 'express'
 Game = require './game'
 
-app = express.createServer()
+app = express()
+server = http.createServer(app)
+io = require('socket.io').listen(server)
 
 game = new Game()
 
-io = require('socket.io').listen(3001)
-
-io.sockets.on 'connection', (socket) ->
-  game.addClient socket
-
 app.get '/', (req, res) ->
-  res.redirect(301, 'http://learn2d.com');
+  if req.host is 'www.learn2d.com'
+    res.redirect(301, 'http://learn2d.com');
+  else
+    res.render 'render',
+      title: 'Learn2D'
 
 app.get '/play', (req, res) ->
   res.render 'render',
@@ -31,4 +34,8 @@ app.configure ->
   app.set 'view options'
     layout: false
 
-app.listen 3000
+io.sockets.on 'connection', (socket) ->
+  game.addClient socket
+
+
+server.listen 3000

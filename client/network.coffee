@@ -3,7 +3,7 @@ define ->
     constructor: ->
 
     start: (@game) ->
-      @socket = io.connect "http://#{location.hostname}:3001"
+      @socket = io.connect "#{document.location.protocol}//#{location.hostname}"
 
       @socket.on 'connect', (data) ->
         console.log 'socket connected'
