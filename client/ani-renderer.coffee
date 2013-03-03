@@ -69,6 +69,8 @@ define [
         aniY
       )
 
+      return
+
       testText = new CanvasText()
 
       testText.config

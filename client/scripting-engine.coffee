@@ -3,6 +3,7 @@ define [
 
   'cs!util'
   'cs!timer'
+  'cs!module-builder'
 
   'cs!api/trigger'
   'cs!api/player'
@@ -15,6 +16,7 @@ define [
 
   'cs!modules/player/movement'
   'cs!modules/player/fire-spell'
+  'text!modules/player/chat.js'
 
   #'cs!modules/sound/soundblaster'
 ], ->
@@ -22,6 +24,7 @@ define [
 
   util = require 'util'
   Timer = require 'timer'
+  moduleBuilder = require 'module-builder'
 
   Trigger = require 'api/trigger'
   Player = require 'api/player'
@@ -37,10 +40,11 @@ define [
     player:
       Movement: require 'cs!modules/player/movement'
       FireSpell: require 'cs!modules/player/fire-spell'
+      chatSrc: require 'text!modules/player/chat.js'
     #sound:
       #SoundBlaster: require 'cs!modules/sound/soundblaster'
       #soundManager.sounds.aSound.play()
-      
+
   class ScriptingEngine
     constructor: (@input, @sceneGraph, @network) ->
       @initialized = false
@@ -60,6 +64,9 @@ define [
       if typeof module.onMouseDown is 'function'
         @mouseDownListeners.push (coords) =>
           @timer.timerCheck module, module.onMouseDown.bind(module, coords)
+      if typeof module.onPlayerChat is 'function'
+        @playerChatListeners.push (playerChat) =>
+            module.onPlayerChat(playerChat)
 
     loop: (timeDelta) ->
       if @initialized
@@ -96,6 +103,10 @@ define [
       else
         @mouseDown = false
 
+      if @input.playerChat isnt @playerChat
+        @playerChat = @input.playerChat
+        @callPlayerChatListeners()
+
       if @initialized
         # Post-scripting networking
         @network.afterScripting player
@@ -105,21 +116,38 @@ define [
 
       @mouseDownListeners = []
       @keyDownListeners = []
+      @playerChatListeners = []
 
       @timer.reset()
 
       @moduleList = []
       for key, Module of modules[type]
-        scriptModule = new Module
-          trigger: @triggerApi
-          player: @playerApi
-          timer: @timerApi
-          input: @inputApi
-          level: @levelApi
-          projectile: @projectileApi
-          util: util
-        scriptModule.id = uuid.v1()
-        @moduleList.push scriptModule
+        if typeof Module is 'function'
+          scriptModule = new Module
+            trigger: @triggerApi
+            player: @playerApi
+            timer: @timerApi
+            input: @inputApi
+            level: @levelApi
+            projectile: @projectileApi
+            util: util
+          scriptModule.id = uuid.v1()
+          @moduleList.push scriptModule
+
+        else
+          DynamicModule = moduleBuilder(Module)
+          scriptModule = new DynamicModule
+            trigger: @triggerApi
+            player: @playerApi
+            timer: @timerApi
+            input: @inputApi
+            level: @levelApi
+            projectile: @projectileApi
+            util: util
+
+          console.log scriptModule
+          @moduleList.push scriptModule
+          console.log(scriptModule)
 
       for module in @moduleList
         @addClientModule(module)
@@ -131,3 +159,7 @@ define [
         listener
           x: @input.getMouseX()
           y: @input.getMouseY()
+
+    callPlayerChatListeners: ->
+      for listener in @playerChatListeners
+        listener(@playerChat)
