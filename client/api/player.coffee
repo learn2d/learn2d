@@ -54,9 +54,25 @@ define ->
 
     setAni: (aniName) ->
       @sceneGraph.getPlayer().setAniName(aniName)
-      
+
     getHealth: ->
       @sceneGraph.getPlayer().getHealth()
 
     setHealth: (deltaHealth) ->
       @sceneGraph.getPlayer().setHealth(deltaHealth)
+
+    ###
+    Set a variable on the player object. Based on the prefix, this variable
+    will be shared with other players and/or the server.
+    ###
+    set: (key, value) ->
+      [keyPrefix, keySuffix] = key.split('.')
+      switch keyPrefix
+        when 'public'
+          debugger
+          # update scene graph with new public variable
+          console.log 'update scene graph with new var'
+          console.log keyPrefix
+          console.log keySuffix
+          console.log value
+      return

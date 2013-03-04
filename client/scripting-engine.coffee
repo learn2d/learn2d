@@ -135,7 +135,7 @@ define [
           @moduleList.push scriptModule
 
         else
-          DynamicModule = moduleBuilder(Module)
+          DynamicModule = moduleBuilder.build(Module)
           scriptModule = new DynamicModule
             trigger: @triggerApi
             player: @playerApi
@@ -152,7 +152,7 @@ define [
       for module in @moduleList
         @addClientModule(module)
 
-      undefined
+      return
 
     callMouseDownListeners: ->
       for listener in @mouseDownListeners
