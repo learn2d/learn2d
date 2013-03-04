@@ -1,6 +1,7 @@
 define ->
   class Network
     constructor: ->
+      @playerDataUpdates = {}
 
     start: (@game) ->
       @socket = io.connect "#{document.location.protocol}//#{location.hostname}"
@@ -29,7 +30,7 @@ define ->
           return undefined
         if data.levelinfo.oldlevel == levelName
           @game.sceneGraph.removeEntity data.ent.id
-         
+
         undefined
 
       @socket.on 'healthChanged', (data) =>
@@ -93,6 +94,11 @@ define ->
         if @playerCache[key] isnt oldCache[key]
           updatesNeeded = true
           updates[key] = val
+
+      if Object.keys(@playerDataUpdates).length > 0
+        updatesNeeded = true
+        updates['data'] = @playerDataUpdates
+        @playerDataUpdates = {}
 
       if updatesNeeded
         updates.id = player.id

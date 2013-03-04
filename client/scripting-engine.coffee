@@ -52,7 +52,7 @@ define [
       @timer = new Timer()
 
       @triggerApi = new Trigger(@network)
-      @playerApi = new Player(@sceneGraph)
+      @playerApi = new Player(@sceneGraph, @network)
       @timerApi = new TimerApi(@timer)
       @inputApi = new InputApi(@input)
       @levelApi = new LevelApi(@sceneGraph)

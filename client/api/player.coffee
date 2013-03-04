@@ -1,6 +1,6 @@
 define ->
   class Player
-    constructor: (@sceneGraph) ->
+    constructor: (@sceneGraph, @network) ->
       Object.defineProperty this, 'x',
         get: @getX
         set: @setX
@@ -69,7 +69,7 @@ define ->
       [keyPrefix, keySuffix] = key.split('.')
       switch keyPrefix
         when 'public'
-          debugger
+          @network.playerDataUpdates[key] = value
           # update scene graph with new public variable
           console.log 'update scene graph with new var'
           console.log keyPrefix
