@@ -4,14 +4,13 @@ define ->
       onCreated: ->
 
   buildModule = (text) ->
-    npcTemplate = new Function("NPC", template.header + text + template.footer)
-    NPC =
-      extend: (extendObj) ->
-        NPC.scripts = extendObj
-    scriptVars = npcTemplate(NPC)
+    customScript = new Function(template.header + text + template.footer)
+    eventHandlers = {}
+    scriptVars = customScript.call(eventHandlers)
     Module = template()
-    for idx, script of NPC.scripts
-      Module.prototype["on_#{idx.toLowerCase()}"] = script
+    for idx, script of eventHandlers
+      Module.prototype[idx] = script
+    console.log(Module.prototype);
     return Module
 
   return buildModule

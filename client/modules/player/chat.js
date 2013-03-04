@@ -1,12 +1,11 @@
 // NPC by cmwelsh
 
-NPC.extend({
-  playerChat: function (chatMessage) {
-    console.log('foo');
-    console.log(chatMessage);
-    if (this.player.chat === 'warp') {
-      this.player.x = 30;
-      this.player.y = 35;
-    }
+//#CLIENTSIDE
+
+this.onPlayerChats = function (message) {
+  console.log(message);
+  if (message === 'warp') {
+    this.player.x = 100;
+    this.player.y = 150;
   }
-});
+}
